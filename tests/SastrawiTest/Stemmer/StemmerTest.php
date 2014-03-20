@@ -25,9 +25,9 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test removing inflectional possesive pronoun ku|mu|nya
+     * Test removing inflectional possessive pronoun ku|mu|nya
      */
-    public function testRemoveInflectionalPossesivePronoun()
+    public function testRemoveInflectionalPossessivePronoun()
     {
         $this->assertEquals('kemeja', $this->stemmer->removeInflectionalPossessivePronoun('kemejaku'));
         $this->assertEquals('baju', $this->stemmer->removeInflectionalPossessivePronoun('bajumu'));
