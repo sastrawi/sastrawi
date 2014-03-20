@@ -23,4 +23,15 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('apa', $this->stemmer->removeInflectionalParticle('apatah'));
         $this->assertEquals('siapa', $this->stemmer->removeInflectionalParticle('siapapun'));
     }
+
+    /**
+     * Test removing inflectional possesive pronoun ku|mu|nya
+     */
+    public function testRemoveInflectionalPossesivePronoun()
+    {
+        $this->assertEquals('kemeja', $this->stemmer->removeInflectionalPossessivePronoun('kemejaku'));
+        $this->assertEquals('baju', $this->stemmer->removeInflectionalPossessivePronoun('bajumu'));
+        $this->assertEquals('celana', $this->stemmer->removeInflectionalPossessivePronoun('celananya'));
+    }
+
 }

@@ -11,4 +11,13 @@ class Stemmer
     {
         return preg_replace('/lah|kah|tah|pun$/', '', $word);
     }
+
+    /**
+     * Remove inflectional particle : ku|mu|nya
+     */
+    public function removeInflectionalPossessivePronoun($word)
+    {
+        return preg_replace('/ku|mu|nya$/', '', $word);
+    }
+
 }
