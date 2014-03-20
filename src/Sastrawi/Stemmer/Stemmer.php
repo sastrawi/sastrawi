@@ -9,7 +9,7 @@ class Stemmer
      */
     public function removeInflectionalParticle($word)
     {
-        return preg_replace('/lah|kah|tah|pun$/', '', $word);
+        return preg_replace('/(lah|kah|tah|pun)$/', '', $word, 1);
     }
 
     /**
@@ -17,7 +17,15 @@ class Stemmer
      */
     public function removeInflectionalPossessivePronoun($word)
     {
-        return preg_replace('/ku|mu|nya$/', '', $word);
+        return preg_replace('/(ku|mu|nya)$/', '', $word, 1);
+    }
+    
+    /**
+     * Remove derivational suffix : i|kan|an
+     */
+    public function removeDerivationalSuffix($word)
+    {
+        return preg_replace('/(i|kan|an)$/', '', $word, 1);
     }
 
 }

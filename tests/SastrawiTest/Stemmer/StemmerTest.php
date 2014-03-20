@@ -33,5 +33,15 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('baju', $this->stemmer->removeInflectionalPossessivePronoun('bajumu'));
         $this->assertEquals('celana', $this->stemmer->removeInflectionalPossessivePronoun('celananya'));
     }
+    
+    /**
+     * Test removing derivational suffixes
+     */
+    public function testRemoveDerivationalSuffix()
+    {
+        $this->assertEquals('menghantu', $this->stemmer->removeDerivationalSuffix('menghantui'));
+        $this->assertEquals('membeli', $this->stemmer->removeDerivationalSuffix('membelikan'));
+        $this->assertEquals('penjual', $this->stemmer->removeDerivationalSuffix('penjualan'));
+    }
 
 }
