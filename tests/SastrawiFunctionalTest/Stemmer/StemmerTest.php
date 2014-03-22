@@ -27,20 +27,32 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
     public function stemDataProvider()
     {
-        return array(
-            array('mei', 'mei'),
-            array('bui', 'bui'),
-            array('nilai', 'nilai'),
-            array('dialah', 'dia'),
-            array('benarkah', 'benar'),
-            array('apatah', 'apa'),
-            array('siapapun', 'siapa'),
-            array('kemejaku', 'kemeja'),
-            array('bajumu', 'baju'),
-            array('celananya', 'celana'),
-            array('hantui', 'hantu'),
-            array('belikan', 'beli'),
-            array('jualan', 'jual'),
-        );
+        $data = array();
+        
+        // don't stem short words
+        $data[] = array('mei', 'mei');
+        $data[] = array('bui', 'bui');
+        
+        // lookup up the dictionary, to prevent overstemming
+        // don't stem nilai to nila
+        $data[] = array('nilai', 'nilai');
+        
+        // lah|kah|tah|pun
+        $data[] = array('dialah', 'dia');
+        $data[] = array('benarkah', 'benar');
+        $data[] = array('apatah', 'apa');
+        $data[] = array('siapapun', 'siapa');
+
+        // ku|mu|nya
+        $data[] = array('kemejaku', 'kemeja');
+        $data[] = array('bajumu', 'baju');
+        $data[] = array('celananya', 'celana');
+
+        // i|kan|an
+        $data[] = array('hantui', 'hantu');
+        $data[] = array('belikan', 'beli');
+        $data[] = array('jualan', 'jual');
+
+        return $data;
     }
 }
