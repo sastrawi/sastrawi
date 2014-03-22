@@ -13,7 +13,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     
     public function setUp()
     {
-        $this->dictionary = new ArrayDictionary(array('nilai'));
+        $this->dictionary = new ArrayDictionary(array());
         $this->stemmer = new Stemmer($this->dictionary);
     }
     
@@ -59,10 +59,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
     /**
      * To prevent overstemming : nilai could have been overstemmed to nila
-     * if we don't use dictionary lookup
+     * if we don't lookup against the dictionary
      */
     public function testStemReturnImmediatelyIfFoundOnDictionary()
     {
+        $this->assertEquals('nila', $this->stemmer->stem('nilai'));
+        $this->dictionary->add('nilai');
         $this->assertEquals('nilai', $this->stemmer->stem('nilai'));
     }
 }

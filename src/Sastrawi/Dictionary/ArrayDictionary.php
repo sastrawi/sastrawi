@@ -8,9 +8,7 @@ class ArrayDictionary implements DictionaryInterface
     
     public function __construct(array $words)
     {
-        foreach ($words as $word) {
-            $this->words[$word] = $word;
-        }
+        $this->exchangeArray($words);
     }
 
     public function lookup($word)
@@ -19,4 +17,17 @@ class ArrayDictionary implements DictionaryInterface
             return $this->words[$word];
         }
     }
+ 
+    public function exchangeArray(array $words)
+    {
+        foreach ($words as $word) {
+            $this->add($word);
+        }
+    }
+
+    public function add($word)
+    {
+        $this->words[$word] = $word;
+    }
+
 }

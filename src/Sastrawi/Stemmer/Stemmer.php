@@ -30,10 +30,18 @@ class Stemmer
             return $word;
         }
         
-        $result = $this->dictionary->lookup($word);
-        if ($result !== null) {
-            return $result;
+        $lookupResult = $this->dictionary->lookup($word);
+        if ($lookupResult !== null) {
+            return $lookupResult;
         }
+
+        $stemmedWord = $this->removeDerivationalSuffix($word);
+        $lookupResult = $this->dictionary->lookup($stemmedWord);
+        if ($lookupResult !== null) {
+            return $lookupResult;
+        }
+
+        return $stemmedWord;
     }
 
     protected function isShortWord($word)
