@@ -53,6 +53,17 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('belikan', 'beli');
         $data[] = array('jualan', 'jual');
 
+        // combination of suffixes
+        $data[] = array('bukumukah', 'buku');
+        $data[] = array('miliknyalah', 'milik');
+        $data[] = array('kulitkupun', 'kulit'); 
+        $data[] = array('berikanku', 'beri');
+        $data[] = array('sakitimu', 'sakit');
+        $data[] = array('beriannya', 'beri');
+        $data[] = array('kasihilah', 'kasih');
+        
+        //$data[] = array('teriakanmu', 'teriak'); // wtf? kok jadi teria?
+
         return $data;
     }
 }
