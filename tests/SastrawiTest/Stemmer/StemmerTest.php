@@ -3,14 +3,18 @@
 namespace SastrawiTest\Stemmer;
 
 use Sastrawi\Stemmer\Stemmer;
+use Sastrawi\Dictionary\ArrayDictionary;
 
 class StemmerTest extends \PHPUnit_Framework_TestCase
 {
+    protected $dictionary;
+    
     protected $stemmer;
     
     public function setUp()
     {
-        $this->stemmer = new Stemmer();
+        $this->dictionary = new ArrayDictionary(array('nilai'));
+        $this->stemmer = new Stemmer($this->dictionary);
     }
     
     /**
@@ -44,4 +48,21 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('penjual', $this->stemmer->removeDerivationalSuffix('penjualan'));
     }
 
+    /**
+     * Don't stem such a short word (three or fewer characters)
+     */
+    public function testStemReturnImmediatelyOnShortWord()
+    {
+        $this->assertEquals('mei', $this->stemmer->stem('mei'));
+        $this->assertEquals('bui', $this->stemmer->stem('bui'));
+    }
+
+    /**
+     * To prevent overstemming : nilai could have been overstemmed to nila
+     * if we don't use dictionary lookup
+     */
+    public function testStemReturnImmediatelyIfFoundOnDictionary()
+    {
+        $this->assertEquals('nilai', $this->stemmer->stem('nilai'));
+    }
 }
