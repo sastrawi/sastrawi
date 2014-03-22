@@ -13,6 +13,7 @@
 >
     <testsuite name="Sastrawi tests">
         <directory>./tests/SastrawiTest</directory>
+        <directory>./tests/SastrawiFunctionalTest</directory>
     </testsuite>
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">

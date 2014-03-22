@@ -33,5 +33,6 @@ if (! isset($loader)) {
 }
 
 $loader->add('SastrawiTest\\', __DIR__);
+$loader->add('SastrawiFunctionalTest\\', __DIR__);
 
 unset($files, $file, $loader);

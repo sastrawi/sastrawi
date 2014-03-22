@@ -35,7 +35,19 @@ class Stemmer
             return $lookupResult;
         }
 
-        $stemmedWord = $this->removeDerivationalSuffix($word);
+        $stemmedWord = $this->removeInflectionalParticle($word);
+        $lookupResult = $this->dictionary->lookup($stemmedWord);
+        if ($lookupResult !== null) {
+            return $lookupResult;
+        }
+
+        $stemmedWord = $this->removeInflectionalPossessivePronoun($stemmedWord);
+        $lookupResult = $this->dictionary->lookup($stemmedWord);
+        if ($lookupResult !== null) {
+            return $lookupResult;
+        }
+
+        $stemmedWord = $this->removeDerivationalSuffix($stemmedWord);
         $lookupResult = $this->dictionary->lookup($stemmedWord);
         if ($lookupResult !== null) {
             return $lookupResult;
