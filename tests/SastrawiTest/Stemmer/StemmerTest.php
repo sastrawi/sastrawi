@@ -64,7 +64,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     public function testStemReturnImmediatelyIfFoundOnDictionary()
     {
         $this->assertEquals('nila', $this->stemmer->stem('nilai'));
-        $this->dictionary->add('nilai');
+        $this->stemmer->getDictionary()->add('nilai');
         $this->assertEquals('nilai', $this->stemmer->stem('nilai'));
     }
 }
