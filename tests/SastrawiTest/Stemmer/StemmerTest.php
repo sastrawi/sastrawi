@@ -13,7 +13,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     
     public function setUp()
     {
-        $this->dictionary = new ArrayDictionary(array());
+        $this->dictionary = new ArrayDictionary();
         $this->stemmer = new Stemmer($this->dictionary);
     }
     

@@ -6,7 +6,7 @@ class ArrayDictionary implements DictionaryInterface
 {
     protected $words = array();
     
-    public function __construct(array $words)
+    public function __construct(array $words = array())
     {
         $this->exchangeArray($words);
     }
