@@ -49,6 +49,16 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test get removed affix
+     */
+    public function testGetRemovedAffix()
+    {
+        $this->assertEquals('i', $this->stemmer->getRemovedAffix('menghantui', 'menghantu'));
+        $this->assertEquals('kan', $this->stemmer->getRemovedAffix('membelikan', 'membeli'));
+        $this->assertEquals('an', $this->stemmer->getRemovedAffix('penjualan', 'penjual'));
+    }
+
+    /**
      * Test removing plain prefixes di|ke|se
      */
     public function testRemovePlainPrefix()

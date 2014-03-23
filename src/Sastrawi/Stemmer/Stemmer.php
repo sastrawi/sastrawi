@@ -92,6 +92,14 @@ class Stemmer
     }
 
     /**
+     * Get removed affix
+     */
+    public function getRemovedAffix($completeWord, $wordAfterRemoved)
+    {    
+        return preg_replace("/$wordAfterRemoved/", '', $completeWord, 1);
+    }
+
+    /**
      * Remove plain prefix : di|ke|se
      */
     public function removePlainPrefix($word)
