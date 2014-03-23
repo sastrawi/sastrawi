@@ -39,13 +39,23 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * Test removing derivational suffixes
+     * Test removing derivational suffixes i|kan|an
      */
     public function testRemoveDerivationalSuffix()
     {
         $this->assertEquals('menghantu', $this->stemmer->removeDerivationalSuffix('menghantui'));
         $this->assertEquals('membeli', $this->stemmer->removeDerivationalSuffix('membelikan'));
         $this->assertEquals('penjual', $this->stemmer->removeDerivationalSuffix('penjualan'));
+    }
+
+    /**
+     * Test removing plain prefixes di|ke|se
+     */
+    public function testRemovePlainPrefix()
+    {
+        $this->assertEquals('buang', $this->stemmer->removePlainPrefix('dibuang'));
+        $this->assertEquals('sakitan', $this->stemmer->removePlainPrefix('kesakitan'));
+        $this->assertEquals('kuat', $this->stemmer->removePlainPrefix('sekuat'));
     }
 
     /**

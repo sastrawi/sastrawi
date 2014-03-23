@@ -84,4 +84,12 @@ class Stemmer
     {
         return preg_replace('/(i|kan|an)$/', '', $word, 1);
     }
+
+    /**
+     * Remove plain prefix : di|ke|se
+     */
+    public function removePlainPrefix($word)
+    {
+        return preg_replace('/^(di|ke|se)/', '', $word, 1);
+    }
 }
