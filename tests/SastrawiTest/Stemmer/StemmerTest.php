@@ -69,6 +69,23 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test contains invalid affix pair ber-i|di-an|ke-i|ke-kan|me-an|ter-an|per-an
+     */
+    public function testContainsInvalidAffixPair()
+    {
+        $this->assertFalse($this->stemmer->containsInvalidAffixPair('memberikan'));
+        $this->assertFalse($this->stemmer->containsInvalidAffixPair('ketahui'));
+        
+        $this->assertTrue($this->stemmer->containsInvalidAffixPair('berjatuhi'));
+        $this->assertTrue($this->stemmer->containsInvalidAffixPair('dipukulan'));
+        $this->assertTrue($this->stemmer->containsInvalidAffixPair('ketiduri'));
+        $this->assertTrue($this->stemmer->containsInvalidAffixPair('ketidurkan'));
+        $this->assertTrue($this->stemmer->containsInvalidAffixPair('menduaan'));
+        $this->assertTrue($this->stemmer->containsInvalidAffixPair('terduaan'));
+        $this->assertTrue($this->stemmer->containsInvalidAffixPair('perkataan')); // wtf?
+    }
+
+    /**
      * Don't stem such a short word (three or fewer characters)
      */
     public function testStemReturnImmediatelyOnShortWord()

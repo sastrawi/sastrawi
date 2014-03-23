@@ -106,4 +106,30 @@ class Stemmer
     {
         return preg_replace('/^(di|ke|se)/', '', $word, 1);
     }
+
+    /**
+     * Does the word contain invalid affix pair?
+     * ber-i|di-an|ke-i|ke-an|me-an|ter-an|per-an
+     */
+    public function containsInvalidAffixPair($word)
+    {
+        if (preg_match('/^me(.*)kan$/', $word) === 1) {
+            return false;
+        }
+
+        if ($word == 'ketahui') {
+            return false;
+        }
+
+        $contains = false 
+                    || preg_match('/^ber(.*)i$/', $word) === 1
+                    || preg_match('/^di(.*)an$/', $word) === 1
+                    || preg_match('/^ke(.*)i$/', $word) === 1
+                    || preg_match('/^ke(.*)an$/', $word) === 1
+                    || preg_match('/^me(.*)an$/', $word) === 1
+                    || preg_match('/^ter(.*)an$/', $word) === 1
+                    || preg_match('/^per(.*)an$/', $word) === 1;
+
+        return $contains;
+    }
 }
