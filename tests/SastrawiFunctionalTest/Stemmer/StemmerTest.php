@@ -38,13 +38,13 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('nilai', 'nilai');
         
         // lah|kah|tah|pun
-        $data[] = array('dialah', 'dia');
+        $data[] = array('hancurlah', 'hancur');
         $data[] = array('benarkah', 'benar');
         $data[] = array('apatah', 'apa');
         $data[] = array('siapapun', 'siapa');
 
         // ku|mu|nya
-        $data[] = array('kemejaku', 'kemeja');
+        $data[] = array('jubahku', 'jubah');
         $data[] = array('bajumu', 'baju');
         $data[] = array('celananya', 'celana');
 
@@ -61,7 +61,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('sakitimu', 'sakit');
         $data[] = array('beriannya', 'beri');
         $data[] = array('kasihilah', 'kasih');
-        
+
+        // plain prefix
+        $data[] = array('dibuang', 'buang');
+        //$data[] = array('kesakitan', 'sakit');
+        $data[] = array('sesuap', 'suap');
+
         //$data[] = array('teriakanmu', 'teriak'); // wtf? kok jadi teria?
 
         return $data;

@@ -53,6 +53,12 @@ class Stemmer
             return $lookupResult;
         }
 
+        $stemmedWord = $this->removePlainPrefix($stemmedWord);
+        $lookupResult = $this->dictionary->lookup($stemmedWord);
+        if ($lookupResult !== null) {
+            return $lookupResult;
+        }
+
         return $stemmedWord;
     }
 
