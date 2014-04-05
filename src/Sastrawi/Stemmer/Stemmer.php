@@ -261,7 +261,7 @@ class Stemmer
      * @param string $wordAfterRemoved
      */
     public function getRemovedAffix($completeWord, $wordAfterRemoved)
-    {    
+    {
         return preg_replace("/$wordAfterRemoved/", '', $completeWord, 1);
     }
 
@@ -288,7 +288,7 @@ class Stemmer
             return false;
         }
 
-        $contains = false 
+        $contains = false
                     || preg_match('/^ber(.*)i$/', $word) === 1
                     || preg_match('/^di(.*)an$/', $word) === 1
                     || preg_match('/^ke(.*)i$/', $word) === 1

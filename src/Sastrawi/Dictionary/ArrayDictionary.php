@@ -29,5 +29,4 @@ class ArrayDictionary implements DictionaryInterface
     {
         $this->words[$word] = $word;
     }
-
 }
