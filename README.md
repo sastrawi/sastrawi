@@ -4,9 +4,9 @@ Sastrawi
 Sastrawi is a simple PHP library which provides stemming of Indonesian words. Despite its simplicity, this library is  high in quality, well documented, and carefully tested. For more information in english, see [README](https://github.com/andylib/sastrawi/blob/master/README.en.md).
 
 
-| Development | Master |
-| ----------- | ------ | 
-| [![Build Status](https://travis-ci.org/andylibrian/sastrawi.svg?branch=development)](https://travis-ci.org/andylibrian/sastrawi) | [![Build Status](https://travis-ci.org/andylibrian/sastrawi.svg?branch=master)](https://travis-ci.org/andylibrian/sastrawi) |
+| Development | Master | Releases |
+| ----------- | ------ | -------- |
+| [![Build Status](https://travis-ci.org/andylibrian/sastrawi.svg?branch=development)](https://travis-ci.org/andylibrian/sastrawi) | [![Build Status](https://travis-ci.org/andylibrian/sastrawi.svg?branch=master)](https://travis-ci.org/andylibrian/sastrawi) | [![Latest Unstable Version](https://poser.pugx.org/andylibrian/sastrawi/v/unstable.png)](https://packagist.org/packages/andylibrian/sastrawi) [![Latest Stable Version](https://poser.pugx.org/andylibrian/sastrawi/v/stable.png)](https://packagist.org/packages/andylibrian/sastrawi) |
 
 
 Stemming
