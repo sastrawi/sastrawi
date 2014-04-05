@@ -177,4 +177,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('gerak', $this->stemmer->disambiguatePrefixRule7('tergerak'));
     }
+
+    /**
+     * Rule 8 : terCP -> ter-CP where C != 'r' and P != 'er'
+     */
+    public function testDisambiguatePrefixRule8()
+    {
+        $this->assertEquals('puruk', $this->stemmer->disambiguatePrefixRule8('terpuruk'));
+    }
 }
