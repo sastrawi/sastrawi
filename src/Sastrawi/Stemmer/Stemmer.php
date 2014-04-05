@@ -187,6 +187,14 @@ class Stemmer
             }
         }
 
+        $disambiguated = $this->disambiguatePrefixRule15($stemmedWord);
+        if ($disambiguated !== null) {
+            $lookupResult = $this->dictionary->lookup($disambiguated);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
+
         return $stemmedWord;
     }
 
@@ -466,7 +474,7 @@ class Stemmer
     
     /**
      * Disambiguate Prefix Rule 12
-     * Rule 11 : mempe{r|l} -> mem-pe{r|l}
+     * Rule 12 : mempe{r|l} -> mem-pe{r|l}
      */
     public function disambiguatePrefixRule12($word)
     {
@@ -480,7 +488,7 @@ class Stemmer
 
     /**
      * Disambiguate Prefix Rule 13
-     * Rule 11 : mem{rV|V} -> me-m{rV|V}
+     * Rule 13 : mem{rV|V} -> me-m{rV|V}
      */
     public function disambiguatePrefixRule13($word)
     {
@@ -503,6 +511,20 @@ class Stemmer
         
         if ($contains === 1) {
             return $matches[1] . $matches[2];
+        }
+    }
+
+    /**
+     * Disambiguate Prefix Rule 15
+     * Rule 15 : men{V} -> me-n{V}
+     */
+    public function disambiguatePrefixRule15($word)
+    {
+        $matches  = null;
+        $contains = preg_match('/men([aiueo])(.*)/', $word, $matches);
+        
+        if ($contains === 1) {
+            return 'n' . $matches[1] . $matches[2];
         }
     }
 }
