@@ -183,7 +183,7 @@ class Stemmer
 
     /**
      * Disambiguate Prefix Rule 1a
-     * Rule 1 : berV -> ber-V
+     * Rule 1a : berV -> ber-V
      */
     public function disambiguatePrefixRule1a($word)
     {
@@ -197,7 +197,7 @@ class Stemmer
 
     /**
      * Disambiguate Prefix Rule 1b
-     * Rule 1 : berV -> be-rV
+     * Rule 1b : berV -> be-rV
      */
     public function disambiguatePrefixRule1b($word)
     {
@@ -211,7 +211,7 @@ class Stemmer
 
     /**
      * Disambiguate Prefix Rule 2
-     * Rule 1 : berCAP -> ber-CAP where C != 'r' AND P != 'er'
+     * Rule 2 : berCAP -> ber-CAP where C != 'r' AND P != 'er'
      */
     public function disambiguatePrefixRule2($word)
     {
@@ -229,7 +229,7 @@ class Stemmer
     
     /**
      * Disambiguate Prefix Rule 3
-     * Rule 1 : berCAerV -> ber-CAerV where C != 'r'
+     * Rule 3 : berCAerV -> ber-CAerV where C != 'r'
      */
     public function disambiguatePrefixRule3($word)
     {
@@ -247,7 +247,7 @@ class Stemmer
 
     /**
      * Disambiguate Prefix Rule 4
-     * Rule 1 : belajar -> bel-ajar
+     * Rule 4 : belajar -> bel-ajar
      */
     public function disambiguatePrefixRule4($word)
     {
