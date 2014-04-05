@@ -13,7 +13,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->dictionary = new ArrayDictionary(array('nilai', 'beri'));
+        $this->dictionary = new ArrayDictionary(array('nilai', 'beri', 'rambut', 'adu'));
         $this->stemmer    = new Stemmer($this->dictionary);
     }
     
@@ -71,8 +71,9 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         
         /* template formulas for derivation prefix rules (disambiguation) */
         
-        // rule 1
+        // rule 1 : berV -> ber-V | be-rV
         $data[] = array('beradu', 'adu');
+        $data[] = array('berambut', 'rambut');
 
         return $data;
     }

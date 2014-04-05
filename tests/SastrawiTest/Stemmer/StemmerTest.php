@@ -105,8 +105,20 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('nilai', $this->stemmer->stem('nilai'));
     }
 
-    public function testDisambiguatePrefixBe()
+    /**
+     * Rule 1a : berV -> ber-V 
+     */
+    public function testDisambiguatePrefixRule1a()
     {
-        $this->assertEquals('adu', $this->stemmer->disambiguatePrefixBe('beradu'));
+        $this->assertEquals('adu', $this->stemmer->disambiguatePrefixRule1a('beradu'));
     }
+
+    /**
+     * Rule 1a : berV -> be-rV 
+     */
+    public function testDisambiguatePrefixRule1b()
+    {
+        $this->assertEquals('rambut', $this->stemmer->disambiguatePrefixRule1b('berambut'));
+    }
+
 }
