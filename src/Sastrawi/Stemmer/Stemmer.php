@@ -241,6 +241,7 @@ class Stemmer
 
     /**
      * Remove inflectional particle : ku|mu|nya
+     * @param string $word
      */
     public function removeInflectionalPossessivePronoun($word)
     {
