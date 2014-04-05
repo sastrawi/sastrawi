@@ -75,6 +75,14 @@ class Stemmer
             }
         }
 
+        $disambiguated = $this->disambiguatePrefixRule2($stemmedWord);
+        if ($disambiguated !== null) {
+            $lookupResult = $this->dictionary->lookup($disambiguated);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
+
         return $stemmedWord;
     }
 
@@ -176,4 +184,23 @@ class Stemmer
             return 'r' . $matches[1];
         }
     }
+
+    /**
+     * Disambiguate Prefix Rule 2
+     * Rule 1 : berCAP -> ber-CAP where C != 'r' AND P != 'er'
+     */
+    public function disambiguatePrefixRule2($word)
+    {
+        $matches  = null;
+        $contains = preg_match('/ber([bcdfghjklmnpqrstvwxyz])([aiueo])(.*)/', $word, $matches);
+
+        if ($contains === 1) {
+            if (preg_match('/^er(.*)$/', $matches[3]) === 1) {
+                return;
+            }
+            
+            return $matches[1] . $matches[2] . $matches[3];
+        }
+    }
+
 }

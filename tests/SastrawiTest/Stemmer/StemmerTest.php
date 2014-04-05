@@ -121,4 +121,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('rambut', $this->stemmer->disambiguatePrefixRule1b('berambut'));
     }
 
+    /**
+     * Rule 2 : berCAP -> ber-CAP where C != 'r' AND P != 'er'
+     */
+    public function testDisambiguatePrefixRule2()
+    {
+        $this->assertEquals('suara', $this->stemmer->disambiguatePrefixRule2('bersuara'));
+    }
 }
