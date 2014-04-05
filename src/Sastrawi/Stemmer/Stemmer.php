@@ -59,6 +59,15 @@ class Stemmer
             return $lookupResult;
         }
 
+        $disambiguated = $this->disambiguatePrefixBe($stemmedWord);
+        if ($disambiguated !== null) {
+            $stemmedWord = $disambiguated;
+            $lookupResult = $this->dictionary->lookup($stemmedWord);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
+
         return $stemmedWord;
     }
 
@@ -131,5 +140,19 @@ class Stemmer
                     || preg_match('/^per(.*)an$/', $word) === 1;
 
         return $contains;
+    }
+
+    /**
+     * Disambiguate Prefix Be
+     * Rule 1 : berV -> ber-V | be-rV
+     */
+    public function disambiguatePrefixBe($word)
+    {
+        $matches  = null;
+        $contains = preg_match('/ber([aiueo].*)/', $word, $matches);
+
+        if ($contains === 1) {
+            return $matches[1];
+        }
     }
 }

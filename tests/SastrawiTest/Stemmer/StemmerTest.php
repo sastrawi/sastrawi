@@ -13,7 +13,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     
     public function setUp()
     {
-        $this->dictionary = new ArrayDictionary();
+        $this->dictionary = new ArrayDictionary(array('beri'));
         $this->stemmer = new Stemmer($this->dictionary);
     }
     
@@ -103,5 +103,10 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('nila', $this->stemmer->stem('nilai'));
         $this->stemmer->getDictionary()->add('nilai');
         $this->assertEquals('nilai', $this->stemmer->stem('nilai'));
+    }
+
+    public function testDisambiguatePrefixBe()
+    {
+        $this->assertEquals('adu', $this->stemmer->disambiguatePrefixBe('beradu'));
     }
 }
