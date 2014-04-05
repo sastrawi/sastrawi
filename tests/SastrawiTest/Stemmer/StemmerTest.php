@@ -161,4 +161,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('asing', $this->stemmer->disambiguatePrefixRule6a('terasing'));
     }
+
+    /**
+     * Rule 6b : terV -> te-rV
+     */
+    public function testDisambiguatePrefixRule6b()
+    {
+        $this->assertEquals('raup', $this->stemmer->disambiguatePrefixRule6b('teraup'));
+    }
 }
