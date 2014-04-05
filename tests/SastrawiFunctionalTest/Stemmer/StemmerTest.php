@@ -19,7 +19,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'asing', 'raup', 'gerak', 'puruk', 'terbang', 'lipat', 'ringkas', 'warna', 'yakin',
                 'bangun', 'fitnah', 'vonis',
                 'perbaru', 'pelajar', // should be recursive later, regarding of rule no 12
-                'minum',
+                'minum', 'cinta', 'dua', 'jauh', 'ziarah',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -133,6 +133,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // TODO : return me-p{rV|V} ?? recoding
         $data[] = array('meminum', 'minum');
         // $data[] = array('memukul', 'pukul');
+
+        // rule 14 : men{c|d|j|z} -> men-{c|d|j|z}
+        $data[] = array('mencinta', 'cinta');
+        $data[] = array('mendua', 'dua');
+        $data[] = array('menjauh', 'jauh');
+        $data[] = array('menziarah', 'ziarah');
 
         return $data;
     }

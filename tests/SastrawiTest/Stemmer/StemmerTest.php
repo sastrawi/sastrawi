@@ -231,4 +231,15 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('minum', $this->stemmer->disambiguatePrefixRule13('meminum'));
     }
+
+    /**
+     * Rule 14 : men{c|d|j|z} -> men-{c|d|j|z}
+     */
+    public function testDisambiguatePrefixRule14()
+    {
+        $this->assertEquals('cinta', $this->stemmer->disambiguatePrefixRule14('mencinta'));
+        $this->assertEquals('dua', $this->stemmer->disambiguatePrefixRule14('mendua'));
+        $this->assertEquals('jauh', $this->stemmer->disambiguatePrefixRule14('menjauh'));
+        $this->assertEquals('ziarah', $this->stemmer->disambiguatePrefixRule14('menziarah'));
+    }
 }
