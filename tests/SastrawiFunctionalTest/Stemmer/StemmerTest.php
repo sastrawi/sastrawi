@@ -13,7 +13,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->dictionary = new ArrayDictionary(array('nilai', 'beri', 'rambut', 'adu', 'suara', 'daerah'));
+        $this->dictionary = new ArrayDictionary(array('nilai', 'beri', 'rambut', 'adu', 'suara', 'daerah', 'ajar'));
         $this->stemmer    = new Stemmer($this->dictionary);
     }
     
@@ -82,6 +82,9 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         // rule 3 : berCAerV -> ber-CAerV where C != 'r'
         $data[] = array('berdaerah', 'daerah');
+
+        // rule 4 : belajar -> bel-ajar
+        $data[] = array('belajar', 'ajar');
 
         return $data;
     }

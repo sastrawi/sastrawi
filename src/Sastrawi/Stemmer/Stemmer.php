@@ -91,6 +91,14 @@ class Stemmer
             }
         }
 
+        $disambiguated = $this->disambiguatePrefixRule4($stemmedWord);
+        if ($disambiguated !== null) {
+            $lookupResult = $this->dictionary->lookup($disambiguated);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
+
         return $stemmedWord;
     }
 
@@ -229,4 +237,14 @@ class Stemmer
         }
     }
 
+    /**
+     * Disambiguate Prefix Rule 4
+     * Rule 1 : belajar -> bel-ajar
+     */
+    public function disambiguatePrefixRule4($word)
+    {
+        if ($word == 'belajar') {
+            return 'ajar';
+        }
+    }
 }
