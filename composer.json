@@ -1,6 +1,23 @@
 {
-    "name": "andylib/sastrawi",
+    "name": "andylibrian/sastrawi",
     "type": "library",
+    "description": "PHP library for stemming Indonesian language (Bahasa Indonesia)",
+    "keywords": [
+        "stem",
+        "indonesian",
+        "bahasa",
+        "indonesia",
+        "kata dasar",
+        "root word"
+    ],
+    "homepage": "https://github.com/andylibrian/sastrawi",
+    "authors": [
+        {
+            "name": "Andy Librian",
+            "email": "andylibrian@gmail.com",
+            "role": "Lead Developer"
+        }
+    ],
     "require": {
         "php": ">=5.3"
     },
@@ -10,6 +27,18 @@
     "autoload": {
         "psr-0": {
             "Sastrawi\\": "src"
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://github.com/andylibrian/sastrawi/issues",
+        "email": "andylibrian@gmail.com",
+        "source": "https://github.com/andylibrian/sastrawi"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
         }
     }
 }
