@@ -223,4 +223,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('pertinggi', $this->stemmer->disambiguatePrefixRule12('mempertinggi'));
         $this->assertEquals('pelajari', $this->stemmer->disambiguatePrefixRule12('mempelajari'));
     }
+
+    /**
+     * Rule 13 : mem{rV|v} -> me-m{rV|V}
+     */
+    public function testDisambiguatePrefixRule13()
+    {
+        $this->assertEquals('minum', $this->stemmer->disambiguatePrefixRule13('meminum'));
+    }
 }
