@@ -222,6 +222,9 @@ class Stemmer
         return $stemmedWord;
     }
 
+    /**
+     * @param string $word
+     */
     protected function isShortWord($word)
     {
         return (strlen($word) <= 3);
@@ -229,6 +232,7 @@ class Stemmer
     
     /**
      * Remove inflectional particle : lah|kah|tah|pun
+     * @param string $word
      */
     public function removeInflectionalParticle($word)
     {
@@ -253,6 +257,8 @@ class Stemmer
 
     /**
      * Get removed affix
+     * @param string $completeWord
+     * @param string $wordAfterRemoved
      */
     public function getRemovedAffix($completeWord, $wordAfterRemoved)
     {    
@@ -270,6 +276,7 @@ class Stemmer
     /**
      * Does the word contain invalid affix pair?
      * ber-i|di-an|ke-i|ke-an|me-an|ter-an|per-an
+     * @param string $word
      */
     public function containsInvalidAffixPair($word)
     {
@@ -296,6 +303,7 @@ class Stemmer
     /**
      * Disambiguate Prefix Rule 1a
      * Rule 1a : berV -> ber-V
+     * @return string
      */
     public function disambiguatePrefixRule1a($word)
     {
@@ -389,6 +397,7 @@ class Stemmer
     /**
      * Disambiguate Prefix Rule 6a
      * Rule 6a : terV -> ter-V
+     * @return string
      */
     public function disambiguatePrefixRule6a($word)
     {
