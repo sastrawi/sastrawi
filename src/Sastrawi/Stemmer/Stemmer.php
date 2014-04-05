@@ -83,6 +83,14 @@ class Stemmer
             }
         }
 
+        $disambiguated = $this->disambiguatePrefixRule3($stemmedWord);
+        if ($disambiguated !== null) {
+            $lookupResult = $this->dictionary->lookup($disambiguated);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
+
         return $stemmedWord;
     }
 
@@ -192,7 +200,7 @@ class Stemmer
     public function disambiguatePrefixRule2($word)
     {
         $matches  = null;
-        $contains = preg_match('/ber([bcdfghjklmnpqrstvwxyz])([aiueo])(.*)/', $word, $matches);
+        $contains = preg_match('/ber([bcdfghjklmnpqrstvwxyz])([a-z])(.*)/', $word, $matches);
 
         if ($contains === 1) {
             if (preg_match('/^er(.*)$/', $matches[3]) === 1) {
@@ -200,6 +208,24 @@ class Stemmer
             }
             
             return $matches[1] . $matches[2] . $matches[3];
+        }
+    }
+    
+    /**
+     * Disambiguate Prefix Rule 3
+     * Rule 1 : berCAerV -> ber-CAerV where C != 'r'
+     */
+    public function disambiguatePrefixRule3($word)
+    {
+        $matches  = null;
+        $contains = preg_match('/ber([bcdfghjklmnpqrstvwxyz])([a-z])er([aiueo])(.*)/', $word, $matches);
+
+        if ($contains === 1) {
+            if ($matches[1] === 'r') {
+                return;
+            }
+            
+            return $matches[1] . $matches[2] . 'er' . $matches[3] . $matches[4];
         }
     }
 

@@ -128,4 +128,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('suara', $this->stemmer->disambiguatePrefixRule2('bersuara'));
     }
+
+    /**
+     * Rule 3 : berCAerV -> ber-CAerV where C != 'r'
+     */
+    public function testDisambiguatePrefixRule3()
+    {
+        $this->assertEquals('daerah', $this->stemmer->disambiguatePrefixRule3('berdaerah'));
+    }
 }
