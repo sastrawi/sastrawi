@@ -16,7 +16,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->dictionary = new ArrayDictionary(
             array(
                 'nilai', 'beri', 'rambut', 'adu', 'suara', 'daerah', 'ajar', 'kerja', 'ternak',
-                'asing', 'raup', 'gerak', 'puruk', 'terbang'
+                'asing', 'raup', 'gerak', 'puruk', 'terbang', 'lipat', 'ringkas', 'warna', 'yakin',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -109,6 +109,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         // rule 9 : teC1erC2 -> te-C1erC2 where C1 != 'r'
         $data[] = array('teterbang', 'terbang');
+        
+        // rule 10 : me{l|r|w|y}V -> me-{l|r|w|y}V
+        $data[] = array('melipat', 'lipat');
+        $data[] = array('meringkas', 'ringkas');
+        $data[] = array('mewarnai', 'warna');
+        $data[] = array('meyakinkan', 'yakin');
 
         return $data;
     }
