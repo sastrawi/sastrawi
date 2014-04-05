@@ -52,7 +52,7 @@ Tujuan
 _Developer_ dan kontributor
 --------------------------
 
-- [Andy Librian](https://github.com/andylib)
+- [Andy Librian](https://github.com/andylibrian)
 
 
 Pustaka

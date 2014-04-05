@@ -47,7 +47,7 @@ Our Goals
 Developers and Contributors
 ----------------------------
 
-- [Andy Librian](https://github.com/andylib)
+- [Andy Librian](https://github.com/andylibrian)
 
 
 Credits
