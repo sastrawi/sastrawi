@@ -17,6 +17,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
             array(
                 'nilai', 'beri', 'rambut', 'adu', 'suara', 'daerah', 'ajar', 'kerja', 'ternak',
                 'asing', 'raup', 'gerak', 'puruk', 'terbang', 'lipat', 'ringkas', 'warna', 'yakin',
+                'bangun', 'fitnah', 'vonis',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -115,6 +116,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('meringkas', 'ringkas');
         $data[] = array('mewarnai', 'warna');
         $data[] = array('meyakinkan', 'yakin');
+
+        // rule 11 : mem{b|f|v} -> mem-{b|f|v}
+        $data[] = array('membangun', 'bangun');
+        $data[] = array('memfitnah', 'fitnah');
+        $data[] = array('memvonis', 'vonis');
 
         return $data;
     }

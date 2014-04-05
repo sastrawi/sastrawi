@@ -204,4 +204,14 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('warna', $this->stemmer->disambiguatePrefixRule10('mewarna'));
         $this->assertEquals('yakin', $this->stemmer->disambiguatePrefixRule10('meyakin'));
     }
+
+    /**
+     * Rule 11 : mem{b|f|v} -> mem-{b|f|v}
+     */
+    public function testDisambiguatePrefixRule11()
+    {
+        $this->assertEquals('bangun', $this->stemmer->disambiguatePrefixRule11('membangun'));
+        $this->assertEquals('fitnah', $this->stemmer->disambiguatePrefixRule11('memfitnah'));
+        $this->assertEquals('vonis', $this->stemmer->disambiguatePrefixRule11('memvonis'));
+    }
 }
