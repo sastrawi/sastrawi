@@ -13,7 +13,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->dictionary = new ArrayDictionary(array('nilai', 'beri', 'rambut', 'adu', 'suara', 'daerah', 'ajar', 'kerja', 'ternak', 'asing', 'raup', 'gerak', 'puruk', 'terbang'));
+        $this->dictionary = new ArrayDictionary(
+            array(
+                'nilai', 'beri', 'rambut', 'adu', 'suara', 'daerah', 'ajar', 'kerja', 'ternak',
+                'asing', 'raup', 'gerak', 'puruk', 'terbang'
+            )
+        );
         $this->stemmer    = new Stemmer($this->dictionary);
     }
     
