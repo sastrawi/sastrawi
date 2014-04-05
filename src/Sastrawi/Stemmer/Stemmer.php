@@ -99,6 +99,14 @@ class Stemmer
             }
         }
 
+        $disambiguated = $this->disambiguatePrefixRule5($stemmedWord);
+        if ($disambiguated !== null) {
+            $lookupResult = $this->dictionary->lookup($disambiguated);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
+
         return $stemmedWord;
     }
 
@@ -245,6 +253,24 @@ class Stemmer
     {
         if ($word == 'belajar') {
             return 'ajar';
+        }
+    }
+
+    /**
+     * Disambiguate Prefix Rule 5
+     * Rule 5 : beC1erC2 -> be-C1erC2 where C1 != 'r'
+     */
+    public function disambiguatePrefixRule5($word)
+    {
+        $matches  = null;
+        $contains = preg_match('/be([bcdfghjklmnpqrstvwxyz])er([bcdfghjklmnpqrstvwxyz])(.*)/', $word, $matches);
+
+        if ($contains === 1) {
+            if ($matches[1] === 'r') {
+                return;
+            }
+            
+            return $matches[1] . 'er' . $matches[2] . $matches[3];
         }
     }
 }
