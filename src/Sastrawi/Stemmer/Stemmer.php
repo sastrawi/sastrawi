@@ -195,6 +195,14 @@ class Stemmer
             }
         }
 
+        $disambiguated = $this->disambiguatePrefixRule16($stemmedWord);
+        if ($disambiguated !== null) {
+            $lookupResult = $this->dictionary->lookup($disambiguated);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
+
         return $stemmedWord;
     }
 
@@ -525,6 +533,20 @@ class Stemmer
         
         if ($contains === 1) {
             return 'n' . $matches[1] . $matches[2];
+        }
+    }
+
+    /**
+     * Disambiguate Prefix Rule 16
+     * Rule 15 : meng{g|h|q} -> meng-{g|h|q}
+     */
+    public function disambiguatePrefixRule16($word)
+    {
+        $matches  = null;
+        $contains = preg_match('/meng([g|h|q])(.*)/', $word, $matches);
+        
+        if ($contains === 1) {
+            return $matches[1] . $matches[2];
         }
     }
 }
