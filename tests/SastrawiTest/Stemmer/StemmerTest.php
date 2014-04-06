@@ -276,4 +276,13 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('populer', $this->stemmer->disambiguatePrefixRule19('mempopuler'));
     }
+
+    /**
+     * Rule 20 : pe{w|y}V -> pe-{w|y}V
+     */
+    public function testDisambiguatePrefixRule20()
+    {
+        $this->assertEquals('warna', $this->stemmer->disambiguatePrefixRule20('pewarna'));
+        $this->assertEquals('yoga', $this->stemmer->disambiguatePrefixRule20('peyoga'));
+    }
 }
