@@ -20,7 +20,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'bangun', 'fitnah', 'vonis',
                 'perbaru', 'pelajar', // should be recursive later, regarding of rule no 12
                 'minum', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
-                'populer', 'warna', 'yoga', 'adil', 'rumah',
+                'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -168,6 +168,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // rule 21 : perV -> per-V | pe-rV
         $data[] = array('peradilan', 'adil');
         $data[] = array('perumahan', 'rumah');
+        
+        // rule 22 is missing in the document?
+
+        // rule 23 : perCAP -> per-CAP where C != 'r' and P != 'er'
+        $data[] = array('permuka', 'muka');
 
         return $data;
     }

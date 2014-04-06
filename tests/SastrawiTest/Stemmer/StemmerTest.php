@@ -301,4 +301,13 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('rumah', $this->stemmer->disambiguatePrefixRule21b('perumah'));
     }
+
+    /**
+     * Rule 23 : perCAP -> per-CAP where C != 'r' and P != 'er'
+     */
+    public function testDisambiguatePrefixRule23()
+    {
+        $this->assertEquals('muka', $this->stemmer->disambiguatePrefixRule23('permuka'));
+    }
+
 }

@@ -242,6 +242,14 @@ class Stemmer
                 return $lookupResult;
             }
         }
+        
+        $disambiguated = $this->disambiguatePrefixRule23($stemmedWord);
+        if ($disambiguated !== null) {
+            $lookupResult = $this->dictionary->lookup($disambiguated);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
 
         return $stemmedWord;
     }
@@ -660,6 +668,23 @@ class Stemmer
     {
         if (preg_match('/pe(r[aiueo])(.*)/', $word, $matches)) {
             return $matches[1] . $matches[2];
+        }
+    }
+    
+    /**
+     * Disambiguate Prefix Rule 23
+     * Rule 23 : perCAP -> per-CAP where C != 'r' AND P != 'er'
+     */
+    public function disambiguatePrefixRule23($word)
+    {
+        $contains = preg_match('/per([bcdfghjklmnpqrstvwxyz])([a-z])(.*)/', $word, $matches);
+
+        if ($contains === 1) {
+            if (preg_match('/^er(.*)$/', $matches[3]) === 1) {
+                return;
+            }
+            
+            return $matches[1] . $matches[2] . $matches[3];
         }
     }
 }
