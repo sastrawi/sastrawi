@@ -177,6 +177,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // rule 24 : perCAerV -> per-CAerV where C != 'r'
         $data[] = array('perdaerah', 'daerah');
 
+        // rule 25 : pem{b|f|v} -> pem-{b|f|v}
+        $data[] = array('pembangun', 'bangun');
+        $data[] = array('pemfitnah', 'fitnah');
+        $data[] = array('pemvonis', 'vonis');
+
         return $data;
     }
 }
