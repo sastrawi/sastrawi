@@ -285,4 +285,20 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('warna', $this->stemmer->disambiguatePrefixRule20('pewarna'));
         $this->assertEquals('yoga', $this->stemmer->disambiguatePrefixRule20('peyoga'));
     }
+    
+    /**
+     * Rule 21a : perV -> per-V
+     */
+    public function testDisambiguatePrefixRule21a()
+    {
+        $this->assertEquals('adil', $this->stemmer->disambiguatePrefixRule21a('peradil'));
+    }
+
+    /**
+     * Rule 21b : perV -> pe-rV
+     */
+    public function testDisambiguatePrefixRule21b()
+    {
+        $this->assertEquals('rumah', $this->stemmer->disambiguatePrefixRule21b('perumah'));
+    }
 }
