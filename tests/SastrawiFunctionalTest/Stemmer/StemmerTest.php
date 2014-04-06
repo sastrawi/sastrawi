@@ -174,6 +174,9 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // rule 23 : perCAP -> per-CAP where C != 'r' and P != 'er'
         $data[] = array('permuka', 'muka');
 
+        // rule 24 : perCAerV -> per-CAerV where C != 'r'
+        $data[] = array('perdaerah', 'daerah');
+
         return $data;
     }
 }

@@ -309,5 +309,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('muka', $this->stemmer->disambiguatePrefixRule23('permuka'));
     }
-
+    
+    /**
+     * Rule 24 : perCAerV -> per-CAerV where C != 'r'
+     */
+    public function testDisambiguatePrefixRule24()
+    {
+        $this->assertEquals('daerah', $this->stemmer->disambiguatePrefixRule24('perdaerah'));
+    }
 }
