@@ -198,6 +198,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // TODO recoding : pe-t{V} : penangkap -> pe-tangkap
         $data[] = array('penuklir', 'nuklir');
 
+        // rule 29 : peng{g|h|q} -> peng-{g|h|q}
+        $data[] = array('penggila', 'gila');
+        $data[] = array('penghajar', 'hajar');
+        $data[] = array('pengqasar', 'qasar');
+
         return $data;
     }
 }

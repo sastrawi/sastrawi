@@ -354,4 +354,14 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('nikah', $this->stemmer->disambiguatePrefixRule28('penikah'));
     }
+
+    /**
+     * Rule 29 : peng{g|h|q} -> peng-{g|h|q}
+     */
+    public function testDisambiguatePrefixRule29()
+    {
+        $this->assertEquals('gila', $this->stemmer->disambiguatePrefixRule29('penggila'));
+        $this->assertEquals('hajar', $this->stemmer->disambiguatePrefixRule29('penghajar'));
+        $this->assertEquals('qasar', $this->stemmer->disambiguatePrefixRule29('pengqasar'));
+    }
 }
