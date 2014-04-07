@@ -20,7 +20,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'bangun', 'fitnah', 'vonis',
                 'perbaru', 'pelajar', // should be recursive later, regarding of rule no 12
                 'minum', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
-                'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka',
+                'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -154,7 +154,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // TODO recoding : mengV -> meng-kV : mengupas -> meng-kupas
         $data[] = array('mengudara', 'udara');
 
-        // rule 18 : mengV -> meng-V
+        // rule 18 : menyV -> meny-sV
         // TODO recoding : menyV -> men-sV
         //$data[] = array('menyuarakan', 'suara');
 
@@ -206,6 +206,14 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // rule 30 : pengV -> peng-V
         // TODO recoding : pengV -> peng-kV : pengupas -> peng-kupas
         $data[] = array('pengudara', 'udara');
+
+        // rule 31 : menyV -> meng-V
+        // TODO recoding : menyV -> men-sV
+        //$data[] = array('penyuara', 'suara');
+        
+        // rule 32 : pelV -> pe-lV except pelajar -> ajar
+        // $data[] = array('pelajar', 'ajar'); // should be opened later, atm it's conflict with rule 12
+        $data[] = array('pelabuh', 'labuh');
 
         return $data;
     }

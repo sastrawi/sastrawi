@@ -300,7 +300,15 @@ class Stemmer
         }
 
         $disambiguated = $this->disambiguatePrefixRule30($stemmedWord);
-            if ($disambiguated !== null) {
+        if ($disambiguated !== null) {
+            $lookupResult = $this->dictionary->lookup($disambiguated);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
+        
+        $disambiguated = $this->disambiguatePrefixRule32($stemmedWord);
+        if ($disambiguated !== null) {
             $lookupResult = $this->dictionary->lookup($disambiguated);
             if ($lookupResult !== null) {
                 return $lookupResult;
@@ -824,6 +832,21 @@ class Stemmer
     public function disambiguatePrefixRule30($word)
     {
         if (preg_match('/peng([aiueo])(.*)/', $word, $matches)) {
+            return $matches[1] . $matches[2];
+        }
+    }
+
+    /**
+     * Disambiguate Prefix Rule 32
+     * Rule 32 : pelV -> pe-lV except pelajar -> ajar
+     */
+    public function disambiguatePrefixRule32($word)
+    {
+        if ($word == 'pelajar') {
+            return 'ajar';
+        }
+        
+        if (preg_match('/pe(l[aiueo])(.*)/', $word, $matches)) {
             return $matches[1] . $matches[2];
         }
     }

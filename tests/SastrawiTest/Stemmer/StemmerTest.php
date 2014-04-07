@@ -372,4 +372,13 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('udara', $this->stemmer->disambiguatePrefixRule30('pengudara'));
     }
+
+    /**
+     * Rule 32 : pelV -> pe-lV except pelajar -> ajar
+     */
+    public function testDisambiguatePrefixRule32()
+    {
+        $this->assertEquals('ajar', $this->stemmer->disambiguatePrefixRule32('pelajar'));
+        $this->assertEquals('labuh', $this->stemmer->disambiguatePrefixRule32('pelabuh'));
+    }
 }
