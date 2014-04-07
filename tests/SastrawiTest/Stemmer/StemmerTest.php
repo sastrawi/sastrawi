@@ -381,4 +381,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('ajar', $this->stemmer->disambiguatePrefixRule32('pelajar'));
         $this->assertEquals('labuh', $this->stemmer->disambiguatePrefixRule32('pelabuh'));
     }
+
+    /**
+     * Rule 34 :peCP -> pe-CP where C != 'r|w|y|l|m|n' and P != 'er'
+     */
+    public function testDisambiguatePrefixRule34()
+    {
+        $this->assertEquals('tarung', $this->stemmer->disambiguatePrefixRule34('petarung'));
+    }
 }
