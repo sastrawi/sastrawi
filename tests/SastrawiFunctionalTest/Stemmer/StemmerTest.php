@@ -21,6 +21,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'perbaru', 'pelajar', // should be recursive later, regarding of rule no 12
                 'minum', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
                 'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh', 'tarung',
+                'tebar',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -221,6 +222,16 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // rule 34 : peCP -> pe-CP where C != {r|w|y|l|m|n} and P != 'er'
         $data[] = array('petarung', 'tarung');
 
+        // combination of prefix + suffix
+        $data[] = array('bertebaran', 'tebar');
+        $data[] = array('terasingkan', 'asing');
+        $data[] = array('membangunkan', 'bangun');
+        $data[] = array('mencintai', 'cinta');
+        $data[] = array('menduakan', 'dua');
+        $data[] = array('menjauhi', 'jauh');
+        $data[] = array('menggilai', 'gila');
+        $data[] = array('pembangunan', 'bangun');
+        
         return $data;
     }
 }
