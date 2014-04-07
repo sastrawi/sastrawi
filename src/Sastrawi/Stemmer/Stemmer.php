@@ -413,7 +413,7 @@ class Stemmer
     public function disambiguatePrefixRule1a($word)
     {
         $matches  = null;
-        $contains = preg_match('/ber([aiueo].*)/', $word, $matches);
+        $contains = preg_match('/^ber([aiueo].*)$/', $word, $matches);
 
         if ($contains === 1) {
             return $matches[1];
@@ -427,7 +427,7 @@ class Stemmer
     public function disambiguatePrefixRule1b($word)
     {
         $matches  = null;
-        $contains = preg_match('/ber([aiueo].*)/', $word, $matches);
+        $contains = preg_match('/^ber([aiueo].*)$/', $word, $matches);
 
         if ($contains === 1) {
             return 'r' . $matches[1];
@@ -441,7 +441,7 @@ class Stemmer
     public function disambiguatePrefixRule2($word)
     {
         $matches  = null;
-        $contains = preg_match('/ber([bcdfghjklmnpqrstvwxyz])([a-z])(.*)/', $word, $matches);
+        $contains = preg_match('/^ber([bcdfghjklmnpqrstvwxyz])([a-z])(.*)$/', $word, $matches);
 
         if ($contains === 1) {
             if (preg_match('/^er(.*)$/', $matches[3]) === 1) {
@@ -459,7 +459,7 @@ class Stemmer
     public function disambiguatePrefixRule3($word)
     {
         $matches  = null;
-        $contains = preg_match('/ber([bcdfghjklmnpqrstvwxyz])([a-z])er([aiueo])(.*)/', $word, $matches);
+        $contains = preg_match('/^ber([bcdfghjklmnpqrstvwxyz])([a-z])er([aiueo])(.*)$/', $word, $matches);
 
         if ($contains === 1) {
             if ($matches[1] === 'r') {
@@ -488,7 +488,7 @@ class Stemmer
     public function disambiguatePrefixRule5($word)
     {
         $matches  = null;
-        $contains = preg_match('/be([bcdfghjklmnpqrstvwxyz])er([bcdfghjklmnpqrstvwxyz])(.*)/', $word, $matches);
+        $contains = preg_match('/^be([bcdfghjklmnpqrstvwxyz])er([bcdfghjklmnpqrstvwxyz])(.*)$/', $word, $matches);
 
         if ($contains === 1) {
             if ($matches[1] === 'r') {
@@ -507,7 +507,7 @@ class Stemmer
     public function disambiguatePrefixRule6a($word)
     {
         $matches  = null;
-        $contains = preg_match('/ter([aiueo].*)/', $word, $matches);
+        $contains = preg_match('/^ter([aiueo].*)$/', $word, $matches);
 
         if ($contains === 1) {
             return $matches[1];
@@ -521,7 +521,7 @@ class Stemmer
     public function disambiguatePrefixRule6b($word)
     {
         $matches  = null;
-        $contains = preg_match('/ter([aiueo].*)/', $word, $matches);
+        $contains = preg_match('/^ter([aiueo].*)$/', $word, $matches);
 
         if ($contains === 1) {
             return 'r' . $matches[1];
@@ -535,7 +535,7 @@ class Stemmer
     public function disambiguatePrefixRule7($word)
     {
         $matches  = null;
-        $contains = preg_match('/ter([bcdfghjklmnpqrstvwxyz])er([aiueo].*)/', $word, $matches);
+        $contains = preg_match('/^ter([bcdfghjklmnpqrstvwxyz])er([aiueo].*)$/', $word, $matches);
         
         if ($contains === 1) {
             if ($matches[1] === 'r') {
@@ -553,7 +553,7 @@ class Stemmer
     public function disambiguatePrefixRule8($word)
     {
         $matches  = null;
-        $contains = preg_match('/ter([bcdfghjklmnpqrstvwxyz])(.*)/', $word, $matches);
+        $contains = preg_match('/^ter([bcdfghjklmnpqrstvwxyz])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             if ($matches[1] === 'r' || preg_match('/^er(.*)$/', $matches[2]) === 1) {
@@ -571,7 +571,7 @@ class Stemmer
     public function disambiguatePrefixRule9($word)
     {
         $matches  = null;
-        $contains = preg_match('/te([bcdfghjklmnpqrstvwxyz])er([bcdfghjklmnpqrstvwxyz])(.*)/', $word, $matches);
+        $contains = preg_match('/^te([bcdfghjklmnpqrstvwxyz])er([bcdfghjklmnpqrstvwxyz])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             if ($matches[1] === 'r') {
@@ -589,7 +589,7 @@ class Stemmer
     public function disambiguatePrefixRule10($word)
     {
         $matches  = null;
-        $contains = preg_match('/me([lrwy])([aiueo])(.*)/', $word, $matches);
+        $contains = preg_match('/^me([lrwy])([aiueo])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return $matches[1] . $matches[2] . $matches[3];
@@ -603,7 +603,7 @@ class Stemmer
     public function disambiguatePrefixRule11($word)
     {
         $matches  = null;
-        $contains = preg_match('/mem([bfv])(.*)/', $word, $matches);
+        $contains = preg_match('/^mem([bfv])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return $matches[1] . $matches[2];
@@ -617,7 +617,7 @@ class Stemmer
     public function disambiguatePrefixRule12($word)
     {
         $matches  = null;
-        $contains = preg_match('/mempe([rl])(.*)/', $word, $matches);
+        $contains = preg_match('/^mempe([rl])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return 'pe' . $matches[1] . $matches[2];
@@ -631,7 +631,7 @@ class Stemmer
     public function disambiguatePrefixRule13($word)
     {
         $matches  = null;
-        $contains = preg_match('/mem([aiueo])(.*)/', $word, $matches);
+        $contains = preg_match('/^mem([aiueo])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return 'm' . $matches[1] . $matches[2];
@@ -645,7 +645,7 @@ class Stemmer
     public function disambiguatePrefixRule14($word)
     {
         $matches  = null;
-        $contains = preg_match('/men([cdjz])(.*)/', $word, $matches);
+        $contains = preg_match('/^men([cdjz])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return $matches[1] . $matches[2];
@@ -659,7 +659,7 @@ class Stemmer
     public function disambiguatePrefixRule15($word)
     {
         $matches  = null;
-        $contains = preg_match('/men([aiueo])(.*)/', $word, $matches);
+        $contains = preg_match('/^men([aiueo])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return 'n' . $matches[1] . $matches[2];
@@ -673,7 +673,7 @@ class Stemmer
     public function disambiguatePrefixRule16($word)
     {
         $matches  = null;
-        $contains = preg_match('/meng([g|h|q])(.*)/', $word, $matches);
+        $contains = preg_match('/^meng([g|h|q])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return $matches[1] . $matches[2];
@@ -687,7 +687,7 @@ class Stemmer
     public function disambiguatePrefixRule17($word)
     {
         $matches  = null;
-        $contains = preg_match('/meng([aiueo])(.*)/', $word, $matches);
+        $contains = preg_match('/^meng([aiueo])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return $matches[1] . $matches[2];
@@ -701,7 +701,7 @@ class Stemmer
     public function disambiguatePrefixRule19($word)
     {
         $matches  = null;
-        $contains = preg_match('/memp([aiuo])(.*)/', $word, $matches);
+        $contains = preg_match('/^memp([aiuo])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return 'p' . $matches[1] . $matches[2];
@@ -714,7 +714,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule20($word)
     {
-        $contains = preg_match('/pe([wy])([aiueo])(.*)/', $word, $matches);
+        $contains = preg_match('/^pe([wy])([aiueo])(.*)$/', $word, $matches);
         
         if ($contains === 1) {
             return $matches[1] . $matches[2] . $matches[3];
@@ -727,7 +727,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule21a($word)
     {
-        if (preg_match('/per([aiueo])(.*)/', $word, $matches)) {
+        if (preg_match('/^per([aiueo])(.*)$/', $word, $matches)) {
             return $matches[1] . $matches[2];
         }
     }
@@ -738,7 +738,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule21b($word)
     {
-        if (preg_match('/pe(r[aiueo])(.*)/', $word, $matches)) {
+        if (preg_match('/^pe(r[aiueo])(.*)$/', $word, $matches)) {
             return $matches[1] . $matches[2];
         }
     }
@@ -749,7 +749,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule23($word)
     {
-        $contains = preg_match('/per([bcdfghjklmnpqrstvwxyz])([a-z])(.*)/', $word, $matches);
+        $contains = preg_match('/^per([bcdfghjklmnpqrstvwxyz])([a-z])(.*)$/', $word, $matches);
 
         if ($contains === 1) {
             if (preg_match('/^er(.*)$/', $matches[3]) === 1) {
@@ -767,7 +767,7 @@ class Stemmer
     public function disambiguatePrefixRule24($word)
     {
         $matches  = null;
-        $contains = preg_match('/per([bcdfghjklmnpqrstvwxyz])([a-z])er([aiueo])(.*)/', $word, $matches);
+        $contains = preg_match('/^per([bcdfghjklmnpqrstvwxyz])([a-z])er([aiueo])(.*)$/', $word, $matches);
 
         if ($contains === 1) {
             if ($matches[1] === 'r') {
@@ -784,7 +784,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule25($word)
     {
-        if (preg_match('/pem([bfv])(.*)/', $word, $matches) === 1) {
+        if (preg_match('/^pem([bfv])(.*)$/', $word, $matches) === 1) {
             return $matches[1] . $matches[2];
         }
     }
@@ -795,7 +795,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule26($word)
     {
-        if (preg_match('/pem([aiueo])(.*)/', $word, $matches)) {
+        if (preg_match('/^pem([aiueo])(.*)$/', $word, $matches)) {
             return 'm' . $matches[1] . $matches[2];
         }
     }
@@ -806,7 +806,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule27($word)
     {
-        if (preg_match('/pen([cdjz])(.*)/', $word, $matches)) {
+        if (preg_match('/^pen([cdjz])(.*)$/', $word, $matches)) {
             return $matches[1] . $matches[2];
         }
     }
@@ -817,7 +817,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule28($word)
     {
-        if (preg_match('/pen([aiueo])(.*)/', $word, $matches)) {
+        if (preg_match('/^pen([aiueo])(.*)$/', $word, $matches)) {
             return 'n' . $matches[1] . $matches[2];
         }
     }
@@ -828,7 +828,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule29($word)
     {
-        if (preg_match('/peng([g|h|q])(.*)/', $word, $matches)) {
+        if (preg_match('/^peng([g|h|q])(.*)$/', $word, $matches)) {
             return $matches[1] . $matches[2];
         }
     }
@@ -839,7 +839,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule30($word)
     {
-        if (preg_match('/peng([aiueo])(.*)/', $word, $matches)) {
+        if (preg_match('/^peng([aiueo])(.*)$/', $word, $matches)) {
             return $matches[1] . $matches[2];
         }
     }
@@ -854,7 +854,7 @@ class Stemmer
             return 'ajar';
         }
         
-        if (preg_match('/pe(l[aiueo])(.*)/', $word, $matches)) {
+        if (preg_match('/^pe(l[aiueo])(.*)$/', $word, $matches)) {
             return $matches[1] . $matches[2];
         }
     }
@@ -865,7 +865,7 @@ class Stemmer
      */
     public function disambiguatePrefixRule34($word)
     {
-        if (preg_match('/pe([bcdfghjklmnpqrstvwxyz])(.*)/', $word, $matches)) {
+        if (preg_match('/^pe([bcdfghjklmnpqrstvwxyz])(.*)$/', $word, $matches)) {
             if (preg_match('/^er(.*)$/', $matches[2]) === 1) {
                 return;
             }
