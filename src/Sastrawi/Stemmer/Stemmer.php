@@ -52,6 +52,8 @@ class Stemmer
         if ($lookupResult !== null) {
             return $lookupResult;
         }
+ 
+        for ($i = 0; $i < 3; $i++) {
 
         $stemmedWord = $this->removePlainPrefix($stemmedWord);
         $lookupResult = $this->dictionary->lookup($stemmedWord);
@@ -161,6 +163,10 @@ class Stemmer
             if ($lookupResult !== null) {
                 return $lookupResult;
             }
+            
+            $word = $disambiguated;
+            $stemmedWord = $word;
+            continue;
         }
 
         $disambiguated = $this->disambiguatePrefixRule12($stemmedWord);
@@ -249,6 +255,10 @@ class Stemmer
             if ($lookupResult !== null) {
                 return $lookupResult;
             }
+
+            $word = $disambiguated;
+            $stemmedWord = $word;
+            continue;
         }
 
         $disambiguated = $this->disambiguatePrefixRule24($stemmedWord);
@@ -321,6 +331,8 @@ class Stemmer
             if ($lookupResult !== null) {
                 return $lookupResult;
             }
+        }
+
         }
 
         return $stemmedWord;
