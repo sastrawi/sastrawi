@@ -21,7 +21,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'perbaru', 'pelajar', // should be recursive later, regarding of rule no 12
                 'minum', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
                 'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh', 'tarung',
-                'tebar',
+                'tebar', 'indah', 'daya', 'untung', 'sepuluh',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -231,6 +231,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('menjauhi', 'jauh');
         $data[] = array('menggilai', 'gila');
         $data[] = array('pembangunan', 'bangun');
+        
+        // recursively remove prefix
+        $data[] = array('memberdayakan', 'daya');
+        $data[] = array('persemakmuran', 'makmur');
+        $data[] = array('keberuntunganmu', 'untung');
+        $data[] = array('kesepersepuluhnya', 'sepuluh');
         
         return $data;
     }
