@@ -299,6 +299,14 @@ class Stemmer
             }
         }
 
+        $disambiguated = $this->disambiguatePrefixRule30($stemmedWord);
+            if ($disambiguated !== null) {
+            $lookupResult = $this->dictionary->lookup($disambiguated);
+            if ($lookupResult !== null) {
+                return $lookupResult;
+            }
+        }
+
         return $stemmedWord;
     }
 
@@ -805,6 +813,17 @@ class Stemmer
     public function disambiguatePrefixRule29($word)
     {
         if (preg_match('/peng([g|h|q])(.*)/', $word, $matches)) {
+            return $matches[1] . $matches[2];
+        }
+    }
+
+    /**
+     * Disambiguate Prefix Rule 30
+     * Rule 30 : pengV -> peng-V
+     */
+    public function disambiguatePrefixRule30($word)
+    {
+        if (preg_match('/peng([aiueo])(.*)/', $word, $matches)) {
             return $matches[1] . $matches[2];
         }
     }

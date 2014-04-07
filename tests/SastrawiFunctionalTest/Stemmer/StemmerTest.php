@@ -203,6 +203,10 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('penghajar', 'hajar');
         $data[] = array('pengqasar', 'qasar');
 
+        // rule 30 : pengV -> peng-V
+        // TODO recoding : pengV -> peng-kV : pengupas -> peng-kupas
+        $data[] = array('pengudara', 'udara');
+
         return $data;
     }
 }
