@@ -327,4 +327,12 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('fitnah', $this->stemmer->disambiguatePrefixRule25('pemfitnah'));
         $this->assertEquals('vonis', $this->stemmer->disambiguatePrefixRule25('pemvonis'));
     }
+
+    /**
+     * Rule 26 : pem{rV|v} -> pe-m{rV|V}
+     */
+    public function testDisambiguatePrefixRule26()
+    {
+        $this->assertEquals('minum', $this->stemmer->disambiguatePrefixRule26('peminum'));
+    }
 }

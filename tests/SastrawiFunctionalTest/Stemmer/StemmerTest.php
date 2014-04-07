@@ -182,6 +182,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('pemfitnah', 'fitnah');
         $data[] = array('pemvonis', 'vonis');
 
+        // rule 26 : pem{rV|V} -> pem{rV|V}
+        // TODO : return pe-p{rV|V} ?? recoding
+        $data[] = array('peminum', 'minum');
+        // $data[] = array('pemukul', 'pukul');
+
         return $data;
     }
 }
