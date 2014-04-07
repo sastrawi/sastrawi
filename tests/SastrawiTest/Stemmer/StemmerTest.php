@@ -335,4 +335,15 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals('minum', $this->stemmer->disambiguatePrefixRule26('peminum'));
     }
+    
+    /**
+     * Rule 27 : pen{c|d|j|z} -> pen-{c|d|j|z}
+     */
+    public function testDisambiguatePrefixRule27()
+    {
+        $this->assertEquals('cinta', $this->stemmer->disambiguatePrefixRule27('pencinta'));
+        $this->assertEquals('dua', $this->stemmer->disambiguatePrefixRule27('pendua'));
+        $this->assertEquals('jauh', $this->stemmer->disambiguatePrefixRule27('penjauh'));
+        $this->assertEquals('ziarah', $this->stemmer->disambiguatePrefixRule27('penziarah'));
+    }
 }

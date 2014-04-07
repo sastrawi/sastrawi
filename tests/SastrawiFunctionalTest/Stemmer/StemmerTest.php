@@ -187,6 +187,13 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('peminum', 'minum');
         // $data[] = array('pemukul', 'pukul');
 
+        // rule 27 : men{c|d|j|z} -> men-{c|d|j|z}
+        // TODO : should find more relevant examples
+        $data[] = array('pencinta', 'cinta');
+        $data[] = array('pendua', 'dua');
+        $data[] = array('penjauh', 'jauh');
+        $data[] = array('penziarah', 'ziarah');
+
         return $data;
     }
 }
