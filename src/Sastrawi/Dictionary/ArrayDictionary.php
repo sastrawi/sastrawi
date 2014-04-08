@@ -8,7 +8,7 @@ class ArrayDictionary implements DictionaryInterface
     
     public function __construct(array $words = array())
     {
-        $this->exchangeArray($words);
+        $this->addWords($words);
     }
 
     public function lookup($word)
@@ -23,7 +23,7 @@ class ArrayDictionary implements DictionaryInterface
         return count($this->words);
     }
  
-    public function exchangeArray(array $words)
+    public function addWords(array $words)
     {
         foreach ($words as $word) {
             $this->add($word);
