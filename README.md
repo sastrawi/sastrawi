@@ -54,20 +54,6 @@ Tujuan
 - Mempunyai _API_ yang sederhana dan mudah digunakan.
 
 
-_Developer_ dan kontributor
---------------------------
-
-- [Andy Librian](https://github.com/andylibrian)
-
-
-Pustaka
---------
-
-- Effective Techniques for Indonesian Text Retrieval. Jelita Asian B. Comp Sc.(Hons.) [2007]
-
-Algoritma yang digunakan pada _library_ ini adalah hak intelektual masing-masing pemiliknya.
-
-
 Cara Install
 -------------
 
@@ -90,3 +76,18 @@ Lisensi
 --------
 
 The MIT License (MIT). Lihat [License File](https://github.com/andylib/sastrawi/blob/master/LICENSE) untuk informasi lebih lengkap.
+
+
+_Developer_ dan kontributor
+--------------------------
+
+- [Andy Librian](https://github.com/andylibrian)
+
+
+Pustaka
+--------
+
+- Effective Techniques for Indonesian Text Retrieval. Jelita Asian B. Comp Sc.(Hons.) [2007]
+
+Algoritma yang digunakan pada _library_ ini adalah hak intelektual masing-masing pemiliknya.
+
