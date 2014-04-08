@@ -21,7 +21,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'perbaru', 'pelajar', // should be recursive later, regarding of rule no 12
                 'minum', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
                 'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh', 'tarung',
-                'tebar', 'indah', 'daya', 'untung', 'sepuluh',
+                'tebar', 'indah', 'daya', 'untung', 'sepuluh', 'ekonomi',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -240,6 +240,9 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         // test stem sentence
         $data[] = array('siapakah memberdayakan pembangunan', 'siapa daya bangun');
+
+        // issues
+        $data[] = array('Perekonomian', 'ekonomi');
         
         return $data;
     }

@@ -30,7 +30,7 @@ class Stemmer
         $stemmedWords = array();
 
         foreach ($words as $word) {
-            $stemmedWords[] = $this->stemWord($word);
+            $stemmedWords[] = $this->stemWord(strtolower($word));
         }
 
         return implode(' ', $stemmedWords);
