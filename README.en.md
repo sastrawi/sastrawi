@@ -49,6 +49,30 @@ Our Goals
 - Have a simple and easy to use API
 
 
+Installation
+-------------
+
+Sastrawi can be installed with [Composer](https://getcomposer.org). Add sastrawi into your `composer.json`:
+
+    {
+        "require": {
+            "andylibrian/sastrawi": "1.0.x-dev"
+        }
+    }
+
+Then run `composer install` or `composer update` from `command line`.
+
+
+Usage
+------
+
+
+License
+--------
+
+The MIT License (MIT). Please see [License File](https://github.com/andylib/sastrawi/blob/master/LICENSE) for more information.
+
+
 Developers and Contributors
 ----------------------------
 
@@ -61,17 +85,3 @@ Credits
 - Effective Techniques for Indonesian Text Retrieval. Jelita Asian B. Comp Sc.(Hons.) [2007]
 
 Algorithms and trademarks used in this library are the property of their respective owners.
-
-
-Installation
--------------
-
-
-Usage
-------
-
-
-License
---------
-
-The MIT License (MIT). Please see [License File](https://github.com/andylib/sastrawi/blob/master/LICENSE) for more information.
