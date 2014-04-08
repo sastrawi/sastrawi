@@ -2,7 +2,7 @@
 
 namespace Sastrawi\Dictionary;
 
-interface DictionaryInterface
+interface DictionaryInterface extends \Countable
 {
     /**
      * Lookup a word, return the word if found

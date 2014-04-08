@@ -17,6 +17,11 @@ class ArrayDictionary implements DictionaryInterface
             return $this->words[$word];
         }
     }
+
+    public function count()
+    {
+        return count($this->words);
+    }
  
     public function exchangeArray(array $words)
     {
