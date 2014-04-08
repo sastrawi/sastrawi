@@ -237,6 +237,9 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('persemakmuran', 'makmur');
         $data[] = array('keberuntunganmu', 'untung');
         $data[] = array('kesepersepuluhnya', 'sepuluh');
+
+        // test stem sentence
+        $data[] = array('siapakah memberdayakan pembangunan', 'siapa daya bangun');
         
         return $data;
     }

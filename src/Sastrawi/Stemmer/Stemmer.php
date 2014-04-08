@@ -19,12 +19,30 @@ class Stemmer
     }
     
     /**
+     * Stem a sentence to common stem form of its words
+     *
+     * @param string $sentence the sentence to stem, e.g : memberdayakan pembangunan
+     * @return string common stem form, e.g : daya bangun
+     */
+    public function stem($sentence)
+    {
+        $words = explode(' ', $sentence);
+        $stemmedWords = array();
+
+        foreach ($words as $word) {
+            $stemmedWords[] = $this->stemWord($word);
+        }
+
+        return implode(' ', $stemmedWords);
+    }
+
+    /**
      * Stem a word to its common stem form
      *
      * @param string $word the word to stem, e.g : mengalahkan
      * @return string common stem form, e.g : kalah
      */
-    public function stem($word)
+    public function stemWord($word)
     {
         if ($this->isShortWord($word)) {
             return $word;
@@ -336,6 +354,7 @@ class Stemmer
         }
 
         return $stemmedWord;
+
     }
 
     /**
