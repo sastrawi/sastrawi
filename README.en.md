@@ -54,11 +54,13 @@ Installation
 
 Sastrawi can be installed with [Composer](https://getcomposer.org). Add sastrawi into your `composer.json`:
 
-    {
-        "require": {
-            "andylibrian/sastrawi": "1.0.x-dev"
-        }
+```json
+{
+    "require": {
+        "andylibrian/sastrawi": "1.0.x-dev"
     }
+}
+```
 
 Then run `composer install` or `composer update` from `command line`.
 
@@ -66,6 +68,27 @@ Then run `composer install` or `composer update` from `command line`.
 Usage
 ------
 
+Copy the following code into a php file in your project directory. Then call it from command line.
+
+```php
+<?php
+// demo.php
+
+// include composer autoloader
+require_once __DIR__ . '/vendor/autoload.php';
+
+// create stemmer
+$stemmerFactory = new \Sastrawi\Stemmer\StemmerFactory();
+$stemmer  = $stemmerFactory->createStemmer();
+
+// stem
+$sentence = 'Perekonomian Indonesia sedang dalam pertumbuhan yang membanggakan';
+$output   = $stemmer->stem($sentence);
+
+echo $output . "\n";
+// will print:
+// ekonomi indonesia sedang dalam tumbuh yang bangga
+```
 
 License
 --------
