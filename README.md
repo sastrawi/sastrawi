@@ -71,6 +71,16 @@ Algoritma yang digunakan pada _library_ ini adalah hak intelektual masing-masing
 Cara Install
 -------------
 
+Sastrawi dapat diinstall dengan [Composer](https://getcomposer.org). Di `composer.json` Anda, tambahkan require sastrawi:
+
+    {
+        "require": {
+            "andylibrian/sastrawi": "1.0.x-dev"
+        }
+    }
+
+Kemudian jalankan `composer install` atau `composer update` dari `command line`. Jika Anda masih belum memahami bagaimana cara menggunakan Composer, silahkan baca [Getting Started with Composer](https://getcomposer.org/doc/00-intro.md).
+
 
 Penggunaan
 -----------
