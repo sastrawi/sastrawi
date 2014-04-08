@@ -59,11 +59,13 @@ Cara Install
 
 Sastrawi dapat diinstall dengan [Composer](https://getcomposer.org). Di `composer.json` Anda, tambahkan require sastrawi:
 
-    {
-        "require": {
-            "andylibrian/sastrawi": "1.0.x-dev"
-        }
+```json
+{
+    "require": {
+        "andylibrian/sastrawi": "1.0.x-dev"
     }
+}
+```
 
 Kemudian jalankan `composer install` atau `composer update` dari `command line`. Jika Anda masih belum memahami bagaimana cara menggunakan Composer, silahkan baca [Getting Started with Composer](https://getcomposer.org/doc/00-intro.md).
 
@@ -73,23 +75,25 @@ Penggunaan
 
 Copy kode berikut di directory project anda. Lalu jalankan file tersebut.
 
-    <?php
-    // demo.php
+```php
+<?php
+// demo.php
 
-    // include composer autoloader
-    require_once __DIR__ . '/vendor/autoload.php';
+// include composer autoloader
+require_once __DIR__ . '/vendor/autoload.php';
 
-    // create stemmer
-    $stemmerFactory = new \Sastrawi\Stemmer\StemmerFactory();
-    $stemmer  = $stemmerFactory->createStemmer();
+// create stemmer
+$stemmerFactory = new \Sastrawi\Stemmer\StemmerFactory();
+$stemmer  = $stemmerFactory->createStemmer();
 
-    // stem
-    $sentence = 'Perekonomian Indonesia sedang dalam pertumbuhan yang membanggakan';
-    $output   = $stemmer->stem($sentence);
+// stem
+$sentence = 'Perekonomian Indonesia sedang dalam pertumbuhan yang membanggakan';
+$output   = $stemmer->stem($sentence);
 
-    echo $output . "\n";
-    // will print:
-    // ekonomi indonesia sedang dalam tumbuh yang bangga
+echo $output . "\n";
+// will print:
+// ekonomi indonesia sedang dalam tumbuh yang bangga
+```
 
 
 Lisensi
