@@ -57,7 +57,7 @@ Sastrawi can be installed with [Composer](https://getcomposer.org). Add sastrawi
 ```json
 {
     "require": {
-        "andylibrian/sastrawi": "1.0.x-dev"
+        "andylibrian/sastrawi": "*"
     }
 }
 ```
