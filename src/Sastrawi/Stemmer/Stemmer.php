@@ -7,15 +7,23 @@ use Sastrawi\Dictionary\DictionaryInterface;
 class Stemmer
 {
     protected $dictionary;
+
+    protected $visitors = array();
     
     public function __construct(DictionaryInterface $dictionary)
     {
         $this->dictionary = $dictionary;
+        $this->initVisitors();
     }
 
     public function getDictionary()
     {
         return $this->dictionary;
+    }
+
+    protected function initVisitors()
+    {
+        $this->visitors[] = new Visitor\DontStemShortWord();
     }
     
     /**
@@ -44,8 +52,14 @@ class Stemmer
      */
     public function stemWord($word)
     {
-        if ($this->isShortWord($word)) {
-            return $word;
+        $context = new Context($word);
+
+        foreach ($this->visitors as $visitor) {
+            $context->accept($visitor);
+
+            if ($context->processIsStopped()) {
+                return $context->getCurrentWord();
+            }
         }
         
         $lookupResult = $this->dictionary->lookup($word);
@@ -355,14 +369,6 @@ class Stemmer
 
         return $stemmedWord;
 
-    }
-
-    /**
-     * @param string $word
-     */
-    protected function isShortWord($word)
-    {
-        return (strlen($word) <= 3);
     }
     
     /**
