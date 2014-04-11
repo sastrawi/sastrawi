@@ -10,6 +10,8 @@ interface ContextInterface
 
     public function getCurrentWord();
 
+    public function getDictionary();
+
     public function stopProcess();
 
     public function processIsStopped();

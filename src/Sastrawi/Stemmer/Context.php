@@ -2,6 +2,8 @@
 
 namespace Sastrawi\Stemmer;
 
+use Sastrawi\Dictionary\DictionaryInterface;
+
 class Context implements ContextInterface, VisitableInterface
 {
     protected $originalWord;
@@ -12,10 +14,23 @@ class Context implements ContextInterface, VisitableInterface
 
     protected $removals = array();
 
-    public function __construct($originalWord)
+    protected $dictionary;
+
+    public function __construct($originalWord, DictionaryInterface $dictionary)
     {
         $this->originalWord = $originalWord;
         $this->currentWord  = $this->originalWord;
+        $this->dictionary   = $dictionary;
+    }
+
+    public function setDictionary(DictionaryInterface $dictionary)
+    {
+        $this->dictionary = $dictionary;
+    }
+
+    public function getDictionary()
+    {
+        return $this->dictionary;
     }
     
     public function getOriginalWord()
