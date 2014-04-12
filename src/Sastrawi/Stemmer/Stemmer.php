@@ -3,12 +3,16 @@
 namespace Sastrawi\Stemmer;
 
 use Sastrawi\Dictionary\DictionaryInterface;
+use Sastrawi\Stemmer\Visitor\PrefixDisambiguator;
+use Sastrawi\Morphology\Disambiguator;
 
 class Stemmer
 {
     protected $dictionary;
 
     protected $visitors = array();
+    
+    protected $suffixVisitors = array();
     
     protected $prefixVisitors = array();
     
@@ -26,41 +30,58 @@ class Stemmer
     protected function initVisitors()
     {
         $this->visitors[] = new Visitor\DontStemShortWord();
-        $this->visitors[] = new Visitor\RemoveInflectionalParticle(); // {lah|kah|tah|pun}
-        $this->visitors[] = new Visitor\RemoveInflectionalPossessivePronoun(); // {ku|mu|nya}
-        $this->visitors[] = new Visitor\RemoveDerivationalSuffix(); // {i|kan|an}
+        
+        $this->suffixVisitors[] = new Visitor\RemoveInflectionalParticle(); // {lah|kah|tah|pun}
+        $this->suffixVisitors[] = new Visitor\RemoveInflectionalPossessivePronoun(); // {ku|mu|nya}
+        $this->suffixVisitors[] = new Visitor\RemoveDerivationalSuffix(); // {i|kan|an}
 
         $this->prefixVisitors[] = new Visitor\RemovePlainPrefix(); // {di|ke|se}
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule1(); // berV -> ber-V | berV -> be-rV
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule2();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule3();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule4();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule5();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule6();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule7();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule8();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule9();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule10();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule11();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule12();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule13();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule14();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule15();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule16();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule17();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule19();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule20();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule21();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule23();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule24();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule25();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule26();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule27();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule28();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule29();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule30();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule32();
-        $this->prefixVisitors[] = new Visitor\DisambiguatePrefixRule34();
+        $this->prefixVisitors[] = new PrefixDisambiguator(
+            array(
+                new Disambiguator\DisambiguatorPrefixRule1a(),
+                new Disambiguator\DisambiguatorPrefixRule1b(),
+            )
+        );
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule2()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule3()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule4()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule5()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(
+            array(
+                new Disambiguator\DisambiguatorPrefixRule6a(),
+                new Disambiguator\DisambiguatorPrefixRule6b(),
+            )
+        );
+
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule7()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule8()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule9()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule10()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule11()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule12()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule13()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule14()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule15()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule16()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule17()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule19()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule20()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(
+            array(
+                new Disambiguator\DisambiguatorPrefixRule21a(),
+                new Disambiguator\DisambiguatorPrefixRule21b(),
+            )
+        );
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule23()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule24()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule25()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule26()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule27()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule28()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule29()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule30()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule32()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule34()));
     }
     
     /**
@@ -91,16 +112,37 @@ class Stemmer
     {
         $context = new Context($word, $this->dictionary);
 
-        $lookupResult = $this->dictionary->lookup($word);
-        if ($lookupResult !== null) {
-            return $lookupResult;
+        if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+            return $context->getCurrentWord();
         }
-        
-        foreach ($this->visitors as $visitor) {
+         
+        foreach (array($this->visitors, $this->suffixVisitors) as $visitors) {
+            $this->acceptVisitors($context, $visitors);
+
+            if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+                return $context->getCurrentWord();
+            }
+        }
+                 
+        for ($i = 0; $i < 3; $i++) {
+
+            $this->acceptVisitors($context, $this->prefixVisitors);
+            
+            if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+                return $context->getCurrentWord();
+            }           
+        }
+ 
+        return $context->getCurrentWord();
+    }
+
+    protected function acceptVisitors(ContextInterface $context, array $visitors)
+    {
+        foreach ($visitors as $visitor) {
                         
             $context->accept($visitor);
  
-            $lookupResult = $this->dictionary->lookup($context->getCurrentWord());
+            $lookupResult = $context->getDictionary()->lookup($context->getCurrentWord());
             if ($lookupResult !== null) {
                 return $lookupResult;
             }
@@ -108,28 +150,7 @@ class Stemmer
             if ($context->processIsStopped()) {
                 return $context->getCurrentWord();
             }
-
         }
- 
-        for ($i = 0; $i < 3; $i++) {
-
-            foreach ($this->prefixVisitors as $visitor) {
-                            
-                $context->accept($visitor);
- 
-                $lookupResult = $this->dictionary->lookup($context->getCurrentWord());
- 
-                if ($lookupResult !== null) {
-                    return $lookupResult;
-                }
-
-                if ($context->processIsStopped()) {
-                    return $context->getCurrentWord();
-                }
-            }
-        }
-
-        return $context->getCurrentWord();
     }
 
     /**
