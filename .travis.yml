@@ -9,9 +9,10 @@ php:
 
 before_install:
  - composer install --dev --prefer-source
+ - wget http://get.sensiolabs.org/php-cs-fixer.phar
 
 script:
- - phpunit
+ - ant
 
 matrix:
   fast_finish: true
