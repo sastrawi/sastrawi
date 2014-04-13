@@ -14,7 +14,7 @@ abstract class AbstractDisambiguatePrefixRule implements VisitorInterface
     abstract protected function initDisambiguators();
     
     public function visit(ContextInterface $context)
-    { 
+    {
         if (empty($this->disambiguators)) {
             $this->initDisambiguators();
         }
@@ -31,7 +31,7 @@ abstract class AbstractDisambiguatePrefixRule implements VisitorInterface
         }
          
         if ($result === null) {
-            return; 
+            return;
         }
         
         $removedPart = preg_replace("/$result/", '', $context->getCurrentWord(), 1);

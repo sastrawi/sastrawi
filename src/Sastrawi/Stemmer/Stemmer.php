@@ -34,7 +34,7 @@ class Stemmer
         $this->visitors       = $visitorProvider->getVisitors();
         $this->suffixVisitors = $visitorProvider->getSuffixVisitors();
         $this->prefixVisitors = $visitorProvider->getPrefixVisitors();
-        }
+    }
     
     /**
      * Stem a sentence to common stem form of its words
@@ -82,7 +82,7 @@ class Stemmer
             
             if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
                 return $context->getCurrentWord();
-            }           
+            }
         }
  
         return $context->getCurrentWord();

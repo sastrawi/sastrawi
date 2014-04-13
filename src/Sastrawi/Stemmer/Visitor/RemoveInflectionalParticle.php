@@ -9,7 +9,7 @@ use Sastrawi\Stemmer\Removal;
 class RemoveInflectionalParticle implements VisitorInterface
 {
     public function visit(ContextInterface $context)
-    { 
+    {
         $result = $this->removeInflectionalParticle($context->getCurrentWord());
 
         if ($result != $context->getCurrentWord()) {
@@ -32,7 +32,7 @@ class RemoveInflectionalParticle implements VisitorInterface
      * @param string $word
      */
     public function removeInflectionalParticle($word)
-    {   
-        return preg_replace('/(lah|kah|tah|pun)$/', '', $word, 1); 
+    {
+        return preg_replace('/(lah|kah|tah|pun)$/', '', $word, 1);
     }
 }

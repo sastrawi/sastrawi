@@ -9,7 +9,7 @@ use Sastrawi\Stemmer\Removal;
 class RemoveInflectionalPossessivePronoun implements VisitorInterface
 {
     public function visit(ContextInterface $context)
-    { 
+    {
         $result = $this->removeInflectionalPossessivePronoun($context->getCurrentWord());
 
         if ($result != $context->getCurrentWord()) {
@@ -32,7 +32,7 @@ class RemoveInflectionalPossessivePronoun implements VisitorInterface
      * @param string $word
      */
     public function removeInflectionalPossessivePronoun($word)
-    {   
-        return preg_replace('/(ku|mu|nya)$/', '', $word, 1); 
+    {
+        return preg_replace('/(ku|mu|nya)$/', '', $word, 1);
     }
 }

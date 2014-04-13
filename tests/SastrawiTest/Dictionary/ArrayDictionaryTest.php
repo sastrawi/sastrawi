@@ -46,7 +46,7 @@ class ArrayDictionaryTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testConstructorPreserveWords()
-    { 
+    {
         $words = array(
             'word1',
             'word2',

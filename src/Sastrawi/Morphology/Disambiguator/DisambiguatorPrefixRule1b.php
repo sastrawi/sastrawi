@@ -14,7 +14,7 @@ class DisambiguatorPrefixRule1b implements DisambiguatorInterface
      * @return string
      */
     public function disambiguate($word)
-    {   
+    {
         $matches  = null;
         $contains = preg_match('/^ber([aiueo].*)$/', $word, $matches);
 

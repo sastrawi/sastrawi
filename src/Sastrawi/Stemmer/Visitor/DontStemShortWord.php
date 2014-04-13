@@ -8,7 +8,7 @@ use Sastrawi\Stemmer\ContextInterface;
 class DontStemShortWord implements VisitorInterface
 {
     public function visit(ContextInterface $context)
-    { 
+    {
         if ($this->isShortWord($context->getCurrentWord())) {
             $context->stopProcess();
         }

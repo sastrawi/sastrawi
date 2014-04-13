@@ -9,7 +9,7 @@ use Sastrawi\Stemmer\Removal;
 class RemoveDerivationalSuffix implements VisitorInterface
 {
     public function visit(ContextInterface $context)
-    { 
+    {
         $result = $this->removeDerivationalSuffix($context->getCurrentWord());
 
         if ($result != $context->getCurrentWord()) {
