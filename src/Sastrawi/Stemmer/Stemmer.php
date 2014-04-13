@@ -29,60 +29,12 @@ class Stemmer
 
     protected function initVisitors()
     {
-        $this->visitors[] = new Visitor\DontStemShortWord();
-        
-        $this->suffixVisitors[] = new Visitor\RemoveInflectionalParticle(); // {lah|kah|tah|pun}
-        $this->suffixVisitors[] = new Visitor\RemoveInflectionalPossessivePronoun(); // {ku|mu|nya}
-        $this->suffixVisitors[] = new Visitor\RemoveDerivationalSuffix(); // {i|kan|an}
+        $visitorProvider = new Visitor\VisitorProvider();
 
-        $this->prefixVisitors[] = new Visitor\RemovePlainPrefix(); // {di|ke|se}
-        $this->prefixVisitors[] = new PrefixDisambiguator(
-            array(
-                new Disambiguator\DisambiguatorPrefixRule1a(),
-                new Disambiguator\DisambiguatorPrefixRule1b(),
-            )
-        );
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule2()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule3()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule4()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule5()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(
-            array(
-                new Disambiguator\DisambiguatorPrefixRule6a(),
-                new Disambiguator\DisambiguatorPrefixRule6b(),
-            )
-        );
-
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule7()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule8()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule9()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule10()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule11()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule12()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule13()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule14()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule15()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule16()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule17()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule19()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule20()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(
-            array(
-                new Disambiguator\DisambiguatorPrefixRule21a(),
-                new Disambiguator\DisambiguatorPrefixRule21b(),
-            )
-        );
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule23()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule24()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule25()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule26()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule27()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule28()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule29()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule30()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule32()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule34()));
-    }
+        $this->visitors       = $visitorProvider->getVisitors();
+        $this->suffixVisitors = $visitorProvider->getSuffixVisitors();
+        $this->prefixVisitors = $visitorProvider->getPrefixVisitors();
+        }
     
     /**
      * Stem a sentence to common stem form of its words
