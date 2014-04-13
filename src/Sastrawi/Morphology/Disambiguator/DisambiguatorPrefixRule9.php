@@ -16,12 +16,12 @@ class DisambiguatorPrefixRule9 implements DisambiguatorInterface
     {
         $matches  = null;
         $contains = preg_match('/^te([bcdfghjklmnpqrstvwxyz])er([bcdfghjklmnpqrstvwxyz])(.*)$/', $word, $matches);
-        
+
         if ($contains === 1) {
             if ($matches[1] === 'r') {
                 return;
             }
-            
+
             return $matches[1] . 'er' . $matches[2] . $matches[3];
         }
     }

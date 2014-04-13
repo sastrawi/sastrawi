@@ -16,7 +16,7 @@ class DisambiguatorPrefixRule12 implements DisambiguatorInterface
     {
         $matches  = null;
         $contains = preg_match('/^mempe([rl])(.*)$/', $word, $matches);
-        
+
         if ($contains === 1) {
             return 'pe' . $matches[1] . $matches[2];
         }

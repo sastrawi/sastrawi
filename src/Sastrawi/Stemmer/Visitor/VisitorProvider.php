@@ -7,20 +7,20 @@ use Sastrawi\Morphology\Disambiguator;
 class VisitorProvider
 {
     protected $visitors = array();
-    
+
     protected $suffixVisitors = array();
-    
+
     protected $prefixVisitors = array();
-    
+
     public function __construct()
     {
         $this->initVisitors();
     }
- 
+
     protected function initVisitors()
     {
         $this->visitors[] = new DontStemShortWord();
-        
+
         $this->suffixVisitors[] = new RemoveInflectionalParticle(); // {lah|kah|tah|pun}
         $this->suffixVisitors[] = new RemoveInflectionalPossessivePronoun(); // {ku|mu|nya}
         $this->suffixVisitors[] = new RemoveDerivationalSuffix(); // {i|kan|an}
@@ -73,7 +73,7 @@ class VisitorProvider
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule32()));
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule34()));
     }
-    
+
     public function getVisitors()
     {
         return $this->visitors;

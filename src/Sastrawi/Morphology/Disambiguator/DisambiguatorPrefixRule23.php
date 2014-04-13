@@ -20,7 +20,7 @@ class DisambiguatorPrefixRule23 implements DisambiguatorInterface
             if (preg_match('/^er(.*)$/', $matches[3]) === 1) {
                 return;
             }
-            
+
             return $matches[1] . $matches[2] . $matches[3];
         }
     }

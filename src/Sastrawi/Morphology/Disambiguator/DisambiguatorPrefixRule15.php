@@ -16,7 +16,7 @@ class DisambiguatorPrefixRule15 implements DisambiguatorInterface
     {
         $matches  = null;
         $contains = preg_match('/^men([aiueo])(.*)$/', $word, $matches);
-        
+
         if ($contains === 1) {
             return 'n' . $matches[1] . $matches[2];
         }

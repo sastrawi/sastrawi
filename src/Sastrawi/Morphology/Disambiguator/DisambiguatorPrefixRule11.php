@@ -16,7 +16,7 @@ class DisambiguatorPrefixRule11 implements DisambiguatorInterface
     {
         $matches  = null;
         $contains = preg_match('/^mem([bfv])(.*)$/', $word, $matches);
-        
+
         if ($contains === 1) {
             return $matches[1] . $matches[2];
         }

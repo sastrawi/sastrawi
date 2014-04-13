@@ -2,13 +2,13 @@
 
 namespace Sastrawi\Morphology\Disambiguator;
 
-/** 
+/**
 * Disambiguate Prefix Rule 1a
 * Rule 1a : berV -> ber-V
 */
 class DisambiguatorPrefixRule1a implements DisambiguatorInterface
 {
-    /** 
+    /**
      * Disambiguate Prefix Rule 1a
      * Rule 1a : berV -> ber-V
      * @return string

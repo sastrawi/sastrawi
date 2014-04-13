@@ -15,7 +15,7 @@ class StemmerFactory
         }
 
         $words = explode(PHP_EOL, file_get_contents($dictionaryFile));
-        
+
         $dictionary = new ArrayDictionary($words);
         $stemmer    = new Stemmer($dictionary);
 

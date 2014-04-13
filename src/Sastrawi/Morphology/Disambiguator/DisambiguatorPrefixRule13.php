@@ -16,7 +16,7 @@ class DisambiguatorPrefixRule13 implements DisambiguatorInterface
     {
         $matches  = null;
         $contains = preg_match('/^mem([aiueo])(.*)$/', $word, $matches);
-        
+
         if ($contains === 1) {
             return 'm' . $matches[1] . $matches[2];
         }

@@ -5,7 +5,7 @@ namespace Sastrawi\Dictionary;
 class ArrayDictionary implements DictionaryInterface
 {
     protected $words = array();
-    
+
     public function __construct(array $words = array())
     {
         $this->addWords($words);
@@ -22,7 +22,7 @@ class ArrayDictionary implements DictionaryInterface
     {
         return count($this->words);
     }
- 
+
     public function addWords(array $words)
     {
         foreach ($words as $word) {

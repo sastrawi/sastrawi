@@ -10,17 +10,17 @@ use Sastrawi\Morphology\Disambiguator\DisambiguatorInterface;
 abstract class AbstractDisambiguatePrefixRule implements VisitorInterface
 {
     protected $disambiguators = array();
-        
+
     abstract protected function initDisambiguators();
-    
+
     public function visit(ContextInterface $context)
     {
         if (empty($this->disambiguators)) {
             $this->initDisambiguators();
         }
-        
+
         $lookup = null;
-        
+
         foreach ($this->disambiguators as $disambiguator) {
             $result = $disambiguator->disambiguate($context->getCurrentWord());
             $lookup = $context->getDictionary()->lookup($result);
@@ -29,13 +29,13 @@ abstract class AbstractDisambiguatePrefixRule implements VisitorInterface
                 break;
             }
         }
-         
+
         if ($result === null) {
             return;
         }
-        
+
         $removedPart = preg_replace("/$result/", '', $context->getCurrentWord(), 1);
-        
+
         $removal = new Removal(
             $this,
             $context->getCurrentWord(),

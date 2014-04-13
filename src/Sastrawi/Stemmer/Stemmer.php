@@ -3,19 +3,17 @@
 namespace Sastrawi\Stemmer;
 
 use Sastrawi\Dictionary\DictionaryInterface;
-use Sastrawi\Stemmer\Visitor\PrefixDisambiguator;
-use Sastrawi\Morphology\Disambiguator;
 
 class Stemmer
 {
     protected $dictionary;
 
     protected $visitors = array();
-    
+
     protected $suffixVisitors = array();
-    
+
     protected $prefixVisitors = array();
-    
+
     public function __construct(DictionaryInterface $dictionary)
     {
         $this->dictionary = $dictionary;
@@ -35,11 +33,11 @@ class Stemmer
         $this->suffixVisitors = $visitorProvider->getSuffixVisitors();
         $this->prefixVisitors = $visitorProvider->getPrefixVisitors();
     }
-    
+
     /**
      * Stem a sentence to common stem form of its words
      *
-     * @param string $sentence the sentence to stem, e.g : memberdayakan pembangunan
+     * @param  string $sentence the sentence to stem, e.g : memberdayakan pembangunan
      * @return string common stem form, e.g : daya bangun
      */
     public function stem($sentence)
@@ -57,7 +55,7 @@ class Stemmer
     /**
      * Stem a word to its common stem form
      *
-     * @param string $word the word to stem, e.g : mengalahkan
+     * @param  string $word the word to stem, e.g : mengalahkan
      * @return string common stem form, e.g : kalah
      */
     public function stemWord($word)
@@ -67,7 +65,7 @@ class Stemmer
         if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
             return $context->getCurrentWord();
         }
-         
+
         foreach (array($this->visitors, $this->suffixVisitors) as $visitors) {
             $this->acceptVisitors($context, $visitors);
 
@@ -75,25 +73,25 @@ class Stemmer
                 return $context->getCurrentWord();
             }
         }
-                 
+
         for ($i = 0; $i < 3; $i++) {
 
             $this->acceptVisitors($context, $this->prefixVisitors);
-            
+
             if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
                 return $context->getCurrentWord();
             }
         }
- 
+
         return $context->getCurrentWord();
     }
 
     protected function acceptVisitors(ContextInterface $context, array $visitors)
     {
         foreach ($visitors as $visitor) {
-                        
+
             $context->accept($visitor);
- 
+
             $lookupResult = $context->getDictionary()->lookup($context->getCurrentWord());
             if ($lookupResult !== null) {
                 return $lookupResult;

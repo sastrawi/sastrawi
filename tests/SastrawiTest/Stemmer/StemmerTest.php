@@ -8,9 +8,9 @@ use Sastrawi\Dictionary\ArrayDictionary;
 class StemmerTest extends \PHPUnit_Framework_TestCase
 {
     protected $dictionary;
-    
+
     protected $stemmer;
-    
+
     public function setUp()
     {
         $this->dictionary = new ArrayDictionary(array('beri'));
@@ -24,7 +24,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertFalse($this->stemmer->containsInvalidAffixPair('memberikan'));
         $this->assertFalse($this->stemmer->containsInvalidAffixPair('ketahui'));
-        
+
         $this->assertTrue($this->stemmer->containsInvalidAffixPair('berjatuhi'));
         $this->assertTrue($this->stemmer->containsInvalidAffixPair('dipukulan'));
         $this->assertTrue($this->stemmer->containsInvalidAffixPair('ketiduri'));

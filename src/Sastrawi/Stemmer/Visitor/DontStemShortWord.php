@@ -14,7 +14,7 @@ class DontStemShortWord implements VisitorInterface
         }
     }
 
-    /** 
+    /**
      * @param string $word
      */
     protected function isShortWord($word)

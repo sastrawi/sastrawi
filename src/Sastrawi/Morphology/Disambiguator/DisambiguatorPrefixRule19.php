@@ -16,7 +16,7 @@ class DisambiguatorPrefixRule19 implements DisambiguatorInterface
     {
         $matches  = null;
         $contains = preg_match('/^memp([aiuo])(.*)$/', $word, $matches);
-        
+
         if ($contains === 1) {
             return 'p' . $matches[1] . $matches[2];
         }

@@ -26,7 +26,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         );
         $this->stemmer    = new Stemmer($this->dictionary);
     }
-    
+
     /**
      * @dataProvider stemDataProvider
      */
@@ -38,15 +38,15 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     public function stemDataProvider()
     {
         $data = array();
-        
+
         // don't stem short words
         $data[] = array('mei', 'mei');
         $data[] = array('bui', 'bui');
-        
+
         // lookup up the dictionary, to prevent overstemming
         // don't stem nilai to nila
         $data[] = array('nilai', 'nilai');
-        
+
         // lah|kah|tah|pun
         $data[] = array('hancurlah', 'hancur');
         $data[] = array('benarkah', 'benar');
@@ -78,15 +78,15 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('sesuap', 'suap');
 
         //$data[] = array('teriakanmu', 'teriak'); // wtf? kok jadi teria?
-        
+
         /* template formulas for derivation prefix rules (disambiguation) */
-        
+
         // rule 1 : berV -> ber-V
         $data[] = array('beradu', 'adu');
-        
+
         // rule 1 : berV -> be-rV
         $data[] = array('berambut', 'rambut');
-        
+
         // rule 2 : berCAP -> ber-CAP
         $data[] = array('bersuara', 'suara');
 
@@ -114,7 +114,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         // rule 9 : teC1erC2 -> te-C1erC2 where C1 != 'r'
         $data[] = array('teterbang', 'terbang');
-        
+
         // rule 10 : me{l|r|w|y}V -> me-{l|r|w|y}V
         $data[] = array('melipat', 'lipat');
         $data[] = array('meringkas', 'ringkas');
@@ -169,7 +169,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // rule 21 : perV -> per-V | pe-rV
         $data[] = array('peradilan', 'adil');
         $data[] = array('perumahan', 'rumah');
-        
+
         // rule 22 is missing in the document?
 
         // rule 23 : perCAP -> per-CAP where C != 'r' and P != 'er'
@@ -211,7 +211,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // rule 31 : menyV -> meng-V
         // TODO recoding : menyV -> men-sV
         //$data[] = array('penyuara', 'suara');
-        
+
         // rule 32 : pelV -> pe-lV except pelajar -> ajar
         // $data[] = array('pelajar', 'ajar'); // should be opened later, atm it's conflict with rule 12
         $data[] = array('pelabuh', 'labuh');
@@ -231,7 +231,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('menjauhi', 'jauh');
         $data[] = array('menggilai', 'gila');
         $data[] = array('pembangunan', 'bangun');
-        
+
         // recursively remove prefix
         $data[] = array('memberdayakan', 'daya');
         $data[] = array('persemakmuran', 'makmur');
@@ -243,7 +243,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         // issues
         $data[] = array('Perekonomian', 'ekonomi');
-        
+
         return $data;
     }
 }

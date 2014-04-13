@@ -21,7 +21,7 @@ class DisambiguatorPrefixRule5 implements DisambiguatorInterface
             if ($matches[1] === 'r') {
                 return;
             }
-            
+
             return $matches[1] . 'er' . $matches[2] . $matches[3];
         }
     }

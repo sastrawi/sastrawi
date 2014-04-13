@@ -7,7 +7,7 @@ use Sastrawi\Dictionary\DictionaryInterface;
 class Context implements ContextInterface, VisitableInterface
 {
     protected $originalWord;
-    
+
     protected $currentWord;
 
     protected $processIsStopped = false;
@@ -32,7 +32,7 @@ class Context implements ContextInterface, VisitableInterface
     {
         return $this->dictionary;
     }
-    
+
     public function getOriginalWord()
     {
         return $this->originalWord;

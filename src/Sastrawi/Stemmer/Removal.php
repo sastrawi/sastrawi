@@ -11,7 +11,7 @@ class Removal implements RemovalInterface
     protected $result;
 
     protected $removedPart;
-    
+
     public function __construct(
         VisitorInterface $visitor,
         $subject,
@@ -23,7 +23,7 @@ class Removal implements RemovalInterface
         $this->result  = $result;
         $this->removedPart = $removedPart;
     }
-    
+
     public function getVisitor()
     {
         return $this->visitor;

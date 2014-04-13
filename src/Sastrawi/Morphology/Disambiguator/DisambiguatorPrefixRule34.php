@@ -18,7 +18,7 @@ class DisambiguatorPrefixRule34 implements DisambiguatorInterface
             if (preg_match('/^er(.*)$/', $matches[2]) === 1) {
                 return;
             }
-            
+
             return $matches[1] . $matches[2];
         }
     }
