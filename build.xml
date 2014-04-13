@@ -43,7 +43,7 @@
             <arg value="--level=all" />
             <arg path="${basedir}/src" />
         </exec>
-        <exec executable="php-cs-fixer" failonerror="true">
+        <exec executable="${basedir}/php-cs-fixer.phar" failonerror="true">
             <arg value="fix" />
             <arg value="--dry-run" />
             <arg value="--level=all" />

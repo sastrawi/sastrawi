@@ -9,7 +9,7 @@ php:
 
 before_install:
  - composer install --dev --prefer-source
- - wget http://get.sensiolabs.org/php-cs-fixer.phar
+ - wget http://get.sensiolabs.org/php-cs-fixer.phar && chmod u+x php-cs-fixer.phar
 
 script:
  - ant
