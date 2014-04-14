@@ -43,7 +43,7 @@ class Stemmer
     public function stem($sentence)
     {
         $filteredSentence = $this->filterSentence($sentence);
-        
+
         $words = explode(' ', $filteredSentence);
         $stemmedWords = array();
 
