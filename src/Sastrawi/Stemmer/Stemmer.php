@@ -42,7 +42,9 @@ class Stemmer
      */
     public function stem($sentence)
     {
-        $words = explode(' ', $sentence);
+        $filteredSentence = $this->filterSentence($sentence);
+        
+        $words = explode(' ', $filteredSentence);
         $stemmedWords = array();
 
         foreach ($words as $word) {
@@ -101,6 +103,11 @@ class Stemmer
                 return $context->getCurrentWord();
             }
         }
+    }
+
+    public function filterSentence($sentence)
+    {
+        return preg_replace('/[^a-z0-9 -]/im', '', $sentence);
     }
 
     /**
