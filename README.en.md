@@ -105,6 +105,7 @@ Developers and Contributors
 Credits
 --------
 
+- Nazief and Adriani Algorithm
 - Effective Techniques for Indonesian Text Retrieval. Jelita Asian B. Comp Sc.(Hons.) [2007]
 
 Algorithms and trademarks used in this library are the property of their respective owners.

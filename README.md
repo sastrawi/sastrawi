@@ -111,6 +111,7 @@ _Developer_ dan kontributor
 Pustaka
 --------
 
+- Algoritma Nazief dan Adriani
 - Effective Techniques for Indonesian Text Retrieval. Jelita Asian B. Comp Sc.(Hons.) [2007]
 
 Algoritma yang digunakan pada _library_ ini adalah hak intelektual masing-masing pemiliknya.
