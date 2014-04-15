@@ -85,7 +85,11 @@ class Stemmer
             }
         }
 
-        return $context->getCurrentWord();
+        if ($this->dictionary->lookup($context->getCurrentWord())) {
+            return $context->getCurrentWord();
+        } else {
+            return $word;
+        }
     }
 
     protected function acceptVisitors(ContextInterface $context, array $visitors)

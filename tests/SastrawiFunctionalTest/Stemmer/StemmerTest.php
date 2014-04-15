@@ -15,6 +15,8 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
     {
         $this->dictionary = new ArrayDictionary(
             array(
+                'hancur', 'benar', 'apa', 'siapa', 'jubah', 'baju', 'beli',
+                'celana', 'hantu', 'jual', 'buku', 'milik', 'kulit', 'sakit', 'kasih', 'buang', 'suap',
                 'nilai', 'beri', 'rambut', 'adu', 'suara', 'daerah', 'ajar', 'kerja', 'ternak',
                 'asing', 'raup', 'gerak', 'puruk', 'terbang', 'lipat', 'ringkas', 'warna', 'yakin',
                 'bangun', 'fitnah', 'vonis',
@@ -236,6 +238,10 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('menjauhi', 'jauh');
         $data[] = array('menggilai', 'gila');
         $data[] = array('pembangunan', 'bangun');
+
+        // return the word if not found in the dictionary
+        $data[] = array('marwan', 'marwan');
+        $data[] = array('subarkah', 'subarkah');
 
         // recursively remove prefix
         $data[] = array('memberdayakan', 'daya');
