@@ -250,7 +250,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('Perekonomian', 'ekonomi');
 
         // test stem multiple sentences
-        $multipleSentence = 'Cinta telah bertebaran. Keduanya saling mencintai.';
+        $multipleSentence = 'Cinta telah bertebaran.Keduanya saling mencintai.';
 
         $data[] = array($multipleSentence, 'cinta telah tebar dua saling cinta');
 
