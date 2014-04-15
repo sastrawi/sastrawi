@@ -108,6 +108,7 @@ class Stemmer
     public function filterSentence($sentence)
     {
         $sentence = trim(str_replace('.', ' ', $sentence));
+
         return preg_replace('/[^a-z0-9 -]/im', '', $sentence);
     }
 
