@@ -15,14 +15,10 @@ class DisambiguatorPrefixRule5 implements DisambiguatorInterface
     public function disambiguate($word)
     {
         $matches  = null;
-        $contains = preg_match('/^be([bcdfghjklmnpqrstvwxyz])er([bcdfghjklmnpqrstvwxyz])(.*)$/', $word, $matches);
+        $contains = preg_match('/^be([bcdfghjklmnpqstvwxyz])(er[bcdfghjklmnpqrstvwxyz])(.*)$/', $word, $matches);
 
         if ($contains === 1) {
-            if ($matches[1] === 'r') {
-                return;
-            }
-
-            return $matches[1] . 'er' . $matches[2] . $matches[3];
+            return $matches[1] . $matches[2] . $matches[3];
         }
     }
 }
