@@ -24,6 +24,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'minum', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
                 'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh', 'tarung',
                 'tebar', 'indah', 'daya', 'untung', 'sepuluh', 'ekonomi', 'makmur', 'telah', 'serta',
+                'percaya',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -225,6 +226,10 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('petarung', 'tarung');
 
         // CS additional rules
+
+        // rule 35 : terC1erC2 -> ter-C1erC2 where C1 != 'r'
+        $data[] = array('terpercaya', 'percaya');
+
         // rule 36 : peC1erC2 -> pe-C1erC2 where C1 != {r|w|y|l|m|n}
         $data[] = array('pekerja', 'kerja');
         $data[] = array('peserta', 'serta');
