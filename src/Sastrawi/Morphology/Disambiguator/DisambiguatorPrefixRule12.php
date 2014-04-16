@@ -5,14 +5,14 @@ namespace Sastrawi\Morphology\Disambiguator;
 /**
  * Disambiguate Prefix Rule 12
  * Nazief and Adriani Rule 12 : mempe{r|l} -> mem-pe{r|l}
- * Modified by Jelita Asian's CS Rule 12 : mempe -> mem-pe
+ * Modified by Jelita Asian's CS Rule 12 : mempe -> mem-pe to stem mempengaruhi
  */
 class DisambiguatorPrefixRule12 implements DisambiguatorInterface
 {
     /**
      * Disambiguate Prefix Rule 12
      * Nazief and Adriani Original Rule 12 : mempe{r|l} -> mem-pe{r|l}
-     * Modified by Jelita Asian's CS Rule 12 : mempe -> mem-pe
+     * Modified by Jelita Asian's CS Rule 12 : mempe -> mem-pe to stem mempengaruhi
      */
     public function disambiguate($word)
     {
