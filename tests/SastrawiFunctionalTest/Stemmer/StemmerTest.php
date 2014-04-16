@@ -24,7 +24,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'minum', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
                 'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh', 'tarung',
                 'tebar', 'indah', 'daya', 'untung', 'sepuluh', 'ekonomi', 'makmur', 'telah', 'serta',
-                'percaya', 'pengaruh',
+                'percaya', 'pengaruh', 'kritik',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -236,6 +236,9 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         // CS modify rule 12
         $data[] = array('mempengaruhi', 'pengaruh');
+
+        // CS modify rule 16
+        $data[] = array('mengkritik', 'kritik');
 
         // combination of prefix + suffix
         $data[] = array('bertebaran', 'tebar');
