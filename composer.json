@@ -1,5 +1,5 @@
 {
-    "name": "andylibrian/sastrawi",
+    "name": "sastrawi/sastrawi",
     "type": "library",
     "description": "PHP library for stemming Indonesian language (Bahasa Indonesia)",
     "keywords": [
@@ -10,7 +10,7 @@
         "kata dasar",
         "root word"
     ],
-    "homepage": "https://github.com/andylibrian/sastrawi",
+    "homepage": "https://github.com/sastrawi/sastrawi",
     "authors": [
         {
             "name": "Andy Librian",
@@ -33,9 +33,8 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "support": {
-        "issues": "https://github.com/andylibrian/sastrawi/issues",
-        "email": "andylibrian@gmail.com",
-        "source": "https://github.com/andylibrian/sastrawi"
+        "issues": "https://github.com/sastrawi/sastrawi/issues",
+        "source": "https://github.com/sastrawi/sastrawi"
     },
     "extra": {
         "branch-alias": {
