@@ -6,7 +6,7 @@ Sastrawi is a simple PHP library which provides stemming of Indonesian words. De
 
 | Development | Master | Releases | Statistics |
 | ----------- | ------ | -------- | ---------- |
-| [![Build Status](https://travis-ci.org/andylibrian/sastrawi.svg?branch=development)](https://travis-ci.org/andylibrian/sastrawi) [![Code Coverage](https://scrutinizer-ci.com/g/andylibrian/sastrawi/badges/coverage.png?s=d3a758c427f5e0b68fc32d98dfb76b68441dc7b9)](https://scrutinizer-ci.com/g/andylibrian/sastrawi/) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/andylibrian/sastrawi/badges/quality-score.png?s=5f7d11afd70dd36fdec255386aa901358b6ce5cd)](https://scrutinizer-ci.com/g/andylibrian/sastrawi/) | [![Build Status](https://travis-ci.org/andylibrian/sastrawi.svg?branch=master)](https://travis-ci.org/andylibrian/sastrawi) | [![Latest Unstable Version](https://poser.pugx.org/andylibrian/sastrawi/v/unstable.png)](https://packagist.org/packages/andylibrian/sastrawi) [![Latest Stable Version](https://poser.pugx.org/andylibrian/sastrawi/v/stable.png)](https://packagist.org/packages/andylibrian/sastrawi) | [![Total Downloads](https://poser.pugx.org/andylibrian/sastrawi/downloads.png)](https://packagist.org/packages/andylibrian/sastrawi) |
+| [![Build Status](https://travis-ci.org/sastrawi/sastrawi.svg?branch=development)](https://travis-ci.org/sastrawi/sastrawi) [![Code Coverage](https://scrutinizer-ci.com/g/andylibrian/sastrawi/badges/coverage.png?s=d3a758c427f5e0b68fc32d98dfb76b68441dc7b9)](https://scrutinizer-ci.com/g/andylibrian/sastrawi/) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/andylibrian/sastrawi/badges/quality-score.png?s=5f7d11afd70dd36fdec255386aa901358b6ce5cd)](https://scrutinizer-ci.com/g/andylibrian/sastrawi/) | [![Build Status](https://travis-ci.org/sastrawi/sastrawi.svg?branch=master)](https://travis-ci.org/sastrawi/sastrawi) | [![Latest Unstable Version](https://poser.pugx.org/sastrawi/sastrawi/v/unstable.png)](https://packagist.org/packages/sastrawi/sastrawi) [![Latest Stable Version](https://poser.pugx.org/sastrawi/sastrawi/v/stable.png)](https://packagist.org/packages/sastrawi/sastrawi) | [![Total Downloads](https://poser.pugx.org/sastrawi/sastrawi/downloads.png)](https://packagist.org/packages/sastrawi/sastrawi) |
 
 
 Stemming
@@ -62,7 +62,7 @@ Sastrawi dapat diinstall dengan [Composer](https://getcomposer.org). Di `compose
 ```json
 {
     "require": {
-        "andylibrian/sastrawi": "*"
+        "sastrawi/sastrawi": "*"
     }
 }
 ```
