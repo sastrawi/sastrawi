@@ -99,7 +99,7 @@ echo $output . "\n";
 Lisensi
 --------
 
-The MIT License (MIT). Lihat [License File](https://github.com/andylib/sastrawi/blob/master/LICENSE) untuk informasi lebih lengkap.
+The MIT License (MIT). Lihat [License File](https://github.com/sastrawi/sastrawi/blob/master/LICENSE) untuk informasi lebih lengkap.
 
 
 Pustaka

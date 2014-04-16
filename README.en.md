@@ -93,7 +93,7 @@ echo $output . "\n";
 License
 --------
 
-The MIT License (MIT). Please see [License File](https://github.com/andylib/sastrawi/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/sastrawi/sastrawi/blob/master/LICENSE) for more information.
 
 
 Credits
