@@ -96,12 +96,6 @@ License
 The MIT License (MIT). Please see [License File](https://github.com/andylib/sastrawi/blob/master/LICENSE) for more information.
 
 
-Developers and Contributors
-----------------------------
-
-- [Andy Librian](https://github.com/andylibrian)
-
-
 Credits
 --------
 

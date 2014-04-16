@@ -102,12 +102,6 @@ Lisensi
 The MIT License (MIT). Lihat [License File](https://github.com/andylib/sastrawi/blob/master/LICENSE) untuk informasi lebih lengkap.
 
 
-_Developer_ dan kontributor
---------------------------
-
-- [Andy Librian](https://github.com/andylibrian)
-
-
 Pustaka
 --------
 
