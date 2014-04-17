@@ -39,7 +39,7 @@ class Stemmer
         return implode(' ', $stems);
     }
 
-    public function normalizeText($text)
+    protected function normalizeText($text)
     {
         $text = strtolower(trim(str_replace('.', ' ', $text)));
 
@@ -60,7 +60,7 @@ class Stemmer
         return strpos($word, '-') !== false;
     }
 
-    public function stemPluralWord($plural)
+    protected function stemPluralWord($plural)
     {
         $words = explode('-', $plural);
 
@@ -83,38 +83,11 @@ class Stemmer
      * @param  string $word the word to stem, e.g : mengalahkan
      * @return string common stem form, e.g : kalah
      */
-    public function stemSingularWord($word)
+    protected function stemSingularWord($word)
     {
         $context = new Context($word, $this->dictionary);
         $context->execute();
 
         return $context->getResult();
-    }
-
-    /**
-     * Does the word contain invalid affix pair?
-     * ber-i|di-an|ke-i|ke-an|me-an|ter-an|per-an
-     * @param string $word
-     */
-    public function containsInvalidAffixPair($word)
-    {
-        if (preg_match('/^me(.*)kan$/', $word) === 1) {
-            return false;
-        }
-
-        if ($word == 'ketahui') {
-            return false;
-        }
-
-        $contains = false
-                    || preg_match('/^ber(.*)i$/', $word) === 1
-                    || preg_match('/^di(.*)an$/', $word) === 1
-                    || preg_match('/^ke(.*)i$/', $word) === 1
-                    || preg_match('/^ke(.*)an$/', $word) === 1
-                    || preg_match('/^me(.*)an$/', $word) === 1
-                    || preg_match('/^ter(.*)an$/', $word) === 1
-                    || preg_match('/^per(.*)an$/', $word) === 1;
-
-        return $contains;
     }
 }
