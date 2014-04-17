@@ -27,7 +27,7 @@ class Stemmer
 
     protected function initVisitors()
     {
-        $visitorProvider = new Visitor\VisitorProvider();
+        $visitorProvider = new Context\Visitor\VisitorProvider();
 
         $this->visitors       = $visitorProvider->getVisitors();
         $this->suffixVisitors = $visitorProvider->getSuffixVisitors();
@@ -83,7 +83,7 @@ class Stemmer
      */
     public function stemWord($word)
     {
-        $context = new Context($word, $this->dictionary);
+        $context = new Context\Context($word, $this->dictionary);
 
         if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
             return $context->getCurrentWord();
@@ -134,7 +134,7 @@ class Stemmer
         }
     }
 
-    protected function acceptVisitors(ContextInterface $context, array $visitors)
+    protected function acceptVisitors(Context\ContextInterface $context, array $visitors)
     {
         foreach ($visitors as $visitor) {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sastrawi\Stemmer\Visitor;
+namespace Sastrawi\Stemmer\Context\Visitor;
 
 use Sastrawi\Morphology\Disambiguator;
 

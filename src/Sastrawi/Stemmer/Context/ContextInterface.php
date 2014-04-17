@@ -1,6 +1,6 @@
 <?php
 
-namespace Sastrawi\Stemmer;
+namespace Sastrawi\Stemmer\Context;
 
 interface ContextInterface
 {

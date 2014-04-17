@@ -1,8 +1,6 @@
 <?php
 
-namespace Sastrawi\Stemmer\Visitor;
-
-use Sastrawi\Stemmer\VisitorInterface;
+namespace Sastrawi\Stemmer\Context\Visitor;
 
 class PrefixDisambiguator extends AbstractDisambiguatePrefixRule implements VisitorInterface
 {

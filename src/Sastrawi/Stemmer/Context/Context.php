@@ -1,8 +1,10 @@
 <?php
 
-namespace Sastrawi\Stemmer;
+namespace Sastrawi\Stemmer\Context;
 
 use Sastrawi\Dictionary\DictionaryInterface;
+use Sastrawi\Stemmer\Context\Visitor\VisitorInterface;
+use Sastrawi\Stemmer\Context\Visitor\VisitableInterface;
 
 class Context implements ContextInterface, VisitableInterface
 {

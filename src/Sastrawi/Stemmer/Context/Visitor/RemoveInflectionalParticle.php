@@ -1,10 +1,9 @@
 <?php
 
-namespace Sastrawi\Stemmer\Visitor;
+namespace Sastrawi\Stemmer\Context\Visitor;
 
-use Sastrawi\Stemmer\VisitorInterface;
-use Sastrawi\Stemmer\ContextInterface;
-use Sastrawi\Stemmer\Removal;
+use Sastrawi\Stemmer\Context\ContextInterface;
+use Sastrawi\Stemmer\Context\Removal;
 
 class RemoveInflectionalParticle implements VisitorInterface
 {

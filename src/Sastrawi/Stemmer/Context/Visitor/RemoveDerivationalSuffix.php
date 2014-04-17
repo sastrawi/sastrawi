@@ -1,16 +1,15 @@
 <?php
 
-namespace Sastrawi\Stemmer\Visitor;
+namespace Sastrawi\Stemmer\Context\Visitor;
 
-use Sastrawi\Stemmer\VisitorInterface;
-use Sastrawi\Stemmer\ContextInterface;
-use Sastrawi\Stemmer\Removal;
+use Sastrawi\Stemmer\Context\ContextInterface;
+use Sastrawi\Stemmer\Context\Removal;
 
-class RemoveInflectionalPossessivePronoun implements VisitorInterface
+class RemoveDerivationalSuffix implements VisitorInterface
 {
     public function visit(ContextInterface $context)
     {
-        $result = $this->removeInflectionalPossessivePronoun($context->getCurrentWord());
+        $result = $this->removeDerivationalSuffix($context->getCurrentWord());
 
         if ($result != $context->getCurrentWord()) {
             $removedPart = preg_replace("/$result/", '', $context->getCurrentWord(), 1);
@@ -28,11 +27,10 @@ class RemoveInflectionalPossessivePronoun implements VisitorInterface
     }
 
     /**
-     * Remove inflectional possessive pronoun : ku|mu|nya
-     * @param string $word
+     * Remove derivational suffix
      */
-    public function removeInflectionalPossessivePronoun($word)
+    public function removeDerivationalSuffix($word)
     {
-        return preg_replace('/(ku|mu|nya)$/', '', $word, 1);
+        return preg_replace('/(i|kan|an)$/', '', $word, 1);
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
-namespace Sastrawi\Stemmer;
+namespace Sastrawi\Stemmer\Context\Visitor;
+
+use Sastrawi\Stemmer\Context\ContextInterface;
 
 interface VisitorInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sastrawi\Stemmer;
+namespace Sastrawi\Stemmer\Context;
 
 class Removal implements RemovalInterface
 {
@@ -13,7 +13,7 @@ class Removal implements RemovalInterface
     protected $removedPart;
 
     public function __construct(
-        VisitorInterface $visitor,
+        Visitor\VisitorInterface $visitor,
         $subject,
         $result,
         $removedPart
