@@ -68,21 +68,42 @@ class Stemmer
             return $context->getCurrentWord();
         }
 
-        foreach (array($this->visitors, $this->suffixVisitors) as $visitors) {
-            $this->acceptVisitors($context, $visitors);
+        $this->acceptVisitors($context, $this->visitors);
 
-            if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
-                return $context->getCurrentWord();
-            }
+        if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+            return $context->getCurrentWord();
         }
 
-        for ($i = 0; $i < 3; $i++) {
+        $csPrecedenceAdjustmentSpecification = new CS\PrecedenceAdjustmentSpecification();
 
-            $this->acceptVisitors($context, $this->prefixVisitors);
+        if (! $csPrecedenceAdjustmentSpecification->isSatisfiedBy($word)) {
 
+            $this->acceptVisitors($context, $this->suffixVisitors);
             if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
                 return $context->getCurrentWord();
             }
+
+            for ($i = 0; $i < 3; $i++) {
+                $this->acceptVisitors($context, $this->prefixVisitors);
+                if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+                    return $context->getCurrentWord();
+                }
+            }
+
+        } else {
+
+            for ($i = 0; $i < 3; $i++) {
+                $this->acceptVisitors($context, $this->prefixVisitors);
+                if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+                    return $context->getCurrentWord();
+                }
+            }
+
+            $this->acceptVisitors($context, $this->suffixVisitors);
+            if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+                return $context->getCurrentWord();
+            }
+
         }
 
         if ($this->dictionary->lookup($context->getCurrentWord())) {
