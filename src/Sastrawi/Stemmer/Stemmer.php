@@ -46,7 +46,7 @@ class Stemmer
         return preg_replace('/[^a-z0-9 -]/im', '', $text);
     }
 
-    public function stemWord($word)
+    protected function stemWord($word)
     {
         if ($this->isPlural($word)) {
             return $this->stemPluralWord($word);
@@ -62,19 +62,20 @@ class Stemmer
 
     protected function stemPluralWord($plural)
     {
-        $words = explode('-', $plural);
+        preg_match('/^(.*)-(.*)$/', $plural, $words);
 
-        $word1 = (isset($words[0])) ? $words[0] : '';
-        $word2 = (isset($words[1])) ? $words[1] : '';
+        if (!isset($words[1]) || !isset($words[2])) {
+            return $plural;
+        }
 
-        $rootWord1 = $this->stemSingularWord($word1);
-        $rootWord2 = $this->stemSingularWord($word2);
+        $rootWord1 = $this->stemSingularWord($words[1]);
+        $rootWord2 = $this->stemSingularWord($words[2]);
 
         if ($rootWord1 == $rootWord2) {
             return $rootWord1;
-        } else {
-            return $plural;
         }
+
+        return $plural;
     }
 
     /**
