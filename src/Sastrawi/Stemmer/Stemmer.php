@@ -48,10 +48,31 @@ class Stemmer
         $stemmedWords = array();
 
         foreach ($words as $word) {
-            $stemmedWords[] = $this->stemWord(strtolower($word));
+            if (strpos($word, '-') !== false) {
+                $stemmedWords[] = $this->stemPluralWord(strtolower($word));
+            } else {
+                $stemmedWords[] = $this->stemWord(strtolower($word));
+            }
         }
 
         return implode(' ', $stemmedWords);
+    }
+
+    public function stemPluralWord($plural)
+    {
+        $words = explode('-', $plural);
+
+        $word1 = (isset($words[0])) ? $words[0] : '';
+        $word2 = (isset($words[1])) ? $words[1] : '';
+
+        $rootWord1 = $this->stemWord($word1);
+        $rootWord2 = $this->stemWord($word2);
+
+        if ($rootWord1 == $rootWord2) {
+            return $rootWord1;
+        } else {
+            return $plural;
+        }
     }
 
     /**
