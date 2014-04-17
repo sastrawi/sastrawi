@@ -3,21 +3,15 @@
 namespace Sastrawi\Stemmer;
 
 use Sastrawi\Dictionary\DictionaryInterface;
+use Sastrawi\Stemmer\Context\Context;
 
 class Stemmer
 {
     protected $dictionary;
 
-    protected $visitors = array();
-
-    protected $suffixVisitors = array();
-
-    protected $prefixVisitors = array();
-
     public function __construct(DictionaryInterface $dictionary)
     {
         $this->dictionary = $dictionary;
-        $this->initVisitors();
     }
 
     public function getDictionary()
@@ -25,37 +19,45 @@ class Stemmer
         return $this->dictionary;
     }
 
-    protected function initVisitors()
-    {
-        $visitorProvider = new Context\Visitor\VisitorProvider();
-
-        $this->visitors       = $visitorProvider->getVisitors();
-        $this->suffixVisitors = $visitorProvider->getSuffixVisitors();
-        $this->prefixVisitors = $visitorProvider->getPrefixVisitors();
-    }
-
     /**
-     * Stem a sentence to common stem form of its words
+     * Stem a text string to its common stem form
      *
-     * @param  string $sentence the sentence to stem, e.g : memberdayakan pembangunan
+     * @param  string $text the text string to stem, e.g : memberdayakan pembangunan
      * @return string common stem form, e.g : daya bangun
      */
-    public function stem($sentence)
+    public function stem($text)
     {
-        $filteredSentence = $this->filterSentence($sentence);
+        $normalizedText = $this->normalizeText($text);
 
-        $words = explode(' ', $filteredSentence);
-        $stemmedWords = array();
+        $words = explode(' ', $normalizedText);
+        $stems = array();
 
         foreach ($words as $word) {
-            if (strpos($word, '-') !== false) {
-                $stemmedWords[] = $this->stemPluralWord(strtolower($word));
-            } else {
-                $stemmedWords[] = $this->stemWord(strtolower($word));
-            }
+            $stems[] = $this->stemWord($word);
         }
 
-        return implode(' ', $stemmedWords);
+        return implode(' ', $stems);
+    }
+
+    public function normalizeText($text)
+    {
+        $text = strtolower(trim(str_replace('.', ' ', $text)));
+
+        return preg_replace('/[^a-z0-9 -]/im', '', $text);
+    }
+
+    public function stemWord($word)
+    {
+        if ($this->isPlural($word)) {
+            return $this->stemPluralWord($word);
+        } else {
+            return $this->stemSingularWord($word);
+        }
+    }
+
+    protected function isPlural($word)
+    {
+        return strpos($word, '-') !== false;
     }
 
     public function stemPluralWord($plural)
@@ -65,8 +67,8 @@ class Stemmer
         $word1 = (isset($words[0])) ? $words[0] : '';
         $word2 = (isset($words[1])) ? $words[1] : '';
 
-        $rootWord1 = $this->stemWord($word1);
-        $rootWord2 = $this->stemWord($word2);
+        $rootWord1 = $this->stemSingularWord($word1);
+        $rootWord2 = $this->stemSingularWord($word2);
 
         if ($rootWord1 == $rootWord2) {
             return $rootWord1;
@@ -76,86 +78,17 @@ class Stemmer
     }
 
     /**
-     * Stem a word to its common stem form
+     * Stem a singular word to its common stem form
      *
      * @param  string $word the word to stem, e.g : mengalahkan
      * @return string common stem form, e.g : kalah
      */
-    public function stemWord($word)
+    public function stemSingularWord($word)
     {
-        $context = new Context\Context($word, $this->dictionary);
+        $context = new Context($word, $this->dictionary);
+        $context->execute();
 
-        if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
-            return $context->getCurrentWord();
-        }
-
-        $this->acceptVisitors($context, $this->visitors);
-
-        if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
-            return $context->getCurrentWord();
-        }
-
-        $csPrecedenceAdjustmentSpecification = new CS\PrecedenceAdjustmentSpecification();
-
-        if (! $csPrecedenceAdjustmentSpecification->isSatisfiedBy($word)) {
-
-            $this->acceptVisitors($context, $this->suffixVisitors);
-            if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
-                return $context->getCurrentWord();
-            }
-
-            for ($i = 0; $i < 3; $i++) {
-                $this->acceptVisitors($context, $this->prefixVisitors);
-                if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
-                    return $context->getCurrentWord();
-                }
-            }
-
-        } else {
-
-            for ($i = 0; $i < 3; $i++) {
-                $this->acceptVisitors($context, $this->prefixVisitors);
-                if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
-                    return $context->getCurrentWord();
-                }
-            }
-
-            $this->acceptVisitors($context, $this->suffixVisitors);
-            if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
-                return $context->getCurrentWord();
-            }
-
-        }
-
-        if ($this->dictionary->lookup($context->getCurrentWord())) {
-            return $context->getCurrentWord();
-        } else {
-            return $word;
-        }
-    }
-
-    protected function acceptVisitors(Context\ContextInterface $context, array $visitors)
-    {
-        foreach ($visitors as $visitor) {
-
-            $context->accept($visitor);
-
-            $lookupResult = $context->getDictionary()->lookup($context->getCurrentWord());
-            if ($lookupResult !== null) {
-                return $lookupResult;
-            }
-
-            if ($context->processIsStopped()) {
-                return $context->getCurrentWord();
-            }
-        }
-    }
-
-    public function filterSentence($sentence)
-    {
-        $sentence = trim(str_replace('.', ' ', $sentence));
-
-        return preg_replace('/[^a-z0-9 -]/im', '', $sentence);
+        return $context->getResult();
     }
 
     /**
