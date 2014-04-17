@@ -10,6 +10,11 @@ class PrecedenceAdjustmentSpecification implements SpecificationInterface
     {
         $regexRules = array(
             '/^be(.*)lah$/',
+            '/^be(.*)an$/',
+            //'/^me(.*)i$/',
+            '/^di(.*)i$/',
+            '/^pe(.*)i$/',
+            '/^ter(.*)i$/',
         );
 
         foreach ($regexRules as $rule) {
