@@ -105,7 +105,8 @@ The MIT License (MIT). Lihat [License File](https://github.com/sastrawi/sastrawi
 Pustaka
 --------
 
-Algoritma yang digunakan pada _library_ ini adalah hak intelektual masing-masing pemiliknya.
+Algoritma yang digunakan pada _library_ ini adalah hak intelektual masing-masing pemiliknya yang tertera di bawah ini.
+Untuk meningkatkan kualitas kode, algoritma tersebut kami terapkan ke dalam _Object Oriented Design_.
 
 - Algoritma Nazief dan Adriani
 - Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval”. PhD thesis School of Computer Science and Information Technology RMIT University Australia.
