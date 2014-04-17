@@ -19,7 +19,7 @@ Dalam aktivitas sehari-hari, pengguna internet di Indonesia menggunakan Bahasa I
 _Stemming_ adalah proses mengubah kata berimbuhan menjadi kata dasar. Contohnya:
 
 - menahan => tahan
-- memukul-mukul    => pukul
+- berbalas-balasan => balas
 
 
 Contoh kasus
