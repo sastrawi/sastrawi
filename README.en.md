@@ -1,7 +1,9 @@
 Sastrawi
 =========
 
-Sastrawi is a simple PHP library which provides stemming of Indonesian words. Despite its simplicity, sastrawi is  high in quality, well documented, and carefully tested.
+Sastrawi is a simple PHP library which provides stemming of words in Indonesian Language (Bahasa).
+Despite its simplicity, this library is  designed to be high quality and well documented.
+For more information in english, see [README](https://github.com/andylib/sastrawi/blob/master/README.en.md).
 
 
 | Development | Master | Releases | Statistics |
@@ -27,9 +29,7 @@ Let's say we have a blog content:
 The query below will result none.
 
 ```sql
-
 SELECT * FROM posts WHERE content LIKE '%suara%'
-
 ```
 
 Even fuzzy full-text-search tool needs a stemmer to improve the result. A possible improvement would be to index the reduced version of the sentence as follow:
@@ -99,7 +99,8 @@ The MIT License (MIT). Please see [License File](https://github.com/sastrawi/sas
 Credits
 --------
 
-- Nazief and Adriani Algorithm
-- Effective Techniques for Indonesian Text Retrieval. Jelita Asian B. Comp Sc.(Hons.) [2007]
-
 Algorithms and trademarks used in this library are the property of their respective owners.
+
+- Algoritma Nazief dan Adriani
+- Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval”. PhD thesis School of Computer Science and Information Technology RMIT University Australia.
+
