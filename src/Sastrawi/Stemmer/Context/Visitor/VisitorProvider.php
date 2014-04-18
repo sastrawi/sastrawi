@@ -49,7 +49,13 @@ class VisitorProvider
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule10()));
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule11()));
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule12()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule13()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(
+            array(
+                new Disambiguator\DisambiguatorPrefixRule13a(),
+                new Disambiguator\DisambiguatorPrefixRule13b(),
+            )
+        );
+
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule14()));
         $this->prefixVisitors[] = new PrefixDisambiguator(
             array(

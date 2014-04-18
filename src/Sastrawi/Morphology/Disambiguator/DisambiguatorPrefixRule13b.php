@@ -3,14 +3,14 @@
 namespace Sastrawi\Morphology\Disambiguator;
 
 /**
- * Disambiguate Prefix Rule 13
- * Rule 13 : mem{rV|V} -> me-m{rV|V}
+ * Disambiguate Prefix Rule 13b
+ * Rule 13b : mem{rV|V} -> me-p{rV|V}
  */
-class DisambiguatorPrefixRule13 implements DisambiguatorInterface
+class DisambiguatorPrefixRule13b implements DisambiguatorInterface
 {
     /**
-     * Disambiguate Prefix Rule 13
-     * Rule 13 : mem{rV|V} -> me-m{rV|V}
+     * Disambiguate Prefix Rule 13b
+     * Rule 13b : mem{rV|V} -> me-p{rV|V}
      */
     public function disambiguate($word)
     {
@@ -18,7 +18,7 @@ class DisambiguatorPrefixRule13 implements DisambiguatorInterface
         $contains = preg_match('/^mem([aiueo])(.*)$/', $word, $matches);
 
         if ($contains === 1) {
-            return 'm' . $matches[1] . $matches[2];
+            return 'p' . $matches[1] . $matches[2];
         }
     }
 }

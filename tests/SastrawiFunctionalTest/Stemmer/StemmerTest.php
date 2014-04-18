@@ -22,7 +22,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'bangun', 'fitnah', 'vonis',
                 'perbaru', 'pelajar', // should be recursive later, regarding of rule no 12
                 'tangkap',
-                'minum', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
+                'minum', 'pukul', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
                 'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh', 'tarung',
                 'tebar', 'indah', 'daya', 'untung', 'sepuluh', 'ekonomi', 'makmur', 'telah', 'serta',
                 'percaya', 'pengaruh', 'kritik', 'seko', 'sekolah', 'tah', 'tahan', 'capa', 'capai',
@@ -86,10 +86,10 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         /* template formulas for derivation prefix rules (disambiguation) */
 
-        // rule 1 : berV -> ber-V
+        // rule 1a : berV -> ber-V
         $data[] = array('beradu', 'adu');
 
-        // rule 1 : berV -> be-rV
+        // rule 1b : berV -> be-rV
         $data[] = array('berambut', 'rambut');
 
         // rule 2 : berCAP -> ber-CAP
@@ -136,10 +136,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('memperbaru', 'perbaru');
         $data[] = array('mempelajar', 'pelajar');
 
-        // rule 13 : mem{rV|V} -> mem{rV|V}
-        // TODO : return me-p{rV|V} ?? recoding
+        // rule 13a : mem{rV|V} -> mem{rV|V}
         $data[] = array('meminum', 'minum');
-        // $data[] = array('memukul', 'pukul');
+
+        // rule 13b : mem{rV|V} -> me-p{rV|V}
+        $data[] = array('memukul', 'pukul');
 
         // rule 14 : men{c|d|j|z} -> men-{c|d|j|z}
         $data[] = array('mencinta', 'cinta');
