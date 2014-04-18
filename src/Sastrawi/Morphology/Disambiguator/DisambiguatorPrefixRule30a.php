@@ -3,14 +3,14 @@
 namespace Sastrawi\Morphology\Disambiguator;
 
 /**
- * Disambiguate Prefix Rule 30
- * Rule 30 : pengV -> peng-V
+ * Disambiguate Prefix Rule 30a
+ * Rule 30a : pengV -> peng-V
  */
-class DisambiguatorPrefixRule30 implements DisambiguatorInterface
+class DisambiguatorPrefixRule30a implements DisambiguatorInterface
 {
     /**
-     * Disambiguate Prefix Rule 30
-     * Rule 30 : pengV -> peng-V
+     * Disambiguate Prefix Rule 30a
+     * Rule 30a : pengV -> peng-V
      */
     public function disambiguate($word)
     {
