@@ -27,7 +27,7 @@ class Stemmer
      */
     public function stem($text)
     {
-        $normalizedText = $this->normalizeText($text);
+        $normalizedText = Filter\TextNormalizer::normalizeText($text);
 
         $words = explode(' ', $normalizedText);
         $stems = array();
@@ -37,13 +37,6 @@ class Stemmer
         }
 
         return implode(' ', $stems);
-    }
-
-    protected function normalizeText($text)
-    {
-        $text = strtolower(trim(str_replace('.', ' ', $text)));
-
-        return preg_replace('/[^a-z0-9 -]/im', '', $text);
     }
 
     protected function stemWord($word)
