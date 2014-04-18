@@ -21,7 +21,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'asing', 'raup', 'gerak', 'puruk', 'terbang', 'lipat', 'ringkas', 'warna', 'yakin',
                 'bangun', 'fitnah', 'vonis',
                 'perbaru', 'pelajar', // should be recursive later, regarding of rule no 12
-                'tangkap',
+                'tangkap', 'kupas',
                 'minum', 'pukul', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
                 'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh', 'tarung',
                 'tebar', 'indah', 'daya', 'untung', 'sepuluh', 'ekonomi', 'makmur', 'telah', 'serta',
@@ -148,19 +148,22 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('menjauh', 'jauh');
         $data[] = array('menziarah', 'ziarah');
 
-        // rule 15 : men{V} -> me-n{V}
-        // TODO recoding : me-t{V} : menangkap -> me-tangkap
-        $data[] = array('menangkap', 'tangkap');
+        // rule 15a : men{V} -> me-n{V}
         $data[] = array('menuklir', 'nuklir');
+
+        // rule 15b : men{V} -> me-t{V}
+        $data[] = array('menangkap', 'tangkap');
 
         // rule 16 : meng{g|h|q} -> meng-{g|h|q}
         $data[] = array('menggila', 'gila');
         $data[] = array('menghajar', 'hajar');
         $data[] = array('mengqasar', 'qasar');
 
-        // rule 17 : mengV -> meng-V
-        // TODO recoding : mengV -> meng-kV : mengupas -> meng-kupas
+        // rule 17a : mengV -> meng-V
         $data[] = array('mengudara', 'udara');
+
+        // rule 17b : mengV -> meng-kV
+        $data[] = array('mengupas', 'kupas');
 
         // rule 18 : menyV -> meny-sV
         // TODO recoding : menyV -> men-sV

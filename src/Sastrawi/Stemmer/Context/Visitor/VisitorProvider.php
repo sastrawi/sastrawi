@@ -64,7 +64,14 @@ class VisitorProvider
             )
         );
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule16()));
-        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule17()));
+
+        $this->prefixVisitors[] = new PrefixDisambiguator(
+            array(
+                new Disambiguator\DisambiguatorPrefixRule17a(),
+                new Disambiguator\DisambiguatorPrefixRule17b(),
+            )
+        );
+
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule19()));
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule20()));
         $this->prefixVisitors[] = new PrefixDisambiguator(
