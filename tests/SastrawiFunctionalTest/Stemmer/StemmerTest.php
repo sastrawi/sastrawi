@@ -176,8 +176,10 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('pewarna', 'warna');
         $data[] = array('peyoga', 'yoga');
 
-        // rule 21 : perV -> per-V | pe-rV
+        // rule 21a : perV -> per-V
         $data[] = array('peradilan', 'adil');
+
+        // rule 21b : perV -> pe-rV
         $data[] = array('perumahan', 'rumah');
 
         // rule 22 is missing in the document?
@@ -193,10 +195,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('pemfitnah', 'fitnah');
         $data[] = array('pemvonis', 'vonis');
 
-        // rule 26 : pem{rV|V} -> pem{rV|V}
-        // TODO : return pe-p{rV|V} ?? recoding
+        // rule 26a : pem{rV|V} -> pe-m{rV|V}
         $data[] = array('peminum', 'minum');
-        // $data[] = array('pemukul', 'pukul');
+
+        // rule 26b : pem{rV|V} -> pe-p{rV|V}
+        $data[] = array('pemukul', 'pukul');
 
         // rule 27 : men{c|d|j|z} -> men-{c|d|j|z}
         // TODO : should find more relevant examples
