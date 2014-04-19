@@ -23,5 +23,5 @@ interface DictionaryInterface extends \Countable
      *
      * @return string|null String If the dictionary contains the word, null otherwise.
      */
-    public function lookup($word);
+    public function searchFor($word);
 }

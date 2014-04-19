@@ -99,7 +99,7 @@ class Context implements ContextInterface, VisitableInterface
     {
         $result = $this->doExecute();
 
-        if ($this->dictionary->lookup($result)) {
+        if ($this->dictionary->searchFor($result)) {
             $this->result = $result;
         } else {
             $this->result = $this->originalWord;
@@ -111,13 +111,13 @@ class Context implements ContextInterface, VisitableInterface
         $context = $this;
         $word = $this->originalWord;
 
-        if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+        if ($this->dictionary->searchFor($context->getCurrentWord()) !== null) {
             return $context->getCurrentWord();
         }
 
         $this->acceptVisitors($context, $this->visitors);
 
-        if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+        if ($this->dictionary->searchFor($context->getCurrentWord()) !== null) {
             return $context->getCurrentWord();
         }
 
@@ -126,13 +126,13 @@ class Context implements ContextInterface, VisitableInterface
         if (! $csPrecedenceAdjustmentSpecification->isSatisfiedBy($word)) {
 
             $this->acceptVisitors($context, $this->suffixVisitors);
-            if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+            if ($this->dictionary->searchFor($context->getCurrentWord()) !== null) {
                 return $context->getCurrentWord();
             }
 
             for ($i = 0; $i < 3; $i++) {
                 $this->acceptVisitors($context, $this->prefixVisitors);
-                if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+                if ($this->dictionary->searchFor($context->getCurrentWord()) !== null) {
                     return $context->getCurrentWord();
                 }
             }
@@ -141,13 +141,13 @@ class Context implements ContextInterface, VisitableInterface
 
             for ($i = 0; $i < 3; $i++) {
                 $this->acceptVisitors($context, $this->prefixVisitors);
-                if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+                if ($this->dictionary->searchFor($context->getCurrentWord()) !== null) {
                     return $context->getCurrentWord();
                 }
             }
 
             $this->acceptVisitors($context, $this->suffixVisitors);
-            if ($this->dictionary->lookup($context->getCurrentWord()) !== null) {
+            if ($this->dictionary->searchFor($context->getCurrentWord()) !== null) {
                 return $context->getCurrentWord();
             }
 
@@ -167,7 +167,7 @@ class Context implements ContextInterface, VisitableInterface
 
             $context->accept($visitor);
 
-            $lookupResult = $context->getDictionary()->lookup($context->getCurrentWord());
+            $lookupResult = $context->getDictionary()->searchFor($context->getCurrentWord());
             if ($lookupResult !== null) {
                 return $lookupResult;
             }
