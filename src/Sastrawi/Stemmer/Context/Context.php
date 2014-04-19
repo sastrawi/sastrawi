@@ -5,7 +5,7 @@ namespace Sastrawi\Stemmer\Context;
 use Sastrawi\Dictionary\DictionaryInterface;
 use Sastrawi\Stemmer\Context\Visitor\VisitorInterface;
 use Sastrawi\Stemmer\Context\Visitor\VisitableInterface;
-use Sastrawi\Stemmer\CS;
+use Sastrawi\Stemmer\ConfixStripping;
 
 class Context implements ContextInterface, VisitableInterface
 {
@@ -121,7 +121,7 @@ class Context implements ContextInterface, VisitableInterface
             return $context->getCurrentWord();
         }
 
-        $csPrecedenceAdjustmentSpecification = new CS\PrecedenceAdjustmentSpecification();
+        $csPrecedenceAdjustmentSpecification = new ConfixStripping\PrecedenceAdjustmentSpecification();
 
         if (! $csPrecedenceAdjustmentSpecification->isSatisfiedBy($word)) {
 

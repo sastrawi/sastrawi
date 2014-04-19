@@ -1,6 +1,6 @@
 <?php
 
-namespace Sastrawi\Stemmer\CS;
+namespace Sastrawi\Stemmer\ConfixStripping;
 
 use Sastrawi\Specification\SpecificationInterface;
 
