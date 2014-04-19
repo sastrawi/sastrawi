@@ -111,3 +111,12 @@ Untuk meningkatkan kualitas kode, algoritma tersebut kami terapkan ke dalam _Obj
 - Algoritma Nazief dan Adriani
 - Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval”. PhD thesis School of Computer Science and Information Technology RMIT University Australia.
 
+
+Informasi Lebih Lanjut
+----------------------
+
+- [API Documentation](http://sastrawi.github.io/sastrawi-api-doc/master/)
+- [FAQ](https://github.com/sastrawi/sastrawi/wiki/FAQ)
+- [Wiki](https://github.com/sastrawi/sastrawi/wiki)
+- [Roadmap](https://github.com/sastrawi/sastrawi/issues/milestones)
+- [Bug Report, Questions, Ideas](https://github.com/sastrawi/sastrawi/issues)
