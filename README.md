@@ -67,7 +67,7 @@ Sastrawi dapat diinstall dengan [Composer](https://getcomposer.org). Di `compose
 }
 ```
 
-Kemudian jalankan `composer install` atau `composer update` dari `command line`. Jika Anda masih belum memahami bagaimana cara menggunakan Composer, silahkan baca [Getting Started with Composer](https://getcomposer.org/doc/00-intro.md).
+Kemudian jalankan `php composer.phar install` atau `php composer.phar update` dari `command line`. Jika Anda masih belum memahami bagaimana cara menggunakan Composer, silahkan baca [Getting Started with Composer](https://getcomposer.org/doc/00-intro.md).
 
 
 Penggunaan
