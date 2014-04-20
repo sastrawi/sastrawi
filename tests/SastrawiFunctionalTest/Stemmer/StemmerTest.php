@@ -20,7 +20,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'nilai', 'beri', 'rambut', 'adu', 'suara', 'daerah', 'ajar', 'kerja', 'ternak',
                 'asing', 'raup', 'gerak', 'puruk', 'terbang', 'lipat', 'ringkas', 'warna', 'yakin',
                 'bangun', 'fitnah', 'vonis',
-                'perbaru', 'pelajar', // should be recursive later, regarding of rule no 12
+                'baru', 'ajar', // should be recursive later, regarding of rule no 12
                 'tangkap', 'kupas',
                 'minum', 'pukul', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
                 'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh', 'tarung',
@@ -132,9 +132,8 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('memvonis', 'vonis');
 
         // rule 12 : mempe{r|l} -> mem-pe
-        // TODO : should be recursive later
-        $data[] = array('memperbaru', 'perbaru');
-        $data[] = array('mempelajar', 'pelajar');
+        $data[] = array('memperbaru', 'baru');
+        $data[] = array('mempelajar', 'ajar');
 
         // rule 13a : mem{rV|V} -> mem{rV|V}
         $data[] = array('meminum', 'minum');
