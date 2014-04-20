@@ -79,7 +79,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         // plain prefix
         $data[] = array('dibuang', 'buang');
-        //$data[] = array('kesakitan', 'sakit');
+        $data[] = array('kesakitan', 'sakit');
         $data[] = array('sesuap', 'suap');
 
         //$data[] = array('teriakanmu', 'teriak'); // wtf? kok jadi teria?
