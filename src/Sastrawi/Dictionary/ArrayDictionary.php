@@ -18,6 +18,11 @@ class ArrayDictionary implements DictionaryInterface
         }
     }
 
+    public function contains($word)
+    {
+        return isset($this->words[$word]);
+    }
+
     public function count()
     {
         return count($this->words);

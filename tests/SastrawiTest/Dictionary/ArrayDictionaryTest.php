@@ -25,6 +25,13 @@ class ArrayDictionaryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('word', $this->dictionary->searchFor('word'));
     }
 
+    public function testAddAndContain()
+    {
+        $this->assertFalse($this->dictionary->contains('word'));
+        $this->dictionary->add('word');
+        $this->assertTrue($this->dictionary->contains('word'));
+    }
+
     public function testAddCountWord()
     {
         $this->assertEquals(0, $this->dictionary->count());
