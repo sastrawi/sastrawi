@@ -254,7 +254,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // CS adjusting rule precedence
         $data[] = array('bersekolah', 'sekolah');
         $data[] = array('bertahan', 'tahan');
-        //$data[] = array('mencapai', 'capai');
+        $data[] = array('mencapai', 'capai');
         $data[] = array('dimulai', 'mulai');
         $data[] = array('petani', 'tani');
         $data[] = array('terabai', 'abai');
