@@ -223,9 +223,8 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // rule 30b : pengV -> peng-kV
         $data[] = array('pengupas', 'kupas');
 
-        // rule 31 : menyV -> meng-V
-        // TODO recoding : menyV -> men-sV
-        //$data[] = array('penyuara', 'suara');
+        // rule 31 : penyV -> peny-sV
+        $data[] = array('penyuara', 'suara');
 
         // rule 32 : pelV -> pe-lV except pelajar -> ajar
         // $data[] = array('pelajar', 'ajar'); // should be opened later, atm it's conflict with rule 12
