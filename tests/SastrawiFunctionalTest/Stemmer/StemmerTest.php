@@ -165,8 +165,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('mengupas', 'kupas');
 
         // rule 18 : menyV -> meny-sV
-        // TODO recoding : menyV -> men-sV
-        //$data[] = array('menyuarakan', 'suara');
+        $data[] = array('menyuarakan', 'suara');
 
         // rule 19 : mempV -> mem-pV where V != 'e'
         $data[] = array('mempopulerkan', 'populer');
