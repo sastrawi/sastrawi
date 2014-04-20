@@ -27,6 +27,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'tebar', 'indah', 'daya', 'untung', 'sepuluh', 'ekonomi', 'makmur', 'telah', 'serta',
                 'percaya', 'pengaruh', 'kritik', 'seko', 'sekolah', 'tah', 'tahan', 'capa', 'capai',
                 'mula', 'mulai', 'petan', 'tani', 'aba', 'abai', 'balas', 'balik',
+                'peran', 'medan',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -295,6 +296,13 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         $data[] = array($multipleSentence, 'cinta telah tebar dua saling cinta');
 
+        // failed on other method / algorithm but we should succeed
+        $data[] = array('peranan', 'peran');
+        $data[] = array('memberikan', 'beri');
+        $data[] = array('medannya', 'medan');
+
+        // TODO:
+        //$data[] = array('sebagai', 'bagai');
         return $data;
     }
 }
