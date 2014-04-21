@@ -5,7 +5,7 @@ namespace Sastrawi\Specification;
 interface SpecificationInterface
 {
     /**
-     * return boolean
+     * @return boolean
      */
     public function isSatisfiedBy($value);
 }

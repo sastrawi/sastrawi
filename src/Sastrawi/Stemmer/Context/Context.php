@@ -27,6 +27,10 @@ class Context implements ContextInterface, VisitableInterface
 
     protected $result;
 
+    /**
+     * @param string                                   $originalWord
+     * @param \Sastrawi\Dictionary\DictionaryInterface $dictionary
+     */
     public function __construct($originalWord, DictionaryInterface $dictionary)
     {
         $this->originalWord = $originalWord;
