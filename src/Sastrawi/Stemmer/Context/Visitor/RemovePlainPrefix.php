@@ -28,6 +28,9 @@ class RemovePlainPrefix implements VisitorInterface
 
     /**
      * Remove plain prefix : di|ke|se
+     *
+     * @param  string $word
+     * @return string
      */
     public function removePlainPrefix($word)
     {

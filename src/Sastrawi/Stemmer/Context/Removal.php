@@ -12,6 +12,12 @@ class Removal implements RemovalInterface
 
     protected $removedPart;
 
+    /**
+     * @param \Sastrawi\Stemmer\Context\Visitor\VisitorInterface $visitor
+     * @param string                                             $subject
+     * @param string                                             $result
+     * @param string                                             $removedPart
+     */
     public function __construct(
         Visitor\VisitorInterface $visitor,
         $subject,

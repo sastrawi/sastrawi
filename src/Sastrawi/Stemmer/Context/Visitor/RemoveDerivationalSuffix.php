@@ -28,6 +28,9 @@ class RemoveDerivationalSuffix implements VisitorInterface
 
     /**
      * Remove derivational suffix
+     *
+     * @param  string $word
+     * @return string word after its derivational suffix removed
      */
     public function removeDerivationalSuffix($word)
     {
