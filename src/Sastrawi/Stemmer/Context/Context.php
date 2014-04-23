@@ -110,6 +110,9 @@ class Context implements ContextInterface, VisitableInterface
         }
     }
 
+    /**
+     * @return string result of the stemming execution
+     */
     protected function doExecute()
     {
         if ($this->dictionary->contains($this->getCurrentWord())) {
