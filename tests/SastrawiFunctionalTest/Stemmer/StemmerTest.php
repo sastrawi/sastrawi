@@ -268,6 +268,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('memproteksi', 'proteksi');
         $data[] = array('memprediksi', 'prediksi');
         $data[] = array('pengkajian', 'kaji');
+        $data[] = array('pengebom', 'bom');
 
         // plurals
         $data[] = array('buku-buku', 'buku');

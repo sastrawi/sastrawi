@@ -108,6 +108,7 @@ class VisitorProvider
             array(
                 new Disambiguator\DisambiguatorPrefixRule30a(),
                 new Disambiguator\DisambiguatorPrefixRule30b(),
+                new Disambiguator\DisambiguatorPrefixRule30c(),
             )
         );
 
