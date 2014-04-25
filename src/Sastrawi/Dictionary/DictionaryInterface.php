@@ -17,15 +17,6 @@ namespace Sastrawi\Dictionary;
 interface DictionaryInterface extends \Countable
 {
     /**
-     * Search for a word in the dictionary.
-     *
-     * @param string $word The word to search for.
-     *
-     * @return string|null String If the dictionary contains the word, null otherwise.
-     */
-    public function searchFor($word);
-
-    /**
      * Checks whether a word is contained in the dictionary.
      *
      * @param string $word The word to search for.

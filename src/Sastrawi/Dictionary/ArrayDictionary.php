@@ -11,13 +11,6 @@ class ArrayDictionary implements DictionaryInterface
         $this->addWords($words);
     }
 
-    public function searchFor($word)
-    {
-        if (isset($this->words[$word])) {
-            return $this->words[$word];
-        }
-    }
-
     public function contains($word)
     {
         return isset($this->words[$word]);
