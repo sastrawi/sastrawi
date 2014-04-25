@@ -18,7 +18,8 @@ class RemoveInflectionalPossessivePronoun implements VisitorInterface
                 $this,
                 $context->getCurrentWord(),
                 $result,
-                $removedPart
+                $removedPart,
+                'PP'
             );
 
             $context->addRemoval($removal);

@@ -28,6 +28,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'percaya', 'pengaruh', 'kritik', 'seko', 'sekolah', 'tah', 'tahan', 'capa', 'capai',
                 'mula', 'mulai', 'petan', 'tani', 'aba', 'abai', 'balas', 'balik',
                 'peran', 'medan', 'syukur', 'syarat', 'bom', 'promosi', 'proteksi', 'prediksi', 'kaji',
+                'sembunyi', 'langgan', 'laku', 'baik', 'terang', 'iman', 'bisik', 'taat', 'puas', 'makan',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -269,6 +270,24 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('memprediksi', 'prediksi');
         $data[] = array('pengkajian', 'kaji');
         $data[] = array('pengebom', 'bom');
+
+        // ECS loop pengembalian akhiran
+        $data[] = array('bersembunyi', 'sembunyi');
+        $data[] = array('bersembunyilah', 'sembunyi');
+        $data[] = array('pelanggan', 'langgan');
+        $data[] = array('pelaku', 'laku');
+        $data[] = array('pelangganmukah', 'langgan');
+        $data[] = array('pelakunyalah', 'laku');
+
+        $data[] = array('perbaikan', 'baik');
+        $data[] = array('kebaikannya', 'baik');
+        $data[] = array('bisikan', 'bisik');
+        $data[] = array('menerangi', 'terang');
+        $data[] = array('berimanlah', 'iman');
+
+        $data[] = array('memuaskan', 'puas');
+        $data[] = array('berpelanggan', 'langgan');
+        $data[] = array('bermakanan', 'makan');
 
         // plurals
         $data[] = array('buku-buku', 'buku');

@@ -38,7 +38,8 @@ abstract class AbstractDisambiguatePrefixRule implements VisitorInterface
             $this,
             $context->getCurrentWord(),
             $result,
-            $removedPart
+            $removedPart,
+            'DP'
         );
 
         $context->addRemoval($removal);
