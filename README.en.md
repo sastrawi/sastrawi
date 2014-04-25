@@ -103,6 +103,7 @@ Algorithms and trademarks used in this library are the property of their respect
 
 - Algoritma Nazief dan Adriani
 - Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval”. PhD thesis School of Computer Science and Information Technology RMIT University Australia.
+- Arifin, A.Z., I.P.A.K. Mahendra dan H.T. Ciptaningtyas. 2009. "Enhanced Confix Stripping Stemmer and Ants Algorithm for Classifying News Document in Indonesian Language", Proceeding of International Conference on Information & Communication Technology and Systems (ICTS)
 
 
 More Information

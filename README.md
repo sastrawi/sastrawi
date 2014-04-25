@@ -109,7 +109,8 @@ Algoritma yang digunakan pada _library_ ini adalah hak intelektual masing-masing
 Lalu untuk meningkatkan kualitas kode, algoritma tersebut diterapkan ke dalam _Object Oriented Design_.
 
 - Algoritma Nazief dan Adriani
-- Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval”. PhD thesis School of Computer Science and Information Technology RMIT University Australia.
+- Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval”. PhD thesis School of Computer Science and Information Technology RMIT University Australia
+- Arifin, A.Z., I.P.A.K. Mahendra dan H.T. Ciptaningtyas. 2009. "Enhanced Confix Stripping Stemmer and Ants Algorithm for Classifying News Document in Indonesian Language", Proceeding of International Conference on Information & Communication Technology and Systems (ICTS)
 
 
 Informasi Lebih Lanjut
