@@ -29,6 +29,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'mula', 'mulai', 'petan', 'tani', 'aba', 'abai', 'balas', 'balik',
                 'peran', 'medan', 'syukur', 'syarat', 'bom', 'promosi', 'proteksi', 'prediksi', 'kaji',
                 'sembunyi', 'langgan', 'laku', 'baik', 'terang', 'iman', 'bisik', 'taat', 'puas', 'makan',
+                'nyala', 'nyanyi', 'nyata',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -288,6 +289,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('memuaskan', 'puas');
         $data[] = array('berpelanggan', 'langgan');
         $data[] = array('bermakanan', 'makan');
+
+        // CC (Modified ECS)
+        $data[] = array('menyala', 'nyala');
+        $data[] = array('menyanyikan', 'nyanyi');
+        $data[] = array('menyatakannya', 'nyata');
 
         // plurals
         $data[] = array('buku-buku', 'buku');
