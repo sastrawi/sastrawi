@@ -18,7 +18,8 @@ class RemoveDerivationalSuffix implements VisitorInterface
                 $this,
                 $context->getCurrentWord(),
                 $result,
-                $removedPart
+                $removedPart,
+                'DS'
             );
 
             $context->addRemoval($removal);

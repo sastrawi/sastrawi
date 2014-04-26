@@ -23,4 +23,9 @@ interface RemovalInterface
      * @return string
      */
     public function getRemovedPart();
+
+    /**
+     * @return string
+     */
+    public function getAffixType();
 }

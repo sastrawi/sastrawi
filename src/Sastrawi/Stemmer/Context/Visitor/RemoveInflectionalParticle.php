@@ -18,7 +18,8 @@ class RemoveInflectionalParticle implements VisitorInterface
                 $this,
                 $context->getCurrentWord(),
                 $result,
-                $removedPart
+                $removedPart,
+                'P'
             );
 
             $context->addRemoval($removal);

@@ -161,6 +161,9 @@ class Context implements ContextInterface, VisitableInterface
             }
         }
 
+        // ECS loop pengembalian akhiran
+        $loopResult = $this->loopPengembalianAkhiran();
+
         return $this->getCurrentWord();
     }
 
@@ -181,6 +184,74 @@ class Context implements ContextInterface, VisitableInterface
 
             if ($this->processIsStopped()) {
                 return $this->getCurrentWord();
+            }
+        }
+    }
+
+    /**
+     * ECS Loop Pengembalian Akhiran
+     */
+    public function loopPengembalianAkhiran()
+    {
+        // restore prefix to form [DP+[DP+[DP]]] + Root word
+        $this->restorePrefix();
+
+        $removals = $this->removals;
+        $reversedRemovals = array_reverse($removals);
+        $currentWord = $this->getCurrentWord();
+
+        foreach ($reversedRemovals as $removal) {
+            if (!$this->isSuffixRemoval($removal)) {
+                continue;
+            }
+
+            if ($removal->getRemovedPart() == 'kan') {
+                $this->setCurrentWord($removal->getResult() . 'k');
+
+                for ($i = 0; $i < 3; $i++) {
+                    $this->acceptVisitors($this->prefixVisitors);
+                    if ($this->dictionary->contains($this->getCurrentWord())) {
+                        return $this->getCurrentWord();
+                    }
+                }
+
+                $this->setCurrentWord($removal->getResult() . 'kan');
+            } else {
+                $this->setCurrentWord($removal->getSubject());
+            }
+
+            for ($i = 0; $i < 3; $i++) {
+                $this->acceptVisitors($this->prefixVisitors);
+                if ($this->dictionary->contains($this->getCurrentWord())) {
+                    return $this->getCurrentWord();
+                }
+            }
+
+            $this->removals = $removals;
+            $this->setCurrentWord($currentWord);
+        }
+    }
+
+    protected function isSuffixRemoval($removal)
+    {
+        return $removal->getAffixType() == 'DS'
+            || $removal->getAffixType() == 'PP'
+            || $removal->getAffixType() == 'P';
+    }
+
+    public function restorePrefix()
+    {
+        foreach ($this->removals as $i => $removal) {
+            if ($removal->getAffixType() == 'DP') {
+                // return the word before precoding (the subject of first prefix removal)
+                $this->setCurrentWord($removal->getSubject());
+                break;
+            }
+        }
+
+        foreach ($this->removals as $i => $removal) {
+            if ($removal->getAffixType() == 'DP') {
+                unset($this->removals[$i]);
             }
         }
     }

@@ -12,6 +12,8 @@ class Removal implements RemovalInterface
 
     protected $removedPart;
 
+    protected $affixType;
+
     /**
      * @param \Sastrawi\Stemmer\Context\Visitor\VisitorInterface $visitor
      * @param string                                             $subject
@@ -22,12 +24,14 @@ class Removal implements RemovalInterface
         Visitor\VisitorInterface $visitor,
         $subject,
         $result,
-        $removedPart
+        $removedPart,
+        $affixType
     ) {
         $this->visitor = $visitor;
         $this->subject = $subject;
         $this->result  = $result;
         $this->removedPart = $removedPart;
+        $this->affixType = $affixType;
     }
 
     public function getVisitor()
@@ -48,5 +52,10 @@ class Removal implements RemovalInterface
     public function getRemovedPart()
     {
         return $this->removedPart;
+    }
+
+    public function getAffixType()
+    {
+        return $this->affixType;
     }
 }
