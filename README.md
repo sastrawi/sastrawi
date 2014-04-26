@@ -111,6 +111,7 @@ Lalu untuk meningkatkan kualitas kode, algoritma tersebut diterapkan ke dalam _O
 - Algoritma Nazief dan Adriani
 - Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval”. PhD thesis School of Computer Science and Information Technology RMIT University Australia
 - Arifin, A.Z., I.P.A.K. Mahendra dan H.T. Ciptaningtyas. 2009. "Enhanced Confix Stripping Stemmer and Ants Algorithm for Classifying News Document in Indonesian Language", Proceeding of International Conference on Information & Communication Technology and Systems (ICTS)
+- A. D. Tahitoe, D. Purwitasari. "Implementasi Modifikasi Enhanced Confix Stripping Stemmer Untuk Bahasa Indonesia dengan Metode Corpus Based Stemming", Institut Teknologi Sepuluh Nopember (ITS) – Surabaya, 60111, Indonesia
 
 
 Informasi Lebih Lanjut
