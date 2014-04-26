@@ -129,6 +129,14 @@ class VisitorProvider
         // CS additional rules
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule35()));
         $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule36()));
+
+        // CC infix rules
+        $this->prefixVisitors[] = new PrefixDisambiguator(
+            array(
+                new Disambiguator\DisambiguatorPrefixRule37a(),
+                new Disambiguator\DisambiguatorPrefixRule37b(),
+            )
+        );
     }
 
     public function getVisitors()
