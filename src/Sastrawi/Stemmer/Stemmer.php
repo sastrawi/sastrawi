@@ -4,14 +4,18 @@ namespace Sastrawi\Stemmer;
 
 use Sastrawi\Dictionary\DictionaryInterface;
 use Sastrawi\Stemmer\Context\Context;
+use Sastrawi\Stemmer\Context\Visitor\VisitorProvider;
 
 class Stemmer
 {
     protected $dictionary;
 
+    protected $visitorProvider;
+
     public function __construct(DictionaryInterface $dictionary)
     {
         $this->dictionary = $dictionary;
+        $this->visitorProvider = new VisitorProvider;
     }
 
     public function getDictionary()
@@ -79,7 +83,7 @@ class Stemmer
      */
     protected function stemSingularWord($word)
     {
-        $context = new Context($word, $this->dictionary);
+        $context = new Context($word, $this->dictionary, $this->visitorProvider);
         $context->execute();
 
         return $context->getResult();

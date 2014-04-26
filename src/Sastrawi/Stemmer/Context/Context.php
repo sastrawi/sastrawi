@@ -19,6 +19,8 @@ class Context implements ContextInterface, VisitableInterface
 
     protected $dictionary;
 
+    protected $visitorProvider;
+
     protected $visitors = array();
 
     protected $suffixVisitors = array();
@@ -31,22 +33,24 @@ class Context implements ContextInterface, VisitableInterface
      * @param string                                   $originalWord
      * @param \Sastrawi\Dictionary\DictionaryInterface $dictionary
      */
-    public function __construct($originalWord, DictionaryInterface $dictionary)
-    {
+    public function __construct(
+        $originalWord,
+        DictionaryInterface $dictionary,
+        Visitor\VisitorProvider $visitorProvider
+    ) {
         $this->originalWord = $originalWord;
         $this->currentWord  = $this->originalWord;
         $this->dictionary   = $dictionary;
+        $this->visitorProvider = $visitorProvider;
 
         $this->initVisitors();
     }
 
     protected function initVisitors()
     {
-        $visitorProvider = new Visitor\VisitorProvider();
-
-        $this->visitors       = $visitorProvider->getVisitors();
-        $this->suffixVisitors = $visitorProvider->getSuffixVisitors();
-        $this->prefixVisitors = $visitorProvider->getPrefixVisitors();
+        $this->visitors       = $this->visitorProvider->getVisitors();
+        $this->suffixVisitors = $this->visitorProvider->getSuffixVisitors();
+        $this->prefixVisitors = $this->visitorProvider->getPrefixVisitors();
     }
 
     public function setDictionary(DictionaryInterface $dictionary)
