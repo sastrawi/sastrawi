@@ -1,3 +1,5 @@
+a
+ab
 aba
 aba-aba
 abad
@@ -132,6 +134,7 @@ acu
 acuh
 acum
 acung
+ad
 ada
 adab
 adad
@@ -388,6 +391,7 @@ agus
 agustus
 agut
 agut-agut
+ah
 ahad
 ahadiat
 ahimsa
@@ -406,6 +410,7 @@ ahmar
 aho
 ahsan
 ahwal
+ai
 aib
 ain
 ainulbanat
@@ -587,6 +592,7 @@ akustik
 akustika
 akut
 akwal
+al
 ala
 alabangka
 alabio
@@ -799,6 +805,7 @@ alveolus
 alwah
 alwasi
 alwasia
+am
 ama
 amabakdu
 amah
@@ -1656,6 +1663,7 @@ arwana
 arya
 aryaduta
 arzak
+as
 asa
 asabat
 asabiah
@@ -2019,6 +2027,8 @@ azmat
 azoikum
 azospermi
 azurit
+b
+ba
 bab
 baba
 babad
@@ -2588,6 +2598,7 @@ bayung
 bayur
 bazar
 bazoka
+be
 bea
 beasiswa
 beatifikasi
@@ -3228,6 +3239,8 @@ betung
 betutu
 bewok
 bhayangkara
+bi
+bi-
 biadab
 biadat
 biadi
@@ -3785,6 +3798,7 @@ brunai
 brutal
 brutalisme
 bruto
+bu
 bua
 buah
 buai
@@ -4032,6 +4046,8 @@ buyung
 buyur
 buyut
 byarpet
+c
+ca
 caba
 cabai
 cabak
@@ -4285,6 +4301,7 @@ cawat
 cawe-cawe
 cawi
 cawis
+ce
 cebak
 ceban
 cebik
@@ -4668,6 +4685,7 @@ cetus
 ceuki
 cewang
 cewek
+ci
 ciak
 cialat
 ciap
@@ -4955,6 +4973,8 @@ cutbrai
 cutel
 cuti
 cuwil
+d
+da
 daayah
 dab
 daba
@@ -5194,6 +5214,7 @@ dayuh
 dayuk
 dayung
 dayus
+de
 dealat
 deaneksasi
 debah
@@ -5729,6 +5750,7 @@ dewata
 dewe
 dewi
 dewi-dewi
+di
 dia
 dia-
 diabetes
@@ -6025,6 +6047,7 @@ divestasi
 dividen
 divisi
 diwala
+do
 doa
 doang
 dobel
@@ -6336,6 +6359,7 @@ dwitarung
 dwitunggal
 dwiwarna
 dzal
+e
 ebam
 eban
 ebek
@@ -6362,6 +6386,7 @@ editor
 editorial
 edukasi
 edukatif
+ef
 efedrina
 efek
 efektif
@@ -6393,6 +6418,7 @@ egosentrisitas
 egosentrisme
 egrang
 egresif
+eh
 ehe
 eidetik
 eigendom
@@ -6639,6 +6665,7 @@ ekuivokasi
 ekumene
 ekumenis
 ekumenisme
+el
 ela
 elaborasi
 elak
@@ -6730,6 +6757,7 @@ elutriasi
 eluvial
 eluviasi
 eluvium
+em
 email
 emanasi
 emang
@@ -6843,6 +6871,8 @@ emulator
 emulsi
 emulsifikasi
 emut
+en
+en-
 enak
 enam
 enamel
@@ -7071,6 +7101,7 @@ epolet
 eponim
 epos
 epsilon
+er
 era
 eradikasi
 eradiksi
@@ -7241,6 +7272,8 @@ evolusionisme
 ewa
 eyang
 eyel
+f
+fa
 faal
 faali
 fabel
@@ -7399,6 +7432,7 @@ festival
 fetis
 fetor
 fetus
+fi
 fiasko
 fiat
 fiber
@@ -7721,6 +7755,7 @@ futurolog
 futurologi
 futurologis
 fyord
+g
 gaba-gaba
 gabah
 gabai
@@ -8067,6 +8102,7 @@ gayung
 gayut
 gaz
 gazal
+ge
 gebah
 gebang
 gebar
@@ -8745,6 +8781,7 @@ getuk
 getun
 geulis
 gewang
+gi
 gial
 giam
 giat
@@ -9051,6 +9088,7 @@ gros
 grosir
 grup
 gruwung
+gu
 gua
 gual
 guam
@@ -9198,6 +9236,8 @@ gutuk
 guyon
 guyub
 guyur
+h
+ha
 habenula
 habib
 habibi
@@ -9432,6 +9472,7 @@ hawiah
 hayat
 hayati
 hayo
+he
 heban
 hebat
 heboh
@@ -9584,6 +9625,7 @@ heterozigot
 heuristis
 hewan
 hewani
+hi
 hia
 hialin
 hialit
@@ -9966,6 +10008,8 @@ hut
 hutan
 hutang
 huyung
+i
+ia
 ialah
 iambus
 iatrogenik
@@ -9994,6 +10038,7 @@ ibunda
 ibung
 ibus
 icak-icak
+id
 ida
 idafi
 idah
@@ -10042,6 +10087,7 @@ iga
 igal
 igau
 iglo
+ih
 ihdad
 ihram
 ihsan
@@ -10229,6 +10275,7 @@ imunologi
 imunologis
 imunosupresi
 imunoterapi
+in
 ina
 inadaptabilitas
 inai
@@ -10797,6 +10844,7 @@ iwad
 iya
 izah
 izin
+j
 jaat
 jab
 jabal
@@ -11034,6 +11082,7 @@ jaz
 jazam
 jazirah
 jazirat
+je
 jebab
 jebah
 jebai
@@ -11326,6 +11375,7 @@ jetis
 jetsam
 jetset
 jewer
+ji
 jiawang
 jib
 jibaku
@@ -11588,6 +11638,8 @@ jutawan
 jute
 juvenil
 juz
+k
+ka
 kaabah
 kaba
 kabah
@@ -12424,6 +12476,7 @@ kayau
 kayu
 kayuh
 kayun
+ke
 kebab
 kebabal
 kebah
@@ -13612,6 +13665,7 @@ khurafat
 khusuf
 khusus
 khusyuk
+ki
 kia
 kiah
 kiai
@@ -14782,6 +14836,7 @@ krusial
 krustasea
 ksatria
 ksi
+ku
 kuaci
 kuadran
 kuadrat
@@ -15167,6 +15222,8 @@ kwasiorkor
 kweni
 kwetiau
 kwosien
+l
+la
 laal
 lab
 laba
@@ -16357,6 +16414,7 @@ liwa
 liwan
 liwat
 liwet
+lo
 loak
 lob
 loba
@@ -16522,6 +16580,7 @@ loyar
 loyo
 loyong
 lozenge
+lu
 luah
 luak
 luang
@@ -16664,6 +16723,7 @@ luwes
 luyak
 luyu
 luyut
+m
 maab
 maaf
 mabriuk
@@ -18708,6 +18768,8 @@ muzaki
 muzamil
 muzawir
 muzhab
+n
+na
 naam
 nabatah
 nabati
@@ -18735,6 +18797,7 @@ nagam
 nagara
 nagari
 nagasari
+nah
 nahak
 nahas
 nahdiyin
@@ -19058,6 +19121,7 @@ ngot-ngotan
 ngowos
 ngoyo
 ngung
+ni
 nia
 niaga
 niagawan
@@ -19239,6 +19303,7 @@ november
 novena
 novokaina
 nrima
+nu
 nuansa
 nubuat
 nudis
@@ -19353,6 +19418,7 @@ nyungsung
 nyunyut
 nyureng
 nyut
+o
 oase
 oasis
 obar
@@ -19422,8 +19488,10 @@ ogam
 ogel
 ogok
 ogonium
+oh
 ohm
 ohmmeter
+oi
 oikumene
 oja
 ojeg
@@ -19802,6 +19870,7 @@ ozon
 ozonisasi
 ozonisator
 ozonometer
+p
 pabean
 pabrik
 pabrikan
@@ -20521,6 +20590,7 @@ payon
 payu
 payudara
 payung
+pe
 peang
 pecah
 pecai
@@ -21336,6 +21406,7 @@ peyek
 peyorasi
 peyot
 phi
+pi
 piadah
 piagam
 piah
@@ -21656,6 +21727,7 @@ pneumatika
 pneumatofos
 pneumatokista
 pneumonia
+po
 poal
 poces
 poci
@@ -22506,15 +22578,19 @@ puyer
 puyonghai
 puyu
 puyuh
+q
 qaf
 qari
 qariah
 qasar
+qi
 qiamulail
 qiraah
 qiraat
 qudsi
 quran
+r
+ra
 raba
 raba-rubu
 rabak
@@ -22909,6 +22985,7 @@ rayon
 rayonisasi
 rayu
 razia
+re
 reagen
 reagensia
 reak
@@ -23875,6 +23952,8 @@ ruyak
 ruyap
 ruyung
 ruyup
+s
+sa
 saadah
 saadin
 saanen
@@ -24436,6 +24515,7 @@ sayu
 sayung
 sayup
 sayur
+se
 seba
 sebab
 sebahat
@@ -25616,6 +25696,7 @@ sfikmograf
 sfingofili
 sfingter
 sfinks
+si
 sia
 sia-sia
 siaga
@@ -27083,6 +27164,7 @@ syurah
 syuriah
 syuruk
 syuting
+t
 taajul
 taala
 taaruf
@@ -27155,6 +27237,7 @@ tageh
 tagih
 tago
 tagut
+tah
 tahajud
 tahak
 tahal
@@ -27627,6 +27710,7 @@ tayibah
 tayub
 tayum
 tazkirah
+te
 tean
 teater
 teatris
@@ -28495,6 +28579,7 @@ tiwah
 tiwikrama
 tiwul
 tmesis
+to
 toapekong
 toas
 tobak
@@ -29072,6 +29157,8 @@ tuwuhan
 tuwung
 tuyuk
 tuyul
+u
+ua
 uai
 uak
 uan
@@ -29137,6 +29224,7 @@ ugem
 uger
 uget-uget
 ugut
+uh
 uhu
 uih
 uik
@@ -29215,6 +29303,7 @@ ulung
 ulung-ulung
 ulup
 ulur
+um
 uma
 umak
 uman
@@ -29482,6 +29571,7 @@ uwur
 uyuh
 uzlah
 uzur
+v
 vagina
 vak
 vakansi
@@ -29534,6 +29624,7 @@ vasodilator
 vasomotor
 vatikan
 vaucer
+ve
 vedda
 veddoid
 veem
@@ -29712,6 +29803,8 @@ vulpen
 vulva
 vulvektomi
 vuring
+w
+wa
 waad
 waadat
 wabah
@@ -29880,6 +29973,7 @@ wayang
 wayuh
 wazari
 wazir
+we
 weda
 wedam
 wedana
@@ -30025,6 +30119,7 @@ wulung
 wungon
 wungu
 wuwungan
+x
 xantat
 xantena
 xantofil
@@ -30054,6 +30149,8 @@ xilol
 xilologi
 xilonit
 xilosa
+y
+ya
 yad
 yahud
 yahudi
@@ -30089,6 +30186,7 @@ yaumulmahsyar
 yayasan
 yayi
 yayu
+ye
 yehova
 yel
 yen
@@ -30105,6 +30203,7 @@ yolk
 yos
 yosong
 yoyo
+yu
 yubileum
 yuda
 yudikatif
@@ -30132,6 +30231,8 @@ yuwana
 yuwaraja
 yuyitsu
 yuyu
+z
+za
 zabah
 zabaniah
 zabarjad
