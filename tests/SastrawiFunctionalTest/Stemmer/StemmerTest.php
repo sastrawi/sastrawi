@@ -25,7 +25,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'minum', 'pukul', 'cinta', 'dua', 'jauh', 'ziarah', 'nuklir', 'gila', 'hajar', 'qasar', 'udara',
                 'populer', 'warna', 'yoga', 'adil', 'rumah', 'muka', 'labuh', 'tarung',
                 'tebar', 'indah', 'daya', 'untung', 'sepuluh', 'ekonomi', 'makmur', 'telah', 'serta',
-                'percaya', 'pengaruh', 'kritik', 'seko', 'sekolah', 'tah', 'tahan', 'capa', 'capai',
+                'percaya', 'pengaruh', 'kritik', 'seko', 'sekolah', 'tahan', 'capa', 'capai',
                 'mula', 'mulai', 'petan', 'tani', 'aba', 'abai', 'balas', 'balik',
                 'peran', 'medan', 'syukur', 'syarat', 'bom', 'promosi', 'proteksi', 'prediksi', 'kaji',
                 'sembunyi', 'langgan', 'laku', 'baik', 'terang', 'iman', 'bisik', 'taat', 'puas', 'makan',
@@ -332,6 +332,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         // issues
         $data[] = array('Perekonomian', 'ekonomi');
+        $data[] = array('menahan', 'tahan');
 
         // test stem multiple sentences
         $multipleSentence = 'Cinta telah bertebaran.Keduanya saling mencintai.';
