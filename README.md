@@ -49,7 +49,7 @@ Lalu kata kunci pencarian juga dijadikan kata dasar:
 Sastrawi
 --------
 
--_Library PHP_ untuk _stemming_ Bahasa Indonesia.
+- _Library PHP_ untuk _stemming_ Bahasa Indonesia.
 - Mudah diintegrasikan dengan _framework_ / _package_ lainnya.
 - Mempunyai _API_ yang sederhana dan mudah digunakan.
 
