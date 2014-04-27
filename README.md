@@ -64,7 +64,7 @@ Cara Install
 
 Sastrawi dapat diinstall dengan [Composer](https://getcomposer.org).
 
-1. Buka terminal dan arahkan ke directory project Anda.
+1. Buka terminal (command line) dan arahkan ke directory project Anda.
 2. [Download Composer](https://getcomposer.org/download/) dengan cara `php -r "readfile('https://getcomposer.org/installer');" | php`
 3. Buat file `composer.json` atau jika sudah ada, tambahkan require sastrawi:
 
