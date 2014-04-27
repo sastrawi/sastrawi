@@ -46,12 +46,17 @@ Lalu kata kunci pencarian juga dijadikan kata dasar:
     Bersuara => suara
 
 
-Tujuan
--------
+Sastrawi
+--------
 
-- Mempunyai sebuah _library PHP_ yang berkualitas tinggi untuk memudahkan _stemming_ Bahasa Indonesia.
+-_Library PHP_ untuk _stemming_ Bahasa Indonesia.
 - Mudah diintegrasikan dengan _framework_ / _package_ lainnya.
 - Mempunyai _API_ yang sederhana dan mudah digunakan.
+
+
+Demo
+----
+[http://sastrawi.github.io/sastrawi/](http://sastrawi.github.io/sastrawi/)
 
 
 Cara Install
