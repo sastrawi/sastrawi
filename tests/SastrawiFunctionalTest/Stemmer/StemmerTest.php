@@ -30,6 +30,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'peran', 'medan', 'syukur', 'syarat', 'bom', 'promosi', 'proteksi', 'prediksi', 'kaji',
                 'sembunyi', 'langgan', 'laku', 'baik', 'terang', 'iman', 'bisik', 'taat', 'puas', 'makan',
                 'nyala', 'nyanyi', 'nyata', 'nyawa', 'rata', 'lembut',
+                'budaya', 'karya','ideal', 'final',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -349,6 +350,14 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         //$data[] = array('bagian', 'bagian');
         //$data[] = array('berbadan', 'badan');
         //$data[] = array('abdullah', 'abdullah');
+
+        // adopted foreign suffixes
+        $data[] = array('budayawan', 'budaya');
+        $data[] = array('karyawati', 'karya');
+        $data[] = array('idealis', 'ideal');
+        $data[] = array('idealisme', 'ideal');
+        $data[] = array('finalisasi', 'final');
+
         return $data;
     }
 }
