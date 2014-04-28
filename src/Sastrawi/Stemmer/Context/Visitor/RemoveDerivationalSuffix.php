@@ -43,6 +43,6 @@ class RemoveDerivationalSuffix implements VisitorInterface
      */
     public function removeDerivationalSuffix($word)
     {
-        return preg_replace('/(wan|wati|is|isme|isasi||i|kan|an)$/', '', $word, 1);
+        return preg_replace('/(wan|wati|is|isme|isasi|i|kan|an)$/', '', $word, 1);
     }
 }
