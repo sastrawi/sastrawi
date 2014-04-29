@@ -15,29 +15,60 @@ use Sastrawi\Stemmer\ConfixStripping;
 
 class Context implements ContextInterface, VisitableInterface
 {
+    /**
+     * @var string
+     */
     protected $originalWord;
 
+    /**
+     * @var string
+     */
     protected $currentWord;
 
+    /**
+     * @var boolean
+     */
     protected $processIsStopped = false;
 
+    /**
+     * @var \Sastrawi\Stemmer\Context\RemovalInterface[]
+     */
     protected $removals = array();
 
+    /**
+     * @var \Sastrawi\Dictionary\DictionaryInterface
+     */
     protected $dictionary;
 
+    /**
+     * @var \Sastrawi\Stemmer\Context\Visitor\VisitorProvider
+     */
     protected $visitorProvider;
 
+    /**
+     * @var \Sastrawi\Stemmer\Context\Visitor\VisitorInterface[]
+     */
     protected $visitors = array();
 
+    /**
+     * @var \Sastrawi\Stemmer\Context\Visitor\VisitorInterface[]
+     */
     protected $suffixVisitors = array();
 
+    /**
+     * @var \Sastrawi\Stemmer\Context\Visitor\VisitorInterface[]
+     */
     protected $prefixVisitors = array();
 
+    /**
+     * @var string
+     */
     protected $result;
 
     /**
-     * @param string                                   $originalWord
-     * @param \Sastrawi\Dictionary\DictionaryInterface $dictionary
+     * @param string                                            $originalWord
+     * @param \Sastrawi\Dictionary\DictionaryInterface          $dictionary
+     * @param \Sastrawi\Stemmer\Context\Visitor\VisitorProvider $visitorProvider
      */
     public function __construct(
         $originalWord,
