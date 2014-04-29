@@ -15,7 +15,7 @@ class RemoveDerivationalSuffix implements VisitorInterface
 {
     public function visit(ContextInterface $context)
     {
-        $result = $this->removeDerivationalSuffix($context->getCurrentWord());
+        $result = $this->removeSuffix($context->getCurrentWord());
 
         if ($result != $context->getCurrentWord()) {
             $removedPart = preg_replace("/$result/", '', $context->getCurrentWord(), 1);
@@ -41,7 +41,7 @@ class RemoveDerivationalSuffix implements VisitorInterface
      * @param  string $word
      * @return string word after its derivational suffix removed
      */
-    public function removeDerivationalSuffix($word)
+    public function removeSuffix($word)
     {
         return preg_replace('/(wan|wati|is|isme|isasi|i|kan|an)$/', '', $word, 1);
     }

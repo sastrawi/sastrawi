@@ -15,7 +15,7 @@ class RemoveInflectionalPossessivePronoun implements VisitorInterface
 {
     public function visit(ContextInterface $context)
     {
-        $result = $this->removeInflectionalPossessivePronoun($context->getCurrentWord());
+        $result = $this->remove($context->getCurrentWord());
 
         if ($result != $context->getCurrentWord()) {
             $removedPart = preg_replace("/$result/", '', $context->getCurrentWord(), 1);
@@ -37,7 +37,7 @@ class RemoveInflectionalPossessivePronoun implements VisitorInterface
      * Remove inflectional possessive pronoun : ku|mu|nya
      * @param string $word
      */
-    public function removeInflectionalPossessivePronoun($word)
+    public function remove($word)
     {
         return preg_replace('/(ku|mu|nya)$/', '', $word, 1);
     }

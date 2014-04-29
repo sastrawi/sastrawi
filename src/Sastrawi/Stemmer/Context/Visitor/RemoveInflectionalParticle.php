@@ -15,7 +15,7 @@ class RemoveInflectionalParticle implements VisitorInterface
 {
     public function visit(ContextInterface $context)
     {
-        $result = $this->removeInflectionalParticle($context->getCurrentWord());
+        $result = $this->remove($context->getCurrentWord());
 
         if ($result != $context->getCurrentWord()) {
             $removedPart = preg_replace("/$result/", '', $context->getCurrentWord(), 1);
@@ -37,7 +37,7 @@ class RemoveInflectionalParticle implements VisitorInterface
      * Remove inflectional particle : lah|kah|tah|pun
      * @param string $word
      */
-    public function removeInflectionalParticle($word)
+    public function remove($word)
     {
         return preg_replace('/(lah|kah|tah|pun)$/', '', $word, 1);
     }

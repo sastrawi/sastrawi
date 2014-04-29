@@ -15,7 +15,7 @@ class RemovePlainPrefix implements VisitorInterface
 {
     public function visit(ContextInterface $context)
     {
-        $result = $this->removePlainPrefix($context->getCurrentWord());
+        $result = $this->remove($context->getCurrentWord());
 
         if ($result != $context->getCurrentWord()) {
             $removedPart = preg_replace("/$result/", '', $context->getCurrentWord(), 1);
@@ -39,7 +39,7 @@ class RemovePlainPrefix implements VisitorInterface
      * @param  string $word
      * @return string
      */
-    public function removePlainPrefix($word)
+    public function remove($word)
     {
         return preg_replace('/^(di|ke|se)/', '', $word, 1);
     }
