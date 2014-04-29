@@ -63,6 +63,14 @@ class Stemmer implements StemmerInterface
         return strpos($word, '-') !== false;
     }
 
+    /**
+     * Stem a plural word to its common stem form
+     * Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval” page 76-77
+     *
+     * @param  string $word the word to stem, e.g : bersama-sama
+     * @return string common stem form, e.g : sama
+     * @link   http://researchbank.rmit.edu.au/eserv/rmit:6312/Asian.pdf
+     */
     protected function stemPluralWord($plural)
     {
         preg_match('/^(.*)-(.*)$/', $plural, $words);
