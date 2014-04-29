@@ -111,28 +111,30 @@ class Context implements ContextInterface, VisitableInterface
 
     public function execute()
     {
-        $result = $this->doExecute();
+        $this->startStemmingProcess();
 
-        if ($this->dictionary->contains($result)) {
-            $this->result = $result;
+        // step 6
+        if ($this->dictionary->contains($this->getCurrentWord())) {
+            $this->result = $this->getCurrentWord();
         } else {
             $this->result = $this->originalWord;
         }
     }
 
     /**
-     * @return string result of the stemming execution
+     * @return void
      */
-    protected function doExecute()
+    protected function startStemmingProcess()
     {
+        // step 1
         if ($this->dictionary->contains($this->getCurrentWord())) {
-            return $this->getCurrentWord();
+            return;
         }
 
         $this->acceptVisitors($this->visitors);
 
         if ($this->dictionary->contains($this->getCurrentWord())) {
-            return $this->getCurrentWord();
+            return;
         }
 
         $csPrecedenceAdjustmentSpecification = new ConfixStripping\PrecedenceAdjustmentSpecification();
@@ -142,39 +144,54 @@ class Context implements ContextInterface, VisitableInterface
          * Try to remove prefix before suffix if the specification is met
          */
         if ($csPrecedenceAdjustmentSpecification->isSatisfiedBy($this->getOriginalWord())) {
-            for ($i = 0; $i < 3; $i++) {
-                $this->acceptVisitors($this->prefixVisitors);
-                if ($this->dictionary->contains($this->getCurrentWord())) {
-                    return $this->getCurrentWord();
-                }
+
+            // step 4, 5
+            $this->removePrefixes();
+            if ($this->dictionary->contains($this->getCurrentWord())) {
+                return;
             }
 
-            $this->acceptVisitors($this->suffixVisitors);
+            // step 2, 3
+            $this->removeSuffixes();
             if ($this->dictionary->contains($this->getCurrentWord())) {
-                return $this->getCurrentWord();
+                return;
             } else {
                 // if the trial is failed, restore the original word
                 // and continue to normal rule precedence (suffix first, prefix afterwards)
                 $this->setCurrentWord($this->originalWord);
+                $this->removals = array();
             }
         }
 
-        $this->acceptVisitors($this->suffixVisitors);
+        // step 2, 3
+        $this->removeSuffixes();
         if ($this->dictionary->contains($this->getCurrentWord())) {
-            return $this->getCurrentWord();
+            return;
         }
 
-        for ($i = 0; $i < 3; $i++) {
-            $this->acceptVisitors($this->prefixVisitors);
-            if ($this->dictionary->contains($this->getCurrentWord())) {
-                return $this->getCurrentWord();
-            }
+        // step 4, 5
+        $this->removePrefixes();
+        if ($this->dictionary->contains($this->getCurrentWord())) {
+            return;
         }
 
         // ECS loop pengembalian akhiran
-        $loopResult = $this->loopPengembalianAkhiran();
+        $this->loopPengembalianAkhiran();
+    }
 
-        return $this->getCurrentWord();
+    protected function removePrefixes()
+    {
+        for ($i = 0; $i < 3; $i++) {
+            $this->acceptVisitors($this->prefixVisitors);
+            if ($this->dictionary->contains($this->getCurrentWord())) {
+                return;
+            }
+        }
+    }
+
+    protected function removeSuffixes()
+    {
+        $this->acceptVisitors($this->suffixVisitors);
     }
 
     public function accept(VisitorInterface $visitor)
@@ -218,11 +235,10 @@ class Context implements ContextInterface, VisitableInterface
             if ($removal->getRemovedPart() == 'kan') {
                 $this->setCurrentWord($removal->getResult() . 'k');
 
-                for ($i = 0; $i < 3; $i++) {
-                    $this->acceptVisitors($this->prefixVisitors);
-                    if ($this->dictionary->contains($this->getCurrentWord())) {
-                        return $this->getCurrentWord();
-                    }
+                // step 4, 5
+                $this->removePrefixes();
+                if ($this->dictionary->contains($this->getCurrentWord())) {
+                    return;
                 }
 
                 $this->setCurrentWord($removal->getResult() . 'kan');
@@ -230,11 +246,10 @@ class Context implements ContextInterface, VisitableInterface
                 $this->setCurrentWord($removal->getSubject());
             }
 
-            for ($i = 0; $i < 3; $i++) {
-                $this->acceptVisitors($this->prefixVisitors);
-                if ($this->dictionary->contains($this->getCurrentWord())) {
-                    return $this->getCurrentWord();
-                }
+            // step 4, 5
+            $this->removePrefixes();
+            if ($this->dictionary->contains($this->getCurrentWord())) {
+                return;
             }
 
             $this->removals = $removals;
