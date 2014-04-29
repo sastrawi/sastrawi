@@ -10,6 +10,10 @@ namespace Sastrawi\Morphology;
 
 use Sastrawi\Specification\SpecificationInterface;
 
+/**
+ * Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval”. page 26
+ * @link http://researchbank.rmit.edu.au/eserv/rmit:6312/Asian.pdf
+ */
 class InvalidAffixPairSpecification implements SpecificationInterface
 {
     public function isSatisfiedBy($word)
@@ -22,14 +26,22 @@ class InvalidAffixPairSpecification implements SpecificationInterface
             return false;
         }
 
-        $contains = false
-                    || preg_match('/^ber(.*)i$/', $word) === 1
-                    || preg_match('/^di(.*)an$/', $word) === 1
-                    || preg_match('/^ke(.*)i$/', $word) === 1
-                    || preg_match('/^ke(.*)an$/', $word) === 1
-                    || preg_match('/^me(.*)an$/', $word) === 1
-                    || preg_match('/^ter(.*)an$/', $word) === 1
-                    || preg_match('/^per(.*)an$/', $word) === 1;
+        $invalidAffixes = array(
+            '/^ber(.*)i$/',
+            '/^di(.*)an$/',
+            '/^ke(.*)i$/',
+            '/^ke(.*)an$/',
+            '/^me(.*)an$/',
+            '/^me(.*)an$/',
+            '/^ter(.*)an$/',
+            '/^per(.*)an$/',
+        );
+
+        $contains = false;
+
+        foreach ($invalidAffixes as $invalidAffix) {
+            $contains = $contains || preg_match($invalidAffix, $word) === 1;
+        }
 
         return $contains;
     }
