@@ -8,8 +8,14 @@
 
 namespace Sastrawi\Dictionary;
 
+/**
+ * Implementation of the DictionaryInterface using Array
+ */
 class ArrayDictionary implements DictionaryInterface
 {
+    /**
+     * @var string[]
+     */
     protected $words = array();
 
     public function __construct(array $words = array())
@@ -17,16 +23,28 @@ class ArrayDictionary implements DictionaryInterface
         $this->addWords($words);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function contains($word)
     {
         return isset($this->words[$word]);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function count()
     {
         return count($this->words);
     }
 
+    /**
+     * Add multiple words to the dictionary
+     *
+     * @param  array $words
+     * @return void
+     */
     public function addWords(array $words)
     {
         foreach ($words as $word) {
@@ -34,6 +52,12 @@ class ArrayDictionary implements DictionaryInterface
         }
     }
 
+    /**
+     * Add a word to the dictionary
+     *
+     * @param  string $word
+     * @return void
+     */
     public function add($word)
     {
         $this->words[$word] = $word;
