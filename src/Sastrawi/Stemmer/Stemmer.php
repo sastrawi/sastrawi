@@ -12,10 +12,26 @@ use Sastrawi\Dictionary\DictionaryInterface;
 use Sastrawi\Stemmer\Context\Context;
 use Sastrawi\Stemmer\Context\Visitor\VisitorProvider;
 
+/**
+ * Indonesian Stemmer.
+ * Nazief & Adriani, CS Stemmer, ECS Stemmer, Improved ECS.
+ *
+ * @link https://github.com/sastrawi/sastrawi/wiki/Resources
+ */
 class Stemmer implements StemmerInterface
 {
+    /**
+     * The dictionary containing root words
+     *
+     * @var \Sastrawi\Dictionary\DictionaryInterface
+     */
     protected $dictionary;
 
+    /**
+     * Visitor provider
+     *
+     * @var \Sastrawi\Stemmer\Context\Visitor\VisitorProvider
+     */
     protected $visitorProvider;
 
     public function __construct(DictionaryInterface $dictionary)
@@ -24,13 +40,16 @@ class Stemmer implements StemmerInterface
         $this->visitorProvider = new VisitorProvider;
     }
 
+    /**
+     * @return \Sastrawi\Dictionary\DictionaryInterface
+     */
     public function getDictionary()
     {
         return $this->dictionary;
     }
 
     /**
-     * Stem a text string to its common stem form
+     * Stem a text string to its common stem form.
      *
      * @param  string $text the text string to stem, e.g : memberdayakan pembangunan
      * @return string common stem form, e.g : daya bangun
@@ -49,6 +68,12 @@ class Stemmer implements StemmerInterface
         return implode(' ', $stems);
     }
 
+    /**
+     * Stem a word to its common stem form.
+     *
+     * @param  string $word the word to stem, e.g : memberdayakan
+     * @return string common stem form, e.g : daya
+     */
     protected function stemWord($word)
     {
         if ($this->isPlural($word)) {
@@ -58,14 +83,17 @@ class Stemmer implements StemmerInterface
         }
     }
 
+    /**
+     * @return boolean
+     */
     protected function isPlural($word)
     {
         return strpos($word, '-') !== false;
     }
 
     /**
-     * Stem a plural word to its common stem form
-     * Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval” page 76-77
+     * Stem a plural word to its common stem form.
+     * Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval” page 76-77.
      *
      * @param  string $word the word to stem, e.g : bersama-sama
      * @return string common stem form, e.g : sama
@@ -90,7 +118,7 @@ class Stemmer implements StemmerInterface
     }
 
     /**
-     * Stem a singular word to its common stem form
+     * Stem a singular word to its common stem form.
      *
      * @param  string $word the word to stem, e.g : mengalahkan
      * @return string common stem form, e.g : kalah
