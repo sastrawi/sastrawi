@@ -12,7 +12,7 @@ use Sastrawi\Dictionary\DictionaryInterface;
 use Sastrawi\Stemmer\Context\Context;
 use Sastrawi\Stemmer\Context\Visitor\VisitorProvider;
 
-class Stemmer
+class Stemmer implements StemmerInterface
 {
     protected $dictionary;
 

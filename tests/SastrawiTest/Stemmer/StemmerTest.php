@@ -17,6 +17,11 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $this->stemmer = new Stemmer($this->dictionary);
     }
 
+    public function testStemmerImplementsStemmerInterface()
+    {
+        $this->assertInstanceOf('Sastrawi\Stemmer\StemmerInterface', $this->stemmer);
+    }
+
     /**
      * Don't stem such a short word (three or fewer characters)
      */
