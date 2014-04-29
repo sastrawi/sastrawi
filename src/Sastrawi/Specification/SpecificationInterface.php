@@ -8,6 +8,12 @@
 
 namespace Sastrawi\Specification;
 
+/**
+ * The specification interface. Specification design pattern.
+ *
+ * @link http://martinfowler.com/apsupp/spec.pdf
+ * @link http://mattberther.com/2005/03/25/the-specification-pattern-a-primer
+ */
 interface SpecificationInterface
 {
     /**
