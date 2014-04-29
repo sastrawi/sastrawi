@@ -8,10 +8,16 @@
 
 namespace Sastrawi\Stemmer\Filter;
 
+/**
+ * Class for normalize text before the stemming process
+ */
 class TextNormalizer
 {
     /**
-     * @param string $text
+     * Removes symbols & characters other than alphabetics
+     *
+     * @param  string $text
+     * @return string normalized text
      */
     public static function normalizeText($text)
     {
