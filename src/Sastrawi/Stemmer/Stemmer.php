@@ -84,6 +84,7 @@ class Stemmer implements StemmerInterface
     }
 
     /**
+     * @param  string  $word
      * @return boolean
      */
     protected function isPlural($word)
@@ -95,7 +96,7 @@ class Stemmer implements StemmerInterface
      * Stem a plural word to its common stem form.
      * Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval” page 76-77.
      *
-     * @param  string $word the word to stem, e.g : bersama-sama
+     * @param  string $plural the word to stem, e.g : bersama-sama
      * @return string common stem form, e.g : sama
      * @link   http://researchbank.rmit.edu.au/eserv/rmit:6312/Asian.pdf
      */

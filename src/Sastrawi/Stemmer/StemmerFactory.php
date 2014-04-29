@@ -10,8 +10,14 @@ namespace Sastrawi\Stemmer;
 
 use Sastrawi\Dictionary\ArrayDictionary;
 
+/**
+ * Stemmer factory helps creating pre-configured stemmer
+ */
 class StemmerFactory
 {
+    /**
+     * @return \Sastrawi\Stemmer\Stemmer
+     */
     public function createStemmer()
     {
         $dictionaryFile = __DIR__ . '/../../../data/kata-dasar.txt';

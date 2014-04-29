@@ -10,8 +10,18 @@ namespace Sastrawi\Stemmer\ConfixStripping;
 
 use Sastrawi\Specification\SpecificationInterface;
 
+/**
+ * Confix Stripping Rule Precedence Adjustment Specification.
+ * Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval” page 78-79.
+ *
+ * @link   http://researchbank.rmit.edu.au/eserv/rmit:6312/Asian.pdf
+ */
 class PrecedenceAdjustmentSpecification implements SpecificationInterface
 {
+    /**
+     * @param  string  $value
+     * @return boolean
+     */
     public function isSatisfiedBy($value)
     {
         $regexRules = array(

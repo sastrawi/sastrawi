@@ -8,16 +8,34 @@
 
 namespace Sastrawi\Stemmer\Context;
 
+/**
+ * Standard implementation of Removal Interface.
+ */
 class Removal implements RemovalInterface
 {
+    /**
+     * @var \Sastrawi\Stemmer\Context\Visitor\VisitorInterface
+     */
     protected $visitor;
 
+    /**
+     * @var string
+     */
     protected $subject;
 
+    /**
+     * @var string
+     */
     protected $result;
 
+    /**
+     * @var string
+     */
     protected $removedPart;
 
+    /**
+     * @var string
+     */
     protected $affixType;
 
     /**
@@ -25,6 +43,7 @@ class Removal implements RemovalInterface
      * @param string                                             $subject
      * @param string                                             $result
      * @param string                                             $removedPart
+     * @param string                                             $affixType
      */
     public function __construct(
         Visitor\VisitorInterface $visitor,

@@ -8,6 +8,12 @@
 
 namespace Sastrawi\Stemmer\Context;
 
+/**
+ * Container of a removed part during the stemming process.
+ *
+ * @since  0.2.0
+ * @author Andy Librian <andylibrian@gmail.com>
+ */
 interface RemovalInterface
 {
     /**
