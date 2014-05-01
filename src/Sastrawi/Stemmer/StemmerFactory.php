@@ -15,22 +15,44 @@ use Sastrawi\Dictionary\ArrayDictionary;
  */
 class StemmerFactory
 {
+    const APC_KEY = 'sastrawi_cache_dictionary';
+
     /**
      * @return \Sastrawi\Stemmer\Stemmer
      */
-    public function createStemmer()
+    public function createStemmer($isDev = false)
     {
-        $dictionaryFile = __DIR__ . '/../../../data/kata-dasar.txt';
-
-        if (!is_readable($dictionaryFile)) {
-            throw new \Exception('Dictionary file is missing. It seems that your installation is corrupted.');
-        }
-
-        $words = explode(PHP_EOL, file_get_contents($dictionaryFile));
-
+        $words      = $this->getWords($isDev);
         $dictionary = new ArrayDictionary($words);
         $stemmer    = new Stemmer($dictionary);
 
         return $stemmer;
+    }
+
+    protected function getWords($isDev = false)
+    {
+        if ($isDev || !function_exists('apc_fetch')) {
+            $words = $this->getWordsFromFile();
+        } else {
+
+            $words = apc_fetch(self::APC_KEY);
+
+            if ($words === false) {
+                $words = $this->getWordsFromFile();
+                apc_store(self::APC_KEY, $words);
+            }
+        }
+
+        return $words;
+    }
+
+    protected function getWordsFromFile()
+    {
+        $dictionaryFile = __DIR__ . '/../../../data/kata-dasar.txt';
+        if (!is_readable($dictionaryFile)) {
+            throw new \Exception('Dictionary file is missing. It seems that your installation is corrupted.');
+        }
+
+        return explode(PHP_EOL, file_get_contents($dictionaryFile));
     }
 }
