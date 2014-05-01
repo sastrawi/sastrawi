@@ -51,7 +51,7 @@ Our Goals
 
 Demo
 ----
-[http://sastrawi.github.io/sastrawi/](http://sastrawi.github.io/sastrawi/)
+[http://sastrawi.github.io](http://sastrawi.github.io)
 
 
 Installation
