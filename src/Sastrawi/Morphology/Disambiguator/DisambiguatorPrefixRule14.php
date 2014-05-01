@@ -11,6 +11,9 @@ namespace Sastrawi\Morphology\Disambiguator;
 /**
  * Disambiguate Prefix Rule no 14
  *
+ * Rule 14 modified by Andy Librian : men{c|d|j|s|t|z} -> men-{c|d|j|s|t|z}
+ * in order to stem mentaati
+ *
  * Rule 14 modified by ECS: men{c|d|j|s|z} -> men-{c|d|j|s|z}
  * in order to stem mensyaratkan, mensyukuri
  *
@@ -18,9 +21,11 @@ namespace Sastrawi\Morphology\Disambiguator;
  */
 class DisambiguatorPrefixRule14 implements DisambiguatorInterface
 {
-
     /**
      * Disambiguate Prefix Rule no 14
+     *
+     * Rule 14 modified by Andy Librian : men{c|d|j|s|t|z} -> men-{c|d|j|s|t|z}
+     * in order to stem mentaati
      *
      * Rule 14 modified by ECS: men{c|d|j|s|z} -> men-{c|d|j|s|z}
      * in order to stem mensyaratkan, mensyukuri
@@ -30,7 +35,7 @@ class DisambiguatorPrefixRule14 implements DisambiguatorInterface
     public function disambiguate($word)
     {
         $matches  = null;
-        $contains = preg_match('/^men([cdjsz])(.*)$/', $word, $matches);
+        $contains = preg_match('/^men([cdjstz])(.*)$/', $word, $matches);
 
         if ($contains === 1) {
             return $matches[1] . $matches[2];

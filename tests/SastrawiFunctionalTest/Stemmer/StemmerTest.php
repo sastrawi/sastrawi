@@ -31,6 +31,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'sembunyi', 'langgan', 'laku', 'baik', 'terang', 'iman', 'bisik', 'taat', 'puas', 'makan',
                 'nyala', 'nyanyi', 'nyata', 'nyawa', 'rata', 'lembut',
                 'budaya', 'karya','ideal', 'final',
+                'taat', // sastrawi additional rules
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -357,6 +358,9 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('idealis', 'ideal');
         $data[] = array('idealisme', 'ideal');
         $data[] = array('finalisasi', 'final');
+
+        // sastrawi additional rules
+        $data[] = array('mentaati', 'taat');
 
         return $data;
     }
