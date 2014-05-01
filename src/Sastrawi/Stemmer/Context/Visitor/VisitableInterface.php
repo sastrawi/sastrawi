@@ -8,6 +8,11 @@
 
 namespace Sastrawi\Stemmer\Context\Visitor;
 
+/**
+ * Part of the Visitor Design Pattern
+ *
+ * @link http://en.wikipedia.org/wiki/Visitor_pattern
+ */
 interface VisitableInterface
 {
     /**

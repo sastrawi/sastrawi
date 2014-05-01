@@ -8,6 +8,12 @@
 
 namespace Sastrawi\Stemmer\Context;
 
+/**
+ * Stemming Context Interface
+ *
+ * @since  0.1.0
+ * @author Andy Librian <andylibrian@gmail.com>
+ */
 interface ContextInterface
 {
     /**

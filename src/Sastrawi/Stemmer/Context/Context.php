@@ -13,6 +13,9 @@ use Sastrawi\Stemmer\Context\Visitor\VisitorInterface;
 use Sastrawi\Stemmer\Context\Visitor\VisitableInterface;
 use Sastrawi\Stemmer\ConfixStripping;
 
+/**
+ * Stemming Context using Nazief and Adriani, CS, ECS, Improved ECS
+ */
 class Context implements ContextInterface, VisitableInterface
 {
     /**
@@ -140,8 +143,14 @@ class Context implements ContextInterface, VisitableInterface
         return $this->result;
     }
 
+    /**
+     * Execute stemming process; the result can be retrieved with getResult()
+     *
+     * @return void
+     */
     public function execute()
     {
+        // step 1 - 5
         $this->startStemmingProcess();
 
         // step 6
@@ -288,13 +297,24 @@ class Context implements ContextInterface, VisitableInterface
         }
     }
 
-    protected function isSuffixRemoval($removal)
+    /**
+     * Check wether the removed part is a suffix
+     *
+     * @param  \Sastrawi\Stemmer\Context\RemovalInterface $removal
+     * @return boolean
+     */
+    protected function isSuffixRemoval(RemovalInterface $removal)
     {
         return $removal->getAffixType() == 'DS'
             || $removal->getAffixType() == 'PP'
             || $removal->getAffixType() == 'P';
     }
 
+    /**
+     * Restore prefix to proceed with ECS loop pengembalian akhiran
+     *
+     * @return void
+     */
     public function restorePrefix()
     {
         foreach ($this->removals as $i => $removal) {

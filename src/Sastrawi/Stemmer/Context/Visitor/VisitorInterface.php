@@ -10,6 +10,11 @@ namespace Sastrawi\Stemmer\Context\Visitor;
 
 use Sastrawi\Stemmer\Context\ContextInterface;
 
+/**
+ * Context visitor interface. See visitor design pattern.
+ *
+ * @link http://en.wikipedia.org/wiki/Visitor_pattern
+ */
 interface VisitorInterface
 {
     /**
