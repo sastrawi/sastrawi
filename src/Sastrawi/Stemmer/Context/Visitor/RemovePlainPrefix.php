@@ -11,6 +11,12 @@ namespace Sastrawi\Stemmer\Context\Visitor;
 use Sastrawi\Stemmer\Context\ContextInterface;
 use Sastrawi\Stemmer\Context\Removal;
 
+/**
+ * Remove Plain Prefix.
+ *
+ * Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval”. page 61
+ * @link http://researchbank.rmit.edu.au/eserv/rmit:6312/Asian.pdf
+ */
 class RemovePlainPrefix implements VisitorInterface
 {
     public function visit(ContextInterface $context)
