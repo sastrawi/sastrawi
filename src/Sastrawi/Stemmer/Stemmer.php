@@ -113,9 +113,9 @@ class Stemmer implements StemmerInterface
 
         if ($rootWord1 == $rootWord2) {
             return $rootWord1;
+        } else {
+            return $plural;
         }
-
-        return $plural;
     }
 
     /**
