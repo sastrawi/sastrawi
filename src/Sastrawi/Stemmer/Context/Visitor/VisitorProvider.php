@@ -151,6 +151,12 @@ class VisitorProvider
             )
         );
 
+        $this->prefixVisitors[] = new PrefixDisambiguator(
+            array(
+                new Disambiguator\DisambiguatorPrefixRule39a(),
+                new Disambiguator\DisambiguatorPrefixRule39b(),
+            )
+        );
     }
 
     public function getVisitors()

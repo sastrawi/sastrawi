@@ -9,18 +9,18 @@
 namespace Sastrawi\Morphology\Disambiguator;
 
 /**
- * Disambiguate Prefix Rule 38b (CC infix rules)
- * Rule 38b : CelV -> CV
+ * Disambiguate Prefix Rule 39a (CC infix rules)
+ * Rule 39a : CemV -> CemV
  */
-class DisambiguatorPrefixRule38b implements DisambiguatorInterface
+class DisambiguatorPrefixRule39a implements DisambiguatorInterface
 {
     /**
-     * Disambiguate Prefix Rule 38b (CC infix rules)
-     * Rule 38b : CelV -> CV
+     * Disambiguate Prefix Rule 39a (CC infix rules)
+     * Rule 39a : CemV -> CemV
      */
     public function disambiguate($word)
     {
-        $contains = preg_match('/^([bcdfghjklmnpqrstvwxyz])el([aiueo])(.*)$/', $word, $matches);
+        $contains = preg_match('/^([bcdfghjklmnpqrstvwxyz])(em[aiueo])(.*)$/', $word, $matches);
 
         if ($contains === 1) {
             return $matches[1] . $matches[2] . $matches[3];

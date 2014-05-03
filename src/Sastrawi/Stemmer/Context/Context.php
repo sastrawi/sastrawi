@@ -222,7 +222,7 @@ class Context implements ContextInterface, VisitableInterface
     protected function removePrefixes()
     {
         for ($i = 0; $i < 3; $i++) {
-            $this->acceptVisitors($this->prefixVisitors);
+            $this->acceptPrefixVisitors($this->prefixVisitors);
             if ($this->dictionary->contains($this->getCurrentWord())) {
                 return;
             }
@@ -251,6 +251,27 @@ class Context implements ContextInterface, VisitableInterface
 
             if ($this->processIsStopped()) {
                 return $this->getCurrentWord();
+            }
+        }
+    }
+
+    protected function acceptPrefixVisitors(array $visitors)
+    {
+        $removalCount = count($this->removals);
+        foreach ($visitors as $visitor) {
+
+            $this->accept($visitor);
+
+            if ($this->getDictionary()->contains($this->getCurrentWord())) {
+                return $this->getCurrentWord();
+            }
+
+            if ($this->processIsStopped()) {
+                return $this->getCurrentWord();
+            }
+
+            if (count($this->removals) > $removalCount) {
+                return;
             }
         }
     }
