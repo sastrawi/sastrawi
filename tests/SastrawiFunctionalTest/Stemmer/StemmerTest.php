@@ -304,6 +304,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('rerata', 'rata');
         $data[] = array('lelembut', 'lembut');
         $data[] = array('lemigas', 'ligas');
+        $data[] = array('kinerja', 'kerja');
 
         // plurals
         $data[] = array('buku-buku', 'buku');
