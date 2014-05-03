@@ -120,7 +120,7 @@ Lalu untuk meningkatkan kualitas kode, algoritma tersebut diterapkan ke dalam _O
 
 #### Kamus Kata Dasar ####
 
-Proses stemming oleh Sastrawi sangat bergantung pada kamus kata dasar. Sastrawi menggunakan kamus kata dasar dari [kateglo.com](http://kateglo.com) dengan sedikit perubahan terhadapnya.
+Proses stemming oleh Sastrawi sangat bergantung pada kamus kata dasar. Sastrawi menggunakan kamus kata dasar dari [kateglo.com](http://kateglo.com) dengan sedikit perubahan.
 
 
 Lisensi
