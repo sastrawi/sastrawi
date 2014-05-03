@@ -107,9 +107,9 @@ Credits
 Algorithms and trademarks used in this library are the property of their respective owners.
 
 - Algoritma Nazief dan Adriani
-- Asian J. 2007. _Effective Techniques for Indonesian Text Retrieval_. PhD thesis School of Computer Science and Information Technology RMIT University Australia
-- Arifin, A.Z., I.P.A.K. Mahendra dan H.T. Ciptaningtyas. 2009. _Enhanced Confix Stripping Stemmer and Ants Algorithm for Classifying News Document in Indonesian Language_, Proceeding of International Conference on Information & Communication Technology and Systems (ICTS)
-- A. D. Tahitoe, D. Purwitasari. 2010. _Implementasi Modifikasi Enhanced Confix Stripping Stemmer Untuk Bahasa Indonesia dengan Metode Corpus Based Stemming_, Institut Teknologi Sepuluh Nopember (ITS) – Surabaya, 60111, Indonesia
+- Asian J. 2007. ___Effective Techniques for Indonesian Text Retrieval___. PhD thesis School of Computer Science and Information Technology RMIT University Australia
+- Arifin, A.Z., I.P.A.K. Mahendra dan H.T. Ciptaningtyas. 2009. ___Enhanced Confix Stripping Stemmer and Ants Algorithm for Classifying News Document in Indonesian Language___, Proceeding of International Conference on Information & Communication Technology and Systems (ICTS)
+- A. D. Tahitoe, D. Purwitasari. 2010. ___Implementasi Modifikasi Enhanced Confix Stripping Stemmer Untuk Bahasa Indonesia dengan Metode Corpus Based Stemming___, Institut Teknologi Sepuluh Nopember (ITS) – Surabaya, 60111, Indonesia
 
 
 More Information
