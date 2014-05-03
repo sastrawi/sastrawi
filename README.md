@@ -105,14 +105,10 @@ echo $output . "\n";
 ```
 
 
-Lisensi
---------
-
-The MIT License (MIT). Lihat [License File](https://github.com/sastrawi/sastrawi/blob/master/LICENSE) untuk informasi lebih lengkap.
-
-
 Pustaka
 --------
+
+#### Algoritma ####
 
 Algoritma yang digunakan pada _library_ ini adalah hak intelektual masing-masing pemiliknya yang tertera di bawah ini.
 Lalu untuk meningkatkan kualitas kode, algoritma tersebut diterapkan ke dalam _Object Oriented Design_.
@@ -121,6 +117,16 @@ Lalu untuk meningkatkan kualitas kode, algoritma tersebut diterapkan ke dalam _O
 - Asian J. 2007. ___Effective Techniques for Indonesian Text Retrieval___. PhD thesis School of Computer Science and Information Technology RMIT University Australia
 - Arifin, A.Z., I.P.A.K. Mahendra dan H.T. Ciptaningtyas. 2009. ___Enhanced Confix Stripping Stemmer and Ants Algorithm for Classifying News Document in Indonesian Language___, Proceeding of International Conference on Information & Communication Technology and Systems (ICTS)
 - A. D. Tahitoe, D. Purwitasari. 2010. ___Implementasi Modifikasi Enhanced Confix Stripping Stemmer Untuk Bahasa Indonesia dengan Metode Corpus Based Stemming___, Institut Teknologi Sepuluh Nopember (ITS) – Surabaya, 60111, Indonesia
+
+#### Kamus Kata Dasar ####
+
+Proses stemming oleh Sastrawi sangat bergantung pada kamus kata dasar. Sastrawi menggunakan kamus kata dasar dari [kateglo.com](http://kateglo.com) dengan sedikit perubahan terhadapnya.
+
+
+Lisensi
+--------
+
+Lisensi sastrawi adalah MIT License (MIT) sedangkan lisensi kamus kata dasar dari Kateglo adalah [CC-BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/). Untuk informasi lebih lengkap silahkan lihat [Lisensi Sastrawi](https://github.com/sastrawi/sastrawi/blob/master/LICENSE) dan [Lisensi isi Kateglo](https://github.com/ivanlanin/kateglo#lisensi-isi).
 
 
 Informasi Lebih Lanjut
