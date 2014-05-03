@@ -104,12 +104,24 @@ The MIT License (MIT). Please see [License File](https://github.com/sastrawi/sas
 Credits
 --------
 
+#### Algorithms ####
+
 Algorithms and trademarks used in this library are the property of their respective owners.
 
 - Algoritma Nazief dan Adriani
 - Asian J. 2007. ___Effective Techniques for Indonesian Text Retrieval___. PhD thesis School of Computer Science and Information Technology RMIT University Australia
 - Arifin, A.Z., I.P.A.K. Mahendra dan H.T. Ciptaningtyas. 2009. ___Enhanced Confix Stripping Stemmer and Ants Algorithm for Classifying News Document in Indonesian Language___, Proceeding of International Conference on Information & Communication Technology and Systems (ICTS)
 - A. D. Tahitoe, D. Purwitasari. 2010. ___Implementasi Modifikasi Enhanced Confix Stripping Stemmer Untuk Bahasa Indonesia dengan Metode Corpus Based Stemming___, Institut Teknologi Sepuluh Nopember (ITS) – Surabaya, 60111, Indonesia
+
+#### Root word dictionary ####
+
+Sastrawi rely heavily on a root word dictionary. It is based on [kateglo.com](http://kateglo.com) with some modifications.
+
+
+License
+--------
+
+Sastrawi is released under The MIT License (MIT) while Kateglo's root word dictionary is under [CC-BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/). For more information please see [Sastrawi License File](https://github.com/sastrawi/sastrawi/blob/master/LICENSE) and [Kateglo's content license](https://github.com/ivanlanin/kateglo#lisensi-isi).
 
 
 More Information
