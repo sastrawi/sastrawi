@@ -13,7 +13,12 @@
 >
     <testsuite name="Sastrawi tests">
         <directory>./tests/SastrawiTest</directory>
+    </testsuite>
+    <testsuite name="Sastrawi Functional tests">
         <directory>./tests/SastrawiFunctionalTest</directory>
+    </testsuite>
+    <testsuite name="Sastrawi Integration tests">
+        <directory>./tests/SastrawiIntegrationTest</directory>
     </testsuite>
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
