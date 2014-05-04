@@ -12223,8 +12223,6 @@ karya
 karyah
 karyasiswa
 karyat
-karyawan
-karyawati
 karyawisata
 kas
 kasa
@@ -13735,7 +13733,6 @@ kincup
 kindap
 kinematika
 kinematograf
-kinerja
 kinesika
 kinesimeter
 kineskop
