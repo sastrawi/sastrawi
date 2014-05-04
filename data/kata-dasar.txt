@@ -1061,7 +1061,6 @@ androgogi
 androlog
 andrologi
 anduh
-andung
 andur
 aneh
 aneka
@@ -1669,7 +1668,6 @@ asasi
 asbak
 asbes
 asbut
-ase
 aseksual
 asemble
 asembling
@@ -16790,7 +16788,6 @@ majuj
 majun
 majung
 majusi
-mak
 maka
 makadam
 makadasang
@@ -17016,7 +17013,6 @@ mandor
 mandraguna
 mandril
 mandrin
-mandu
 mandul
 mandung
 maneken
@@ -19831,7 +19827,6 @@ pajan
 pajang
 pajuan
 pajuh
-pak
 pakai
 pakal
 pakan
@@ -29304,7 +29299,6 @@ urai
 urak
 urakus
 uran-uran
-urang
 uranisme
 uranium
 uranologi
