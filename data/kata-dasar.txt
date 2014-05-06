@@ -101,7 +101,6 @@ abuan
 abuh
 abuk
 abuk-abuk
-abul
 abulhayat
 abulia
 abun-abun
@@ -20991,7 +20990,6 @@ perimeter
 perimisium
 perimpin
 perimping
-perin
 perinci
 perincit
 perineorium
@@ -29282,7 +29280,6 @@ upam
 upan
 upanishad
 upar
-upas
 upau
 upawasa
 upaya
