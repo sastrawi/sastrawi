@@ -12396,6 +12396,7 @@ kebiri
 keblangsak
 keblinger
 kebo
+kebon
 kebuk
 kebul
 kebuli
@@ -22374,7 +22375,6 @@ purnatugas
 purnawaktu
 purpura
 purser
-puru
 puruk
 puruk-parak
 purun
