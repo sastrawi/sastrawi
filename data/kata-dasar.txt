@@ -2802,7 +2802,6 @@ belit
 belitung
 beliung
 beliut
-belo
 beloan
 belobor
 belodok
@@ -5491,7 +5490,6 @@ denyut
 deodoran
 deoknumisasi
 deontologi
-dep
 depa
 depak
 depalatalisasi

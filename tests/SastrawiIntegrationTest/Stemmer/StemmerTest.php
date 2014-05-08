@@ -40,6 +40,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('ditemukan', 'temu');
         $data[] = array('mengerti', 'erti');
         $data[] = array('kebon', 'kebon');
+        $data[] = array('terdepan', 'depan');
 
         return $data;
     }
