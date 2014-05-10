@@ -21,8 +21,10 @@ class TextNormalizer
      */
     public static function normalizeText($text)
     {
-        $text = strtolower(trim(str_replace('.', ' ', $text)));
+        $text = strtolower($text);
+        $text = preg_replace('/[^a-z0-9 -]/im', ' ', $text);
+        $text = preg_replace('/( +)/im', ' ', $text);
 
-        return preg_replace('/[^a-z0-9 -]/im', '', $text);
+        return trim($text);
     }
 }

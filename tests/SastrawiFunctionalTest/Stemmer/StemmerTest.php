@@ -339,9 +339,10 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('menahan', 'tahan');
 
         // test stem multiple sentences
-        $multipleSentence = 'Cinta telah bertebaran.Keduanya saling mencintai.';
-
-        $data[] = array($multipleSentence, 'cinta telah tebar dua saling cinta');
+        $multipleSentence1 = 'Cinta telah bertebaran.Keduanya saling mencintai.';
+        $multipleSentence2 = "(Cinta telah bertebaran)\n\n\n\nKeduanya saling mencintai.";
+        $data[] = array($multipleSentence1, 'cinta telah tebar dua saling cinta');
+        $data[] = array($multipleSentence2, 'cinta telah tebar dua saling cinta');
 
         // failed on other method / algorithm but we should succeed
         $data[] = array('peranan', 'peran');
