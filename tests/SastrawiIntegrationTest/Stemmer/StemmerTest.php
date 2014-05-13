@@ -45,6 +45,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('kedudukan', 'duduk');
         $data[] = array('menekan', 'tekan');
         $data[] = array('perusakan', 'rusa'); // overstemming, it's better than perusa
+        $data[] = array('ditemui', 'temu');
 
         return $data;
     }
