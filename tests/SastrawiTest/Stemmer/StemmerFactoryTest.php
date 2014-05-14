@@ -18,14 +18,6 @@ class StemmerFactoryTest extends \PHPUnit_Framework_TestCase
         $stemmer = $this->factory->createStemmer();
 
         $this->assertNotNull($stemmer);
-        $this->assertInstanceOf('Sastrawi\Stemmer\Stemmer', $stemmer);
-    }
-
-    public function testDefaultDirectoryNotEmpty()
-    {
-        $stemmer = $this->factory->createStemmer();
-        $dictionary = $stemmer->getDictionary();
-
-        $this->assertNotEquals(0, $dictionary->count());
+        $this->assertInstanceOf('Sastrawi\Stemmer\StemmerInterface', $stemmer);
     }
 }

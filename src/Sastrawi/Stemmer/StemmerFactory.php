@@ -26,7 +26,10 @@ class StemmerFactory
         $dictionary = new ArrayDictionary($words);
         $stemmer    = new Stemmer($dictionary);
 
-        return $stemmer;
+        $resultCache   = new Cache\ArrayCache();
+        $cachedStemmer = new CachedStemmer($resultCache, $stemmer);
+
+        return $cachedStemmer;
     }
 
     protected function getWords($isDev = false)
