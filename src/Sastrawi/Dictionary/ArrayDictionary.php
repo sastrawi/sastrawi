@@ -60,6 +60,10 @@ class ArrayDictionary implements DictionaryInterface
      */
     public function add($word)
     {
+        if ($word === '') {
+            return;
+        }
+
         $this->words[$word] = $word;
     }
 }

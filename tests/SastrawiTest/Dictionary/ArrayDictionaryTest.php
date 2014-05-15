@@ -32,6 +32,17 @@ class ArrayDictionaryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1, $this->dictionary->count());
     }
 
+    /**
+     * So weird. Let's take a look at this later.
+     * There are '' word in the dictionary. Where is it from?
+     */
+    public function testAddWordIgnoreEmptyString()
+    {
+        $this->assertEquals(0, $this->dictionary->count());
+        $this->dictionary->add('');
+        $this->assertEquals(0, $this->dictionary->count());
+    }
+
     public function testAddWords()
     {
         $words = array(
