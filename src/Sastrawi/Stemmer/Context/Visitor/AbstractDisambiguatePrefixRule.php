@@ -16,14 +16,8 @@ abstract class AbstractDisambiguatePrefixRule implements VisitorInterface
 {
     protected $disambiguators = array();
 
-    abstract protected function initDisambiguators();
-
     public function visit(ContextInterface $context)
     {
-        if (empty($this->disambiguators)) {
-            $this->initDisambiguators();
-        }
-
         $result = null;
 
         foreach ($this->disambiguators as $disambiguator) {

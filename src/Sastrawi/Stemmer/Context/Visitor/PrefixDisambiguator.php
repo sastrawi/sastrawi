@@ -14,8 +14,4 @@ class PrefixDisambiguator extends AbstractDisambiguatePrefixRule implements Visi
     {
         $this->addDisambiguators($disambiguators);
     }
-
-    public function initDisambiguators()
-    {
-    }
 }
