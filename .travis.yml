@@ -14,10 +14,13 @@ before_install:
 script:
  - ant
 
+after_script:
+ - wget https://scrutinizer-ci.com/ocular.phar
+ - php ocular.phar code-coverage:upload --format=php-clover build/coverage.clover
+
 matrix:
   fast_finish: true
   allow_failures:
-    - php: 5.6
     - php: hhvm
 
 notifications:
