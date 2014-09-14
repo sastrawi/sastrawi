@@ -56,6 +56,6 @@ class StemmerFactory
             throw new \Exception('Dictionary file is missing. It seems that your installation is corrupted.');
         }
 
-        return explode(PHP_EOL, file_get_contents($dictionaryFile));
+        return explode("\n", file_get_contents($dictionaryFile));
     }
 }
