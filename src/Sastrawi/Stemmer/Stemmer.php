@@ -37,7 +37,7 @@ class Stemmer implements StemmerInterface
     public function __construct(DictionaryInterface $dictionary)
     {
         $this->dictionary = $dictionary;
-        $this->visitorProvider = new VisitorProvider;
+        $this->visitorProvider = new VisitorProvider();
     }
 
     /**
