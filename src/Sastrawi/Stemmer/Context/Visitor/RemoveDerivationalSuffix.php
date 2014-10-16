@@ -42,13 +42,13 @@ class RemoveDerivationalSuffix implements VisitorInterface
     /**
      * Remove derivational suffix
      * Original rule : i|kan|an
-     * Added the adopted foreign suffix rule : wan|wati|is|isme|isasi
+     * Added the adopted foreign suffix rule : is|isme|isasi
      *
      * @param  string $word
      * @return string word after its derivational suffix removed
      */
     public function removeSuffix($word)
     {
-        return preg_replace('/(wan|wati|is|isme|isasi|i|kan|an)$/', '', $word, 1);
+        return preg_replace('/(is|isme|isasi|i|kan|an)$/', '', $word, 1);
     }
 }

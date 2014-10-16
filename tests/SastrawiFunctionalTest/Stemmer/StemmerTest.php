@@ -32,6 +32,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'nyala', 'nyanyi', 'nyata', 'nyawa', 'rata', 'lembut', 'ligas',
                 'budaya', 'karya','ideal', 'final',
                 'taat', // sastrawi additional rules
+                'lewat',
             )
         );
         $this->stemmer    = new Stemmer($this->dictionary);
@@ -356,14 +357,16 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         //$data[] = array('abdullah', 'abdullah');
 
         // adopted foreign suffixes
-        $data[] = array('budayawan', 'budaya');
-        $data[] = array('karyawati', 'karya');
+        //$data[] = array('budayawan', 'budaya');
+        //$data[] = array('karyawati', 'karya');
         $data[] = array('idealis', 'ideal');
         $data[] = array('idealisme', 'ideal');
         $data[] = array('finalisasi', 'final');
 
         // sastrawi additional rules
         $data[] = array('mentaati', 'taat');
+
+        $data[] = array('melewati', 'lewat');
 
         return $data;
     }

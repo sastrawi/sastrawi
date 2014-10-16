@@ -25,8 +25,8 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data = array();
 
         $data[] = array('kebijakan', 'bijak');
-        $data[] = array('karyawan', 'karya');
-        $data[] = array('karyawati', 'karya');
+        //$data[] = array('karyawan', 'karya');
+        //$data[] = array('karyawati', 'karya');
         $data[] = array('kinerja', 'kerja');
         $data[] = array('mengandung', 'kandung');
         $data[] = array('memakan', 'makan');
@@ -48,6 +48,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('ditemui', 'temu');
         $data[] = array('di', 'di');
         $data[] = array('mengalahkan', 'kalah');
+        $data[] = array('melewati', 'lewat');
 
         return $data;
     }
