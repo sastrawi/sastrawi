@@ -3379,7 +3379,6 @@ bintul
 bintulbahar
 bintur
 binturung
-bio-
 biodata
 biodin
 biofera
@@ -4239,7 +4238,6 @@ catek
 catu
 catuk
 catur
-catur-
 caturjalma
 caturlarik
 caturtunggal
@@ -4787,6 +4785,7 @@ conggok
 congkah-cangkih
 congkah-mangkih
 congkak
+congkel
 congki
 congklak
 congklang
@@ -5282,7 +5281,6 @@ deiktis
 deislamisasi
 deisme
 dek
-deka-
 dekade
 dekaden
 dekadensi
@@ -5700,7 +5698,6 @@ dewe
 dewi
 dewi-dewi
 dia
-dia-
 diabetes
 diad
 diadem
@@ -5890,7 +5887,6 @@ diri
 dirigen
 diris
 dirus
-dis-
 disagio
 disain
 disainer
@@ -6284,7 +6280,6 @@ duwegan
 duwet
 duyun
 duyung
-dwi-
 dwiarti
 dwibahasa
 dwidarma
@@ -6372,7 +6367,6 @@ ejawantah
 ejek
 ejektif
 ejektor
-eka-
 ekabahasa
 ekad
 ekajati
@@ -6430,7 +6424,6 @@ ekozona
 ekrin
 ekrinologi
 eks
-eks-
 eksak
 eksakta
 eksaltasi
@@ -6479,7 +6472,6 @@ ekskresi
 ekskreta
 ekskursi
 ekskursif
-ekso-
 eksobiologi
 eksobiotik
 eksodermis
@@ -6559,7 +6551,6 @@ ekstern
 eksternal
 ekstin
 ekstra
-ekstra-
 ekstradisi
 ekstrak
 ekstrakardial
@@ -6981,7 +6972,6 @@ eozoikum
 epak
 epek
 epentesis
-epi-
 epibentos
 epidemi
 epidemiologi
@@ -7328,7 +7318,6 @@ felon
 felspar
 feminin
 feminisme
-femto-
 fenakit
 fengsui
 fenit
@@ -9404,7 +9393,6 @@ hegemonik
 hegemonisme
 hegemonnisme
 heiho
-heks-
 heksadesimal
 heksagon
 heksahedron
@@ -9414,7 +9402,6 @@ heksana
 heksapoda
 hektar
 hektare
-hekto-
 hektograf
 hektogram
 hektoliter
@@ -9452,8 +9439,8 @@ hematometra
 hematuri
 hembak
 hembalang
+hembus
 hemeralopi
-hemi-
 hemikordat
 hemiplegia
 hemisfer
@@ -9484,7 +9471,6 @@ hentar
 henti
 hepar
 hepatitis
-hepta-
 heptagon
 heptahedron
 heptameter
@@ -9515,7 +9501,6 @@ herpetolog
 herpetologi
 hertz
 hesperidin
-hetero-
 heterodin
 heterodoks
 heterofemi
@@ -9569,7 +9554,6 @@ hidraulik
 hidraulika
 hidraulis
 hidrida
-hidro-
 hidrodinamika
 hidrofili
 hidrofit
@@ -9632,7 +9616,6 @@ hijriah
 hikayat
 hikmah
 hikmat
-hila-hila
 hilal
 hilang
 hilap
@@ -9660,7 +9643,6 @@ hiosiamina
 hiosin
 hip
 hipantium
-hiper-
 hiperaktif
 hiperamnesi
 hiperbarik
@@ -9695,7 +9677,6 @@ hipnosis
 hipnoterapi
 hipnotis
 hipnotisme
-hipo-
 hipoblas
 hipodermis
 hipodermoklisis
@@ -9797,7 +9778,6 @@ homili
 hominid
 hominoid
 homo
-homo-
 homofon
 homofoni
 homogami
@@ -9855,7 +9835,6 @@ hotel
 howitzer
 huakiau
 hubar
-hubar-habir
 hubaya-hubaya
 hububan
 hubulwatan
@@ -10295,7 +10274,6 @@ informan
 informasi
 informatif
 informatika
-infra-
 inframerah
 infrasonik
 infrastruktur
@@ -10442,7 +10420,6 @@ intensif
 intensifikasi
 intensional
 intensitas
-inter-
 interaksi
 interaksionistik
 interaktif
@@ -10519,7 +10496,6 @@ intisari
 intoksikasi
 intoleran
 intonasi
-intra-
 intradermal
 intrakalimat
 intrakurikuler
@@ -10535,7 +10511,6 @@ intravena
 intrik
 intrinsik
 intro
-intro-
 introduksi
 introjeksi
 introspeksi
@@ -10628,7 +10603,6 @@ islamis
 islamisasi
 islamisme
 islamologi
-iso-
 isoaglutinin
 isobar
 isobarik
@@ -11709,7 +11683,6 @@ kaktus
 kaku
 kakuminal
 kakus
-kal
 kala
 kalah
 kalai
@@ -13885,7 +13858,6 @@ klusium
 knalpot
 knop
 knot
-ko-
 koa
 koagel
 koagregasi
@@ -14393,7 +14365,6 @@ kontinum
 kontoid
 kontol
 kontra
-kontra-
 kontrabande
 kontrabas
 kontradiksi
@@ -14779,7 +14750,6 @@ kuas
 kuasa
 kuasar
 kuasi
-kuasi-
 kuat
 kuatren
 kuau
@@ -15961,6 +15931,7 @@ lesak
 lesan
 lesang
 lesap
+lesat
 lesbi
 lesbian
 lesbianisme
@@ -16027,7 +15998,6 @@ leveransir
 levertran
 levirat
 levitin
-levo-
 levulosa
 lewa
 lewah
@@ -16694,7 +16664,6 @@ magrur
 magun
 mah
 maha
-maha-
 mahabah
 mahabintang
 mahadewa
@@ -16831,7 +16800,6 @@ makrame
 makrifat
 makrifatullah
 makro
-makro-
 makroekonomi
 makrofita
 makrofotografi
@@ -16871,7 +16839,6 @@ makyong
 makzul
 mal
 mala
-mala-
 malabau
 malabsorpsi
 malafide
@@ -17403,7 +17370,6 @@ medu
 medula
 medusa
 mega
-mega-
 megabyte
 megafon
 megah
@@ -17791,7 +17757,6 @@ mesui
 mesum
 mesut
 meta
-meta-
 metabahasa
 metabolik
 metabolis
@@ -17890,7 +17855,6 @@ mikosis
 mikotoksin
 mikraj
 mikro
-mikro-
 mikroanalisis
 mikroangiopati
 mikrob
@@ -17941,7 +17905,6 @@ miksoedema
 mil
 milad
 milenium
-mili-
 miliampere
 miliar
 miliarder
@@ -17994,7 +17957,6 @@ minggir
 minggu
 minhaj
 mini
-mini-
 miniatur
 minibasket
 minibus
@@ -18176,7 +18138,6 @@ mongoloid
 monisme
 monitor
 mono
-mono-
 monoatom
 monodi
 monodrama
@@ -18433,7 +18394,6 @@ mulia
 mullah
 mulsa
 multazam
-multi-
 multibahasa
 multidimensi
 multidisipliner
@@ -18889,7 +18849,6 @@ nenenda
 nener
 nenes
 neng
-neo-
 neodarwinisme
 neodimium
 neofeodalisme
@@ -19038,7 +18997,6 @@ ninitowok
 niobium
 nipah
 nipis
-nir-
 nira
 niraksara
 nirgagasan
@@ -19051,7 +19009,6 @@ nirmala
 nirselera
 nirwana
 nirwarta
-nis-
 nisab
 nisan
 nisbah
@@ -19939,7 +19896,6 @@ pampiniform
 pamrih
 pamungkas
 pan
-pan-
 pana
 panah
 panai
@@ -19949,7 +19905,6 @@ panas
 panasea
 panau
 panca
-panca-
 pancabicara
 pancabuta
 pancacita
@@ -20142,7 +20097,6 @@ paprika
 papui
 par
 para
-para-
 parab
 parabasis
 parabel
@@ -20233,7 +20187,6 @@ parfum
 parga
 parhelion
 pari
-pari-
 paria
 parididimis
 parih
@@ -20306,7 +20259,6 @@ pasaraya
 pasase
 pasasir
 pasat
-pasca-
 pascabedah
 pascadoktoral
 pascajual
@@ -20792,7 +20744,6 @@ penomah
 pensi
 pensil
 pensiun
-penta-
 pentagin
 pentagon
 pentagor
@@ -20952,7 +20903,6 @@ pergol
 pergola
 perhati
 peri
-peri-
 peria
 perian
 periang
@@ -21132,7 +21082,6 @@ persuasi
 persuasif
 pertal
 pertama
-pertanda
 pertepel
 pertiwi
 pertua
@@ -21325,7 +21274,6 @@ piket
 pikir
 piknik
 piknometer
-piko-
 pikofarad
 pikogram
 pikolo
@@ -21633,7 +21581,6 @@ polenter
 poler
 poles
 polet
-poli-
 poliandri
 poliantus
 poliester
@@ -21804,7 +21751,6 @@ potong
 potret
 poundal
 poyang
-pra-
 praanggapan
 praba
 prabu
@@ -21903,7 +21849,6 @@ prayang
 prayitna
 prayojana
 prayuwana
-pre-
 preadvis
 preambul
 preantena
@@ -21997,7 +21942,6 @@ privatisasi
 prive
 privilese
 pro
-pro-
 proaktif
 probabilitas
 problem
@@ -26813,7 +26757,6 @@ suprasegmental
 supremasi
 supresif
 supresor
-sura
 surah
 surahi
 surai
