@@ -30,7 +30,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'peran', 'medan', 'syukur', 'syarat', 'bom', 'promosi', 'proteksi', 'prediksi', 'kaji',
                 'sembunyi', 'langgan', 'laku', 'baik', 'terang', 'iman', 'bisik', 'taat', 'puas', 'makan',
                 'nyala', 'nyanyi', 'nyata', 'nyawa', 'rata', 'lembut', 'ligas',
-                'budaya', 'karya','ideal', 'final',
+                'budaya', 'karya', 'ideal', 'final',
                 'taat', // sastrawi additional rules
                 'lewat',
             )

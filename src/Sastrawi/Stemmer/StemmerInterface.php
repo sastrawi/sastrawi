@@ -16,7 +16,7 @@ namespace Sastrawi\Stemmer;
  */
 interface StemmerInterface
 {
-   /**
+    /**
      * Stem a text to its common stem form
      *
      * @param  string $text the text string to stem, e.g : memberdayakan pembangunan

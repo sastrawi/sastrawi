@@ -37,7 +37,6 @@ class StemmerFactory
         if ($isDev || !function_exists('apc_fetch')) {
             $words = $this->getWordsFromFile();
         } else {
-
             $words = apc_fetch(self::APC_KEY);
 
             if ($words === false) {

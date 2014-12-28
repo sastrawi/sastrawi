@@ -45,13 +45,13 @@
         <exec executable="${basedir}/php-cs-fixer.phar" failonerror="true">
             <arg value="fix" />
             <arg value="--dry-run" />
-            <arg value="--level=all" />
+            <arg value="--level=psr2" />
             <arg path="${basedir}/src" />
         </exec>
         <exec executable="${basedir}/php-cs-fixer.phar" failonerror="true">
             <arg value="fix" />
             <arg value="--dry-run" />
-            <arg value="--level=all" />
+            <arg value="--level=psr2" />
             <arg path="${basedir}/tests" />
         </exec>
     </target> 

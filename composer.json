@@ -23,7 +23,7 @@
         "php": ">=5.3"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "1.4.*"
+        "squizlabs/php_codesniffer": "~1.0"
     },
     "autoload": {
         "psr-0": {
@@ -31,6 +31,7 @@
         }
     },
     "license": "MIT",
+    "prefer-stable": true,
     "minimum-stability": "dev",
     "support": {
         "issues": "https://github.com/sastrawi/sastrawi/issues",
