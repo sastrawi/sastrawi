@@ -108,8 +108,14 @@ class Stemmer implements StemmerInterface
             return $plural;
         }
 
+        // berbalas-balasan -> balas
         $rootWord1 = $this->stemSingularWord($words[1]);
         $rootWord2 = $this->stemSingularWord($words[2]);
+
+        // meniru-nirukan -> tiru
+        if (!$this->dictionary->contains($words[2]) && $rootWord2 === $words[2]) {
+            $rootWord2 = $this->stemSingularWord('me'.$words[2]);
+        }
 
         if ($rootWord1 == $rootWord2) {
             return $rootWord1;
