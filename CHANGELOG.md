@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+* 1.0.6 (2015-02-21)
+
+  * stem meniru-nirukan -> tiru, menyepak-nyepak -> sepak, memanggil-manggil -> panggil
+  * README : update code example
+
 * 1.0.5 (2014-12-28)
 
   * remove words from dictionary to prevent overstemming.
