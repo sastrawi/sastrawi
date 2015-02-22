@@ -53,6 +53,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('meniru-niru', 'tiru');
         $data[] = array('memanggil-manggil', 'panggil');
         $data[] = array('menyebut-nyebut', 'sebut');
+        $data[] = array('menganga', 'nganga');
 
         return $data;
     }

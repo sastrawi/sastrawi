@@ -76,6 +76,7 @@ class VisitorProvider
                 new Disambiguator\DisambiguatorPrefixRule17a(),
                 new Disambiguator\DisambiguatorPrefixRule17b(),
                 new Disambiguator\DisambiguatorPrefixRule17c(),
+                new Disambiguator\DisambiguatorPrefixRule17d(),
             )
         );
 
