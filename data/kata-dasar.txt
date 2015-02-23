@@ -3151,7 +3151,6 @@ berzanji
 besalen
 besan
 besar
-besaran
 besek
 besel
 besengek
@@ -9469,6 +9468,7 @@ henoteisme
 henry
 hentar
 henti
+henyak
 hepar
 hepatitis
 heptagon
