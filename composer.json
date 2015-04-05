@@ -15,7 +15,7 @@
         {
             "name": "Andy Librian",
             "email": "andylibrian@gmail.com",
-            "homepage": "http://andylibrian.pro",
+            "homepage": "http://andylibrian.com",
             "role": "Lead Developer"
         }
     ],
@@ -39,7 +39,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "1.1.x-dev"
         }
     }
 }

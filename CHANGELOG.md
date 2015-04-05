@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 1.0.8 (2015-04-05)
+  * stem prefix ku-
+  * stem prefix kau-
+
 * 1.0.7 (2015-02-28)
 
   * stem menganga -> nganga

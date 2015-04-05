@@ -165,6 +165,11 @@ class VisitorProvider
                 new Disambiguator\DisambiguatorPrefixRule40b(),
             )
         );
+
+        // Sastrawi rules
+        // ku-A, kau-A
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule41()));
+        $this->prefixVisitors[] = new PrefixDisambiguator(array(new Disambiguator\DisambiguatorPrefixRule42()));
     }
 
     public function getVisitors()
