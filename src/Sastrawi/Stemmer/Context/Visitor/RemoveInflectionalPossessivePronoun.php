@@ -40,11 +40,11 @@ class RemoveInflectionalPossessivePronoun implements VisitorInterface
     }
 
     /**
-     * Remove inflectional possessive pronoun : ku|mu|nya
+     * Remove inflectional possessive pronoun : ku|mu|nya|-ku|-mu|-nya
      * @param string $word
      */
     public function remove($word)
     {
-        return preg_replace('/(ku|mu|nya)$/', '', $word, 1);
+        return preg_replace('/-*(ku|mu|nya)$/', '', $word, 1);
     }
 }

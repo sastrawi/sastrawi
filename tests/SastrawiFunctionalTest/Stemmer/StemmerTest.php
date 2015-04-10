@@ -31,7 +31,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'sembunyi', 'langgan', 'laku', 'baik', 'terang', 'iman', 'bisik', 'taat', 'puas', 'makan',
                 'nyala', 'nyanyi', 'nyata', 'nyawa', 'rata', 'lembut', 'ligas',
                 'budaya', 'karya', 'ideal', 'final',
-                'taat', 'tiru', 'sepak', // sastrawi additional rules
+                'taat', 'tiru', 'sepak', 'kuasa', 'malaikat', 'nikmat', // sastrawi additional rules
                 'lewat', 'nganga',
             )
         );
@@ -373,6 +373,10 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         
         $data[] = array('kupukul', 'pukul');
         $data[] = array('kauhajar', 'hajar');
+        
+        $data[] = array('kuasa-Mu', 'kuasa');
+        $data[] = array('malaikat-malaikat-Nya', 'malaikat');
+        $data[] = array('nikmat-Ku', 'nikmat');
 
         return $data;
     }

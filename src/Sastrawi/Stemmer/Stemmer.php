@@ -89,6 +89,12 @@ class Stemmer implements StemmerInterface
      */
     protected function isPlural($word)
     {
+        // -ku|-mu|-nya
+        // nikmat-Ku, etc
+        if (preg_match('/^(.*)-(ku|mu|nya)$/', $word, $words)) {
+            return strpos($words[1], '-') !== false;
+        }
+
         return strpos($word, '-') !== false;
     }
 
@@ -106,6 +112,12 @@ class Stemmer implements StemmerInterface
 
         if (!isset($words[1]) || !isset($words[2])) {
             return $plural;
+        }
+
+        // malaikat-malaikat-nya -> malaikat malaikat-nya
+        $suffix = $words[2];
+        if (in_array($suffix, array('ku', 'mu', 'nya')) && preg_match('/^(.*)-(.*)$/', $words[1], $words)) {
+            $words[2] .= '-' . $suffix;
         }
 
         // berbalas-balasan -> balas
