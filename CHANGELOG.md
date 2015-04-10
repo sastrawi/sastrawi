@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 1.0.9 (2015-04-11)
+  * stem possessive pronoun -ku|-mu|-nya as in nikmat-Ku
+  * dictionary : remove plural words
+
 * 1.0.8 (2015-04-05)
   * stem prefix ku-
   * stem prefix kau-
