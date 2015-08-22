@@ -10,7 +10,7 @@ namespace Sastrawi\Morphology\Disambiguator;
 
 /**
  * Disambiguate Prefix Rule 30b
- * Rule 30b : pengV -> peng-V
+ * Rule 30b : pengV -> peng-kV
  */
 class DisambiguatorPrefixRule30b implements DisambiguatorInterface
 {
