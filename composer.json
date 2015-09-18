@@ -23,7 +23,8 @@
         "php": ">=5.3"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "~1.0"
+        "squizlabs/php_codesniffer": "~1.0",
+        "phpunit/phpunit": "4.8.7"
     },
     "autoload": {
         "psr-0": {

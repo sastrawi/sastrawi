@@ -70,6 +70,13 @@ php composer.phar require sastrawi/sastrawi:~1
 
 Jika Anda masih belum memahami bagaimana cara menggunakan Composer, silahkan baca [Getting Started with Composer](https://getcomposer.org/doc/00-intro.md).
 
+Cara menjalankan test
+---------------------
+
+```bash
+vendor/bin/phpunit
+```
+
 
 Penggunaan
 -----------
