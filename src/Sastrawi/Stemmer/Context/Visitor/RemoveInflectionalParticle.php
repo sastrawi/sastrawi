@@ -45,6 +45,6 @@ class RemoveInflectionalParticle implements VisitorInterface
      */
     public function remove($word)
     {
-        return preg_replace('/(lah|kah|tah|pun)$/', '', $word, 1);
+        return preg_replace('/-*(lah|kah|tah|pun)$/', '', $word, 1);
     }
 }

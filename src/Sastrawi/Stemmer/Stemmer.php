@@ -36,7 +36,7 @@ class Stemmer implements StemmerInterface
 
     public function __construct(DictionaryInterface $dictionary)
     {
-        $this->dictionary = $dictionary;
+        $this->dictionary      = $dictionary;
         $this->visitorProvider = new VisitorProvider();
     }
 
@@ -91,7 +91,7 @@ class Stemmer implements StemmerInterface
     {
         // -ku|-mu|-nya
         // nikmat-Ku, etc
-        if (preg_match('/^(.*)-(ku|mu|nya)$/', $word, $words)) {
+        if (preg_match('/^(.*)-(ku|mu|nya|lah|kah|tah|pun)$/', $word, $words)) {
             return strpos($words[1], '-') !== false;
         }
 
@@ -116,7 +116,8 @@ class Stemmer implements StemmerInterface
 
         // malaikat-malaikat-nya -> malaikat malaikat-nya
         $suffix = $words[2];
-        if (in_array($suffix, array('ku', 'mu', 'nya')) && preg_match('/^(.*)-(.*)$/', $words[1], $words)) {
+        if (in_array($suffix, array('ku', 'mu', 'nya', 'lah', 'kah', 'tah', 'pun')) &&
+            preg_match('/^(.*)-(.*)$/', $words[1], $words)) {
             $words[2] .= '-' . $suffix;
         }
 
@@ -126,7 +127,7 @@ class Stemmer implements StemmerInterface
 
         // meniru-nirukan -> tiru
         if (!$this->dictionary->contains($words[2]) && $rootWord2 === $words[2]) {
-            $rootWord2 = $this->stemSingularWord('me'.$words[2]);
+            $rootWord2 = $this->stemSingularWord('me' . $words[2]);
         }
 
         if ($rootWord1 == $rootWord2) {

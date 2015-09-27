@@ -32,10 +32,10 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 'nyala', 'nyanyi', 'nyata', 'nyawa', 'rata', 'lembut', 'ligas',
                 'budaya', 'karya', 'ideal', 'final',
                 'taat', 'tiru', 'sepak', 'kuasa', 'malaikat', 'nikmat', // sastrawi additional rules
-                'lewat', 'nganga',
+                'lewat', 'nganga', 'allah',
             )
         );
-        $this->stemmer    = new Stemmer($this->dictionary);
+        $this->stemmer = new Stemmer($this->dictionary);
     }
 
     /**
@@ -342,8 +342,8 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         // test stem multiple sentences
         $multipleSentence1 = 'Cinta telah bertebaran.Keduanya saling mencintai.';
         $multipleSentence2 = "(Cinta telah bertebaran)\n\n\n\nKeduanya saling mencintai.";
-        $data[] = array($multipleSentence1, 'cinta telah tebar dua saling cinta');
-        $data[] = array($multipleSentence2, 'cinta telah tebar dua saling cinta');
+        $data[]            = array($multipleSentence1, 'cinta telah tebar dua saling cinta');
+        $data[]            = array($multipleSentence2, 'cinta telah tebar dua saling cinta');
 
         // failed on other method / algorithm but we should succeed
         $data[] = array('peranan', 'peran');
@@ -370,13 +370,14 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
 
         $data[] = array('melewati', 'lewat');
         $data[] = array('menganga', 'nganga');
-        
+
         $data[] = array('kupukul', 'pukul');
         $data[] = array('kauhajar', 'hajar');
-        
+
         $data[] = array('kuasa-Mu', 'kuasa');
         $data[] = array('malaikat-malaikat-Nya', 'malaikat');
         $data[] = array('nikmat-Ku', 'nikmat');
+        $data[] = array('allah-lah', 'allah');
 
         return $data;
     }
