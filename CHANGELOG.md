@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 1.0.10 (2015-09-28)
+  * added unit tests for disambiguators (thanks to mohangk)
+  * stem -lah|-kah|-tah|-pun as in Dia-lah (thanks to arryanggaputra)
+
 * 1.0.9 (2015-04-11)
   * stem possessive pronoun -ku|-mu|-nya as in nikmat-Ku
   * dictionary : remove plural words
