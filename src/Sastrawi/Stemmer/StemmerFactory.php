@@ -22,14 +22,23 @@ class StemmerFactory
      */
     public function createStemmer($isDev = false)
     {
-        $words      = $this->getWords($isDev);
-        $dictionary = new ArrayDictionary($words);
-        $stemmer    = new Stemmer($dictionary);
+        $stemmer    = new Stemmer($this->createDefaultDictionary($isDev));
 
         $resultCache   = new Cache\ArrayCache();
         $cachedStemmer = new CachedStemmer($resultCache, $stemmer);
 
         return $cachedStemmer;
+    }
+
+    /**
+     * @return \Sastrawi\Dictionary\ArrayDictionary
+     */
+    public function createDefaultDictionary($isDev = false)
+    {
+        $words      = $this->getWords($isDev);
+        $dictionary = new ArrayDictionary($words);
+
+        return $dictionary;
     }
 
     protected function getWords($isDev = false)
