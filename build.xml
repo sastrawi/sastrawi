@@ -4,7 +4,7 @@
     <property name="php" value="php"/>
 
     <target name="build"
-        depends="prepare,lint,phpcs,php-cs-fixer,phpunit"/>
+        depends="prepare,lint,phpcs,phpunit"/>
 
     <target name="prepare">
         <mkdir dir="${basedir}/build"/>
