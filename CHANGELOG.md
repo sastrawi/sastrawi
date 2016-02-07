@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+* 1.1.0 (2016-02-07)
+  * provide a way to add or remove words in dictionary
+
 * 1.0.10 (2015-09-28)
   * added unit tests for disambiguators (thanks to mohangk)
   * stem -lah|-kah|-tah|-pun as in Dia-lah (thanks to arryanggaputra)
