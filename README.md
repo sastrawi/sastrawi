@@ -153,6 +153,13 @@ Lisensi
 
 Lisensi sastrawi adalah MIT License (MIT) sedangkan lisensi kamus kata dasar dari Kateglo adalah [CC-BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/). Untuk informasi lebih lengkap silahkan lihat [Lisensi Sastrawi](https://github.com/sastrawi/sastrawi/blob/master/LICENSE) dan [Lisensi isi Kateglo](https://github.com/ivanlanin/kateglo#lisensi-isi).
 
+Di Bahasa Pemrograman Lain
+--------------------------
+
+- [JSastrawi](https://github.com/jsastrawi/jsastrawi) - Java
+- [cSastrawi](https://github.com/mohangk/c_sastrawi) - C
+- [Sastrawi](https://github.com/har07/sastrawi) - Python
+
 
 Informasi Lebih Lanjut
 ----------------------
