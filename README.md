@@ -65,7 +65,7 @@ Sastrawi dapat diinstall dengan [Composer](https://getcomposer.org).
 3. Tambahkan sastrawi ke file `composer.json` Anda :
 
 ```bash
-php composer.phar require sastrawi/sastrawi:~1
+php composer.phar require sastrawi/sastrawi:^1
 ```
 
 Jika Anda masih belum memahami bagaimana cara menggunakan Composer, silahkan baca [Getting Started with Composer](https://getcomposer.org/doc/00-intro.md).
@@ -158,7 +158,7 @@ Di Bahasa Pemrograman Lain
 
 - [JSastrawi](https://github.com/jsastrawi/jsastrawi) - Java
 - [cSastrawi](https://github.com/mohangk/c_sastrawi) - C
-- [Sastrawi](https://github.com/har07/sastrawi) - Python
+- [PySastrawi](https://github.com/har07/PySastrawi) - Python
 
 
 Informasi Lebih Lanjut
