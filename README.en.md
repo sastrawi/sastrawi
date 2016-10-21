@@ -123,6 +123,13 @@ License
 
 Sastrawi is released under The MIT License (MIT) while Kateglo's root word dictionary is under [CC-BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/). For more information please see [Sastrawi License File](https://github.com/sastrawi/sastrawi/blob/master/LICENSE) and [Kateglo's content license](https://github.com/ivanlanin/kateglo#lisensi-isi).
 
+Sastrawi in Other Programming Language
+--------------------------
+
+- [JSastrawi](https://github.com/jsastrawi/jsastrawi) - Java
+- [cSastrawi](https://github.com/mohangk/c_sastrawi) - C
+- [PySastrawi](https://github.com/har07/PySastrawi) - Python
+- [Go-Sastrawi](https://github.com/RadhiFadlillah/go-sastrawi) - Go
 
 More Information
 ----------------
