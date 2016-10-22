@@ -159,6 +159,7 @@ Di Bahasa Pemrograman Lain
 - [JSastrawi](https://github.com/jsastrawi/jsastrawi) - Java
 - [cSastrawi](https://github.com/mohangk/c_sastrawi) - C
 - [PySastrawi](https://github.com/har07/PySastrawi) - Python
+- [Go-Sastrawi](https://github.com/RadhiFadlillah/go-sastrawi) - Go
 
 
 Informasi Lebih Lanjut
