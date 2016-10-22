@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 * 1.2.0 (2016-10-22)
-  * stem pen-{s|t} as in penstabilan and pentranskripsi
+  * stem pen-{s|t} as in penstabilan and pentranskripsi (thanks to prasastoadi)
 
 * 1.1.0 (2016-02-07)
   * provide a way to add or remove words in dictionary
