@@ -130,6 +130,7 @@ Sastrawi in Other Programming Language
 - [cSastrawi](https://github.com/mohangk/c_sastrawi) - C
 - [PySastrawi](https://github.com/har07/PySastrawi) - Python
 - [Go-Sastrawi](https://github.com/RadhiFadlillah/go-sastrawi) - Go
+- [Sastrawi-Ruby](https://github.com/meisyal/sastrawi-ruby) - Ruby
 
 More Information
 ----------------
