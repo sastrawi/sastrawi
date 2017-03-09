@@ -12,6 +12,15 @@ use Sastrawi\Specification\SpecificationInterface;
 
 /**
  * Confix Stripping Rule Precedence Adjustment Specification.
+ * Modified by Prasasto Adi :
+ * - '/i$/',
+ * - '/is$/',
+ *
+ * Original CS rules :
+ * - '/^me(.*)i$/',
+ * - '/^di(.*)i$/',
+ * - '/^pe(.*)i$/',
+ * - '/^ter(.*)i$/',
  * Asian J. (2007) “Effective Techniques for Indonesian Text Retrieval” page 78-79.
  *
  * @link   http://researchbank.rmit.edu.au/eserv/rmit:6312/Asian.pdf
@@ -27,10 +36,8 @@ class PrecedenceAdjustmentSpecification implements SpecificationInterface
         $regexRules = array(
             '/^be(.*)lah$/',
             '/^be(.*)an$/',
-            '/^me(.*)i$/',
-            '/^di(.*)i$/',
-            '/^pe(.*)i$/',
-            '/^ter(.*)i$/',
+            '/i$/',
+            '/is$/',
         );
 
         foreach ($regexRules as $rule) {

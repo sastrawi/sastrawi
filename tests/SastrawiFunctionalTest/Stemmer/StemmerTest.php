@@ -36,6 +36,7 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
                 // sastrawi additional rules
                 'taat', 'tiru', 'sepak', 'kuasa', 'malaikat', 'nikmat', 'stabil', 'transkripsi',
                 'lewat', 'nganga', 'allah',
+                'baris', 'ramai', 'analogi', 'tumis', 'tangis', 'lapis',
             )
         );
         $this->stemmer = new Stemmer($this->dictionary);
@@ -384,6 +385,14 @@ class StemmerTest extends \PHPUnit_Framework_TestCase
         $data[] = array('malaikat-malaikat-Nya', 'malaikat');
         $data[] = array('nikmat-Ku', 'nikmat');
         $data[] = array('allah-lah', 'allah');
+
+        $data[] = array('beramai-ramai', 'ramai');
+        $data[] = array('beranalogi', 'analogi');
+
+        $data[] = array('baris-berbaris', 'baris');
+        $data[] = array('ditumis', 'tumis');
+        $data[] = array('menangis', 'tangis');
+        $data[] = array('pelapis', 'lapis');
 
         return $data;
     }
