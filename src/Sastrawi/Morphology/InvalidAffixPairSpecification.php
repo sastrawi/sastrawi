@@ -18,11 +18,9 @@ class InvalidAffixPairSpecification implements SpecificationInterface
 {
     public function isSatisfiedBy($word)
     {
-        if (preg_match('/^me(.*)kan$/', $word) === 1) {
-            return false;
-        }
-
-        if ($word == 'ketahui') {
+        if ((preg_match('/^me(.*)kan$/', $word) === 1) || 
+            ($word == 'ketahui')) 
+        {
             return false;
         }
 
