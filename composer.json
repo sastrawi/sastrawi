@@ -27,8 +27,8 @@
         "phpunit/phpunit": "4.8.7"
     },
     "autoload": {
-        "psr-0": {
-            "Sastrawi\\": "src"
+        "psr-4": {
+            "Sastrawi\\": "src/Sastrawi"
         }
     },
     "license": "MIT",
